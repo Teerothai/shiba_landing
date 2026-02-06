@@ -4,12 +4,14 @@ import Image from "next/image";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { LineButton } from "@/lib/ui/line-button";
 
+type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
+
 interface FooterViewProps {
   onOpenLINE: () => void;
-  onNavigate: (sectionId: string) => void;
+  onNavigate: (sectionId: SectionId) => void;
 }
 
-const footerLinks = [
+const footerLinks: { key: SectionId; label: string }[] = [
   { key: "home", label: "หน้าแรก" },
   { key: "products", label: "สินค้า" },
   { key: "compare", label: "เทียบรุ่น" },
