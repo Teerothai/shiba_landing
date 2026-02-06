@@ -11,6 +11,7 @@ import { CompareSectionView } from "@/view/CompareSectionView";
 import { PackagesView } from "@/view/PackagesView";
 import { CommunityView } from "@/view/CommunityView";
 import { ContactView } from "@/view/ContactView";
+import { FooterView } from "@/view/FooterView";
 import { HeaderContainer } from "./HeaderContainer";
 import { BannerSliderContainer } from "./BannerSliderContainer";
 import { ScrollNavigator } from "./ScrollNavigator";
@@ -120,6 +121,9 @@ export function LandingContainer() {
         {/* Contact Section */}
         <ContactView onOpenLINE={openLINEChat} />
       </main>
+
+      {/* Footer */}
+      <FooterView onOpenLINE={openLINEChat} onNavigate={scrollToSection} />
 
       {/* Scroll Navigator */}
       <ScrollNavigator
