@@ -1,26 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
+/* ========================================
+   CSS Variables - Kawaii Theme
+   ======================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Kawaii Colors */
+  --kawaii-pink: #ff8ab7;
+  --kawaii-light-pink: #fcb0ce;
+  --kawaii-gold: #f7c77c;
+  --kawaii-brown: #6c4200;
+  --kawaii-soft-purple: #b2a5f2;
+  --kawaii-mint-green: #5ddbba;
+
+  /* Background & Surface */
+  --background: #fef7f7;
+  --foreground: #6c4200;
+  --card: #ffffff;
+  --card-foreground: #6c4200;
+
+  /* Shadows */
+  --kawaii-shadow-sm: 0 2px 8px rgba(255, 138, 183, 0.15);
+  --kawaii-shadow-md: 0 4px 16px rgba(255, 138, 183, 0.2);
+  --kawaii-shadow-lg: 0 8px 32px rgba(255, 138, 183, 0.25);
+  --kawaii-shadow-xl: 0 16px 64px rgba(255, 138, 183, 0.3);
+
+  /* Fonts */
+  --font-thai: "Kanit", "Noto Sans Thai", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-kawaii-pink: var(--kawaii-pink);
+  --color-kawaii-light-pink: var(--kawaii-light-pink);
+  --color-kawaii-gold: var(--kawaii-gold);
+  --color-kawaii-brown: var(--kawaii-brown);
+  --color-kawaii-soft-purple: var(--kawaii-soft-purple);
+  --color-kawaii-mint-green: var(--kawaii-mint-green);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================================
+   Base Styles
+   ======================================== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  font-family: var(--font-thai);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-thai);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+   Kawaii Component Classes
+   ======================================== */
+.kawaii-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--kawaii-shadow-sm);
+}
+
+.kawaii-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 138, 183, 0.15);
+  border-radius: 1.5rem;
+  box-shadow: var(--kawaii-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kawaii-card:hover {
+  border-color: rgba(255, 138, 183, 0.3);
+  box-shadow: var(--kawaii-shadow-lg);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animation Classes */
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--kawaii-pink) 0%,
+    var(--kawaii-light-pink) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    var(--kawaii-light-pink) 75%,
+    var(--kawaii-pink) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 12s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.text-kawaii-pink { color: var(--kawaii-pink); }
+.text-kawaii-brown { color: var(--kawaii-brown); }
+.text-kawaii-gold { color: var(--kawaii-gold); }
+.text-kawaii-mint { color: var(--kawaii-mint-green); }
+.text-kawaii-purple { color: var(--kawaii-soft-purple); }
+
+.bg-kawaii-pink { background-color: var(--kawaii-pink); }
+.bg-kawaii-light-pink { background-color: var(--kawaii-light-pink); }
+.bg-kawaii-gold { background-color: var(--kawaii-gold); }
+.bg-kawaii-mint { background-color: var(--kawaii-mint-green); }
+.bg-kawaii-purple { background-color: var(--kawaii-soft-purple); }
+
+.shadow-kawaii-sm { box-shadow: var(--kawaii-shadow-sm); }
+.shadow-kawaii-md { box-shadow: var(--kawaii-shadow-md); }
+.shadow-kawaii-lg { box-shadow: var(--kawaii-shadow-lg); }
+.shadow-kawaii-xl { box-shadow: var(--kawaii-shadow-xl); }
+
+/* ========================================
+   Reduced Motion Support
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
