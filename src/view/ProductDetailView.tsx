@@ -6,7 +6,6 @@ import {
   Star,
   Heart,
   Share2,
-  MessageCircle,
   Package,
   ArrowRight,
   Check,
@@ -19,6 +18,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/lib/ui/button";
+import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
@@ -230,15 +230,12 @@ export function ProductDetailView({
                       >
                         เปรียบเทียบ
                       </Button>
-                      <Button
+                      <LineButton
                         onClick={onOpenLINE}
-                        variant="mint"
                         size="default"
+                        label="ปรึกษา"
                         className="w-full text-sm"
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        ปรึกษา
-                      </Button>
+                      />
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Heart, MessageCircle, Star } from "lucide-react";
-import { Button } from "@/lib/ui/button";
 import { Card, CardContent } from "@/lib/ui/card";
 
 interface CommunityViewProps {
@@ -181,25 +180,12 @@ export function CommunityView({ onOpenLINE }: CommunityViewProps) {
         </div>
 
         {/* Timeline */}
-        <div className="max-w-2xl mx-auto space-y-6 mb-12">
+        <div className="max-w-2xl mx-auto space-y-6">
           {timelinePosts.map((post, index) => (
             <TimelinePost key={post.id} post={post} index={index} />
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            onClick={onOpenLINE}
-            variant="mint"
-            size="lg"
-            rounded="full"
-            className="border-2 border-[var(--kawaii-brown)]"
-          >
-            <MessageCircle className="w-5 h-5" />
-            เข้าร่วม Community
-          </Button>
-        </div>
       </div>
     </section>
   );

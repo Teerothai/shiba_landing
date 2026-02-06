@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, Package, ArrowDown, Phone, Shield, Clock, Gift } from "lucide-react";
+import { Package, ArrowDown, Phone, Shield, Clock, Gift } from "lucide-react";
 import { Button } from "@/lib/ui/button";
+import { LineButton } from "@/lib/ui/line-button";
 
 interface HeroViewProps {
   onOpenLINE: () => void;
@@ -89,16 +90,11 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button
+          <LineButton
             onClick={onOpenLINE}
-            variant="line"
             size="xl"
-            rounded="full"
             className="border-2 border-[#05a045] shadow-lg"
-          >
-            <MessageCircle className="w-6 h-6" />
-            ทักไลน์เลย
-          </Button>
+          />
 
           <Button
             onClick={onScrollToPackages}

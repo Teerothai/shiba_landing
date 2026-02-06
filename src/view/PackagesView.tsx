@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Check, MessageCircle, Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { Button } from "@/lib/ui/button";
+import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Package } from "@/data/products";
@@ -15,11 +16,11 @@ interface PackagesViewProps {
 
 // Roadmap steps
 const roadmapSteps = [
-  { id: 1, title: "สมัครสมาชิก", description: "ลงทะเบียนผ่าน LINE 2 นาที", completed: true },
-  { id: 2, title: "เลือกแพ็กเกจ", description: "เลือกแบบที่เหมาะกับคุณ", completed: true },
-  { id: 3, title: "เลือกสินค้า", description: "เลือกมือถือที่ต้องการ", completed: false },
-  { id: 4, title: "อนุมัติ", description: "รอผลอนุมัติ 6-24 ชม.", completed: false },
-  { id: 5, title: "รับสินค้า", description: "จัดส่งถึงบ้านฟรี", completed: false },
+  { id: 1, title: "สมัครสมาชิก", description: "ลงทะเบียนผ่าน LINE 2 นาที" },
+  { id: 2, title: "เลือกแพ็กเกจ", description: "เลือกแบบที่เหมาะกับคุณ" },
+  { id: 3, title: "เลือกสินค้า", description: "เลือกมือถือที่ต้องการ" },
+  { id: 4, title: "อนุมัติ", description: "รอผลอนุมัติ 6-24 ชม." },
+  { id: 5, title: "รับสินค้า", description: "จัดส่งถึงบ้านฟรี" },
 ];
 
 /**
@@ -38,16 +39,17 @@ function PackageCard({
 }) {
   return (
     <Card
-      className={`relative overflow-visible animate-slide-in-up ${
-        pkg.popular ? "ring-2 ring-[var(--kawaii-mint-green)] scale-105" : ""
+      data-promoted={pkg.popular ? "true" : undefined}
+      className={`relative overflow-visible animate-slide-in-up min-w-[280px] w-[280px] shrink-0 snap-center ${
+        pkg.popular ? "ring-2 ring-[var(--kawaii-soft-purple)] scale-105" : ""
       }`}
       style={{ animationDelay: `${index * 150}ms` }}
     >
       {/* Popular Badge */}
       {pkg.popular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--kawaii-mint-green)] text-white text-xs font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--kawaii-soft-purple)] text-white text-xs font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
           <Star className="w-3 h-3 fill-current" />
-          ฮิตที่สุด
+          แนะนำ
         </div>
       )}
 
@@ -95,16 +97,18 @@ function PackageCard({
         <div className="flex flex-col gap-2">
           <Button
             onClick={onSelect}
-            variant={pkg.popular ? "mint" : "outline"}
+            variant={pkg.popular ? "purple" : "outline"}
             size="lg"
             className="w-full"
           >
             เลือกแพ็กเกจนี้
           </Button>
-          <Button onClick={onOpenLINE} variant="ghost" size="sm" className="w-full">
-            <MessageCircle className="w-4 h-4" />
-            สอบถามเพิ่มเติม
-          </Button>
+          <LineButton
+            onClick={onOpenLINE}
+            size="sm"
+            label="สอบถามเพิ่มเติม"
+            className="w-full"
+          />
         </div>
       </CardContent>
     </Card>
@@ -148,17 +152,41 @@ export function PackagesView({
           </p>
         </div>
 
-        {/* Packages Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto">
-          {packages.map((pkg, index) => (
-            <PackageCard
-              key={pkg.id}
-              pkg={pkg}
-              index={index}
-              onSelect={() => onSelectPackage(pkg.id)}
-              onOpenLINE={onOpenLINE}
-            />
-          ))}
+        {/* Packages - Horizontal Scroll, centered on Pro Max */}
+        <div className="relative mb-16">
+          <div
+            ref={(node) => {
+              if (!node) return;
+              // Auto-scroll to the promoted (Pro Max) card on mount
+              const promoted = node.querySelector<HTMLElement>("[data-promoted]");
+              if (promoted) {
+                const scrollLeft =
+                  promoted.offsetLeft -
+                  node.offsetWidth / 2 +
+                  promoted.offsetWidth / 2;
+                node.scrollLeft = scrollLeft;
+              }
+            }}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-6 px-4 -mx-4 scrollbar-hide"
+          >
+            {/* Leading spacer so the first card can be centered */}
+            <div className="shrink-0 w-[calc(50vw-160px)]" />
+            {packages.map((pkg, index) => (
+              <PackageCard
+                key={pkg.id}
+                pkg={pkg}
+                index={index}
+                onSelect={() => onSelectPackage(pkg.id)}
+                onOpenLINE={onOpenLINE}
+              />
+            ))}
+            {/* Trailing spacer so the last card can be centered */}
+            <div className="shrink-0 w-[calc(50vw-160px)]" />
+          </div>
+          {/* Scroll hint */}
+          <p className="text-center text-xs text-[var(--kawaii-brown)]/50 mt-2 lg:hidden">
+            ← เลื่อนเพื่อดูแพ็กเกจทั้งหมด →
+          </p>
         </div>
 
         {/* Roadmap */}
@@ -168,47 +196,34 @@ export function PackagesView({
           </h3>
 
           <div className="relative">
-            {/* Progress Line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-[var(--kawaii-brown)]/20" />
-            <div
-              className="absolute left-6 top-0 w-0.5 bg-[var(--kawaii-pink)] transition-all"
-              style={{ height: "40%" }}
-            />
-
             {/* Steps */}
             <div className="space-y-6">
-              {roadmapSteps.map((step) => (
-                <div key={step.id} className="flex gap-4 items-start">
-                  {/* Step indicator */}
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 ${
-                      step.completed
-                        ? "bg-[var(--kawaii-pink)] text-white"
-                        : "bg-white border-2 border-[var(--kawaii-brown)]/20 text-[var(--kawaii-brown)]"
-                    }`}
-                  >
-                    {step.completed ? (
-                      <Check className="w-5 h-5" />
-                    ) : (
-                      <span className="font-bold">{step.id}</span>
+              {roadmapSteps.map((step, index) => {
+                const isLast = index === roadmapSteps.length - 1;
+                return (
+                  <div key={step.id} className="flex gap-4 items-start relative">
+                    {/* Vertical line connecting to next step */}
+                    {!isLast && (
+                      <div className="absolute left-6 top-12 h-[calc(100%-48px+24px)] w-0.5 -translate-x-1/2 bg-[var(--kawaii-brown)]/20" />
                     )}
-                  </div>
 
-                  {/* Step content */}
-                  <div
-                    className={`flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-4 ${
-                      step.completed ? "shadow-kawaii-sm" : "opacity-70"
-                    }`}
-                  >
-                    <h4 className="font-semibold text-[var(--kawaii-brown)]">
-                      {step.title}
-                    </h4>
-                    <p className="text-sm text-[var(--kawaii-brown)]/70">
-                      {step.description}
-                    </p>
+                    {/* Step number */}
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 relative z-10 bg-white border-2 border-[var(--kawaii-brown)]/20 text-[var(--kawaii-brown)]">
+                      <span className="font-bold">{step.id}</span>
+                    </div>
+
+                    {/* Step content */}
+                    <div className="flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-4">
+                      <h4 className="font-semibold text-[var(--kawaii-brown)]">
+                        {step.title}
+                      </h4>
+                      <p className="text-sm text-[var(--kawaii-brown)]/70">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

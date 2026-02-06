@@ -256,7 +256,7 @@ export const iPads: Product[] = [
   },
 ];
 
-// Packages
+// Packages — Pro Max in the middle (promoted / default visible)
 export const packages: Package[] = [
   {
     id: "puppy",
@@ -278,27 +278,6 @@ export const packages: Package[] = [
     ],
   },
   {
-    id: "plus",
-    name: "Shiba Plus",
-    subtitle: "สมดุลดี ฮิตที่สุด",
-    pay: 100,
-    discount: 200,
-    color: "#5ddbba",
-    steps: 15,
-    price: 25000,
-    monthlyStart: 899,
-    bgGradient: "from-teal-100 to-emerald-50",
-    icon: "",
-    benefits: [
-      "ส่วนลด 10%",
-      "รับประกัน 2 ปี",
-      "เก็บเงินได้ 5 วัน",
-      "ฟรีเคส + ฟิล์ม",
-      "อนุมัติด่วน 12 ชม.",
-    ],
-    popular: true,
-  },
-  {
     id: "promax",
     name: "Shiba Pro Max",
     subtitle: "ครบครัน พรีเมียมสุด",
@@ -317,6 +296,27 @@ export const packages: Package[] = [
       "ของแถมครบชุด",
       "VIP Support",
       "อนุมัติทันที 6 ชม.",
+    ],
+    popular: true,
+  },
+  {
+    id: "plus",
+    name: "Shiba Plus",
+    subtitle: "สมดุลดี คุ้มค่า",
+    pay: 100,
+    discount: 200,
+    color: "#5ddbba",
+    steps: 15,
+    price: 25000,
+    monthlyStart: 899,
+    bgGradient: "from-teal-100 to-emerald-50",
+    icon: "",
+    benefits: [
+      "ส่วนลด 10%",
+      "รับประกัน 2 ปี",
+      "เก็บเงินได้ 5 วัน",
+      "ฟรีเคส + ฟิล์ม",
+      "อนุมัติด่วน 12 ชม.",
     ],
   },
 ];

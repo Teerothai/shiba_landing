@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, Phone, Clock, MapPin } from "lucide-react";
+import { Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/lib/ui/button";
+import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 
 interface ContactViewProps {
@@ -44,16 +45,11 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
 
         {/* Main CTA */}
         <div className="text-center mb-12">
-          <Button
+          <LineButton
             onClick={onOpenLINE}
-            variant="line"
             size="xl"
-            rounded="full"
             className="border-2 border-[#05a045] shadow-xl text-xl px-12 py-8"
-          >
-            <MessageCircle className="w-8 h-8" />
-            ทักไลน์เลย
-          </Button>
+          />
         </div>
 
         {/* Contact Cards Grid */}
@@ -161,16 +157,11 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
           </div>
 
           <div>
-            <Button
+            <LineButton
               onClick={onOpenLINE}
-              variant="line"
               size="xl"
-              rounded="full"
               className="border-2 border-[#05a045] shadow-lg"
-            >
-              <MessageCircle className="w-6 h-6" />
-              ทักไลน์เลย
-            </Button>
+            />
           </div>
         </Card>
       </div>

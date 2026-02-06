@@ -8,11 +8,11 @@ import {
   HardDrive,
   Monitor,
   Star,
-  MessageCircle,
   ArrowRight,
   Check,
 } from "lucide-react";
 import { Button } from "@/lib/ui/button";
+import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
@@ -378,15 +378,11 @@ export function CompareSectionView({
             <p className="text-sm text-[var(--kawaii-brown)]/70 mb-4 max-w-sm">
               ทีม SHiBA พร้อมให้คำปรึกษาและช่วยเลือกแพ็กเกจที่เหมาะกับคุณ
             </p>
-            <Button
+            <LineButton
               onClick={onOpenLINE}
-              variant="line"
               size="lg"
-              rounded="full"
-            >
-              <MessageCircle className="w-5 h-5" />
-              ปรึกษาใน LINE
-            </Button>
+              label="ปรึกษาใน LINE"
+            />
           </div>
         </div>
       </div>

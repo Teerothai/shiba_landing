@@ -182,6 +182,15 @@ h1, h2, h3, h4, h5, h6 {
 .shadow-kawaii-lg { box-shadow: var(--kawaii-shadow-lg); }
 .shadow-kawaii-xl { box-shadow: var(--kawaii-shadow-xl); }
 
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ========================================
    Reduced Motion Support
    ======================================== */

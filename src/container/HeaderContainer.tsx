@@ -2,8 +2,9 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/lib/ui/button";
+import { LineButton } from "@/lib/ui/line-button";
 
 type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
 
@@ -91,16 +92,11 @@ export function HeaderContainer({
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
             {/* Desktop CTA */}
-            <Button
+            <LineButton
               onClick={onOpenLINE}
-              variant="line"
               size="default"
-              rounded="full"
               className="hidden sm:flex"
-            >
-              <MessageCircle className="w-4 h-4" />
-              ทักไลน์เลย
-            </Button>
+            />
 
             {/* Mobile Menu Toggle */}
             <Button
@@ -138,16 +134,11 @@ export function HeaderContainer({
             </nav>
 
             <div className="mt-4 px-4">
-              <Button
+              <LineButton
                 onClick={onOpenLINE}
-                variant="line"
                 size="lg"
-                rounded="full"
                 className="w-full"
-              >
-                <MessageCircle className="w-5 h-5" />
-                ทักไลน์เลย
-              </Button>
+              />
             </div>
           </div>
         )}
