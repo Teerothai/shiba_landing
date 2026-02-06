@@ -18,6 +18,11 @@ export interface Product {
   category: "iPhone" | "iPad";
   brand: string;
   specs: ProductSpecs;
+  description?: string;
+  rating?: number;
+  reviewCount?: number;
+  colors?: string[];
+  features?: string[];
 }
 
 export interface Package {
@@ -54,6 +59,10 @@ export const iPhones: Product[] = [
       display: '6.1"',
       camera: "12MP Dual",
     },
+    description: "iPhone 13 รุ่นยอดนิยม ชิป A15 Bionic ประสิทธิภาพสูง กล้องคู่ 12MP ระบบ Cinematic Mode ถ่ายวิดีโอเหมือนมืออาชีพ แบตทนทั้งวัน",
+    rating: 4.6,
+    reviewCount: 89,
+    features: ["5G", "Face ID", "Wireless Charging", "Water Resistant IP68", "Cinematic Mode"],
   },
   {
     id: "iphone-15-128gb",
@@ -70,6 +79,10 @@ export const iPhones: Product[] = [
       display: '6.1"',
       camera: "48MP Main",
     },
+    description: "iPhone 15 กล้องหลัก 48MP Dynamic Island สุดล้ำ USB-C ชาร์จเร็ว ดีไซน์ขอบโค้ง มีหลากสีสันให้เลือก",
+    rating: 4.7,
+    reviewCount: 124,
+    features: ["5G", "Face ID", "USB-C", "Dynamic Island", "48MP Camera", "Wireless Charging"],
   },
   {
     id: "iphone-16-128gb",
@@ -87,6 +100,10 @@ export const iPhones: Product[] = [
       display: '6.1"',
       camera: "48MP Fusion",
     },
+    description: "iPhone 16 ชิป A18 รุ่นใหม่ล่าสุด กล้อง Fusion 48MP Camera Control ถ่ายภาพมือโปร Action Button ปรับแต่งได้ตามใจ",
+    rating: 4.8,
+    reviewCount: 156,
+    features: ["5G", "Face ID", "USB-C", "Camera Control", "Action Button", "A18 Chip", "Wireless Charging"],
   },
   {
     id: "iphone-16-pro-256gb",
@@ -104,6 +121,10 @@ export const iPhones: Product[] = [
       display: '6.3"',
       camera: "48MP Pro",
     },
+    description: "iPhone 16 Pro ชิป A18 Pro ทรงพลังที่สุด จอ Super Retina XDR 6.3 นิ้ว กล้อง Pro 48MP ถ่ายวิดีโอ 4K Dolby Vision ตัวเครื่อง Titanium",
+    rating: 4.9,
+    reviewCount: 203,
+    features: ["5G", "Face ID", "USB-C", "ProMotion 120Hz", "Titanium Design", "Camera Control", "Action Button", "4K Dolby Vision"],
   },
   {
     id: "iphone-16-pro-max-256gb",
@@ -120,6 +141,10 @@ export const iPhones: Product[] = [
       display: '6.9"',
       camera: "48MP Pro",
     },
+    description: "iPhone 16 Pro Max จอใหญ่ 6.9 นิ้ว แบตอึดที่สุดในตระกูล iPhone ชิป A18 Pro ถ่ายวิดีโอ 4K 120fps Spatial Video",
+    rating: 4.9,
+    reviewCount: 178,
+    features: ["5G", "Face ID", "USB-C", "ProMotion 120Hz", "Titanium Design", "Spatial Video", "Action Button", "แบตอึดที่สุด"],
   },
   {
     id: "iphone-17-128gb",
@@ -137,6 +162,10 @@ export const iPhones: Product[] = [
       display: '6.1"',
       camera: "48MP Advanced",
     },
+    description: "iPhone 17 รุ่นใหม่ล่าสุด ชิป A19 ดีไซน์ใหม่หมด กล้อง 48MP Advanced ดีขึ้นทุกด้าน Dynamic Island ใหม่ สมาร์ทกว่าเดิม",
+    rating: 4.8,
+    reviewCount: 67,
+    features: ["5G", "Face ID", "USB-C", "A19 Chip", "Dynamic Island", "48MP Advanced", "Wireless Charging"],
   },
   {
     id: "iphone-17-pro-max-256gb",
@@ -154,6 +183,10 @@ export const iPhones: Product[] = [
       display: '6.9"',
       camera: "48MP Pro Max",
     },
+    description: "iPhone 17 Pro Max เรือธงสุดท้อปของ Apple ชิป A19 Pro จอ 6.9 นิ้ว กล้องระดับโปร ดีไซน์ใหม่ Titanium Premium",
+    rating: 5.0,
+    reviewCount: 42,
+    features: ["5G", "Face ID", "USB-C", "A19 Pro", "ProMotion 120Hz", "Titanium Premium", "Spatial Video", "Action Button"],
   },
 ];
 
@@ -175,6 +208,10 @@ export const iPads: Product[] = [
       display: '10.9"',
       connectivity: "Wi-Fi",
     },
+    description: "iPad Gen 11 ชิป A16 Bionic จอ 10.9 นิ้ว Liquid Retina รองรับ Apple Pencil เหมาะสำหรับเรียนและทำงาน",
+    rating: 4.5,
+    reviewCount: 95,
+    features: ["Wi-Fi 6", "USB-C", "Apple Pencil", "Liquid Retina", "Center Stage"],
   },
   {
     id: "ipad-air-11-m3-wifi-256gb",
@@ -192,6 +229,10 @@ export const iPads: Product[] = [
       display: '11"',
       connectivity: "Wi-Fi",
     },
+    description: "iPad Air ชิป M3 จอ 11 นิ้ว Liquid Retina ประสิทธิภาพระดับ Pro น้ำหนักเบา รองรับ Apple Pencil Pro และ Magic Keyboard",
+    rating: 4.8,
+    reviewCount: 112,
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard", "Center Stage"],
   },
   {
     id: "ipad-mini-a17-wifi-256gb",
@@ -208,6 +249,10 @@ export const iPads: Product[] = [
       display: '8.3"',
       connectivity: "Wi-Fi",
     },
+    description: "iPad Mini จอ 8.3 นิ้ว ชิป A17 Pro พกพาง่ายที่สุด รองรับ Apple Pencil Pro เหมาะสำหรับจดบันทึกและอ่านหนังสือ",
+    rating: 4.6,
+    reviewCount: 78,
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "A17 Pro", "พกพาง่าย", "Liquid Retina"],
   },
 ];
 

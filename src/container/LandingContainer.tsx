@@ -3,14 +3,18 @@
 import { useCallback } from "react";
 import { useProducts } from "@/hook/useProducts";
 import { useScrollNav } from "@/hook/useScrollNav";
+import { useProductDetail } from "@/hook/useProductDetail";
+import { useCompare } from "@/hook/useCompare";
 import { HeroView } from "@/view/HeroView";
 import { ProductsView } from "@/view/ProductsView";
+import { CompareSectionView } from "@/view/CompareSectionView";
 import { PackagesView } from "@/view/PackagesView";
 import { CommunityView } from "@/view/CommunityView";
 import { ContactView } from "@/view/ContactView";
 import { HeaderContainer } from "./HeaderContainer";
 import { BannerSliderContainer } from "./BannerSliderContainer";
 import { ScrollNavigator } from "./ScrollNavigator";
+import { ProductDetailContainer } from "./ProductDetailContainer";
 
 /**
  * LandingContainer - Main landing page container
@@ -26,22 +30,43 @@ export function LandingContainer() {
   } = useProducts();
 
   const { activeSection, scrollToSection } = useScrollNav();
+  const productDetail = useProductDetail();
+  const compare = useCompare();
 
   // LINE Chat handler
   const openLINEChat = useCallback(() => {
     window.open("https://line.me/R/ti/p/@shibaphone", "_blank");
   }, []);
 
-  // Product click handler - opens LINE chat for product inquiries
-  const handleProductClick = useCallback(() => {
-    openLINEChat();
-  }, [openLINEChat]);
+  // Product click handler - opens product detail modal
+  const handleProductClick = useCallback(
+    (productId: string) => {
+      productDetail.openProduct(productId);
+    },
+    [productDetail]
+  );
 
   // Package selection handler
-  const handleSelectPackage = useCallback((packageId: string) => {
-    console.log("Selected package:", packageId);
-    openLINEChat();
-  }, [openLINEChat]);
+  const handleSelectPackage = useCallback(
+    (packageId: string) => {
+      console.log("Selected package:", packageId);
+      openLINEChat();
+    },
+    [openLINEChat]
+  );
+
+  // Compare -> View Detail handler
+  const handleCompareViewDetail = useCallback(
+    (productId: string) => {
+      productDetail.openProduct(productId);
+    },
+    [productDetail]
+  );
+
+  // Product Detail -> Compare handler
+  const handleOpenCompare = useCallback(() => {
+    scrollToSection("compare");
+  }, [scrollToSection]);
 
   return (
     <div className="min-h-screen w-full scroll-smooth bg-[var(--background)]">
@@ -72,6 +97,16 @@ export function LandingContainer() {
           onOpenLINE={openLINEChat}
         />
 
+        {/* Compare Section - Below Products */}
+        <CompareSectionView
+          selectedProducts={compare.selectedProducts}
+          selectedIds={compare.selectedIds}
+          availableProducts={compare.availableProducts}
+          onSelectProduct={compare.selectProduct}
+          onOpenLINE={openLINEChat}
+          onViewDetail={handleCompareViewDetail}
+        />
+
         {/* Packages Section */}
         <PackagesView
           packages={packages}
@@ -90,6 +125,15 @@ export function LandingContainer() {
       <ScrollNavigator
         activeSection={activeSection}
         onNavigate={scrollToSection}
+      />
+
+      {/* Product Detail Modal */}
+      <ProductDetailContainer
+        isOpen={productDetail.isOpen}
+        product={productDetail.product}
+        onClose={productDetail.close}
+        onOpenLINE={openLINEChat}
+        onCompare={handleOpenCompare}
       />
     </div>
   );

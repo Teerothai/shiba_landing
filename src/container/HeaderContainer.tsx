@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/lib/ui/button";
 
-type SectionId = "home" | "products" | "packages" | "community" | "contact";
+type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
 
 interface HeaderContainerProps {
   activeSection: SectionId;
@@ -17,6 +17,7 @@ interface HeaderContainerProps {
 const navItems: { key: SectionId; label: string }[] = [
   { key: "home", label: "หน้าแรก" },
   { key: "products", label: "สินค้า" },
+  { key: "compare", label: "เทียบรุ่น" },
   { key: "packages", label: "แพ็กเกจ" },
   { key: "community", label: "Community" },
   { key: "contact", label: "ติดต่อ" },

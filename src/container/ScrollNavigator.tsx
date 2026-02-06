@@ -1,6 +1,6 @@
 "use client";
 
-type SectionId = "home" | "products" | "packages" | "community" | "contact";
+type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
 
 interface ScrollNavigatorProps {
   activeSection: SectionId;
@@ -11,6 +11,7 @@ interface ScrollNavigatorProps {
 const sections: { id: SectionId; label: string }[] = [
   { id: "home", label: "หน้าแรก" },
   { id: "products", label: "สินค้า" },
+  { id: "compare", label: "เทียบรุ่น" },
   { id: "packages", label: "แพ็กเกจ" },
   { id: "community", label: "Community" },
   { id: "contact", label: "ติดต่อ" },

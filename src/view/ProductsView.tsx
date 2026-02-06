@@ -11,7 +11,7 @@ interface ProductsViewProps {
   products: Product[];
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
-  onProductClick: () => void;
+  onProductClick: (productId: string) => void;
   onOpenLINE: () => void;
 }
 
@@ -31,7 +31,7 @@ function ProductCard({
   index,
 }: {
   product: Product;
-  onClick: () => void;
+  onClick: (productId: string) => void;
   index: number;
 }) {
   const monthlyPrice = Math.floor(product.price / 24);
@@ -40,7 +40,7 @@ function ProductCard({
     <Card
       className="group cursor-pointer hover:scale-[1.02] animate-slide-in-up"
       style={{ animationDelay: `${index * 100}ms` }}
-      onClick={onClick}
+      onClick={() => onClick(product.id)}
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-type SectionId = "home" | "products" | "packages" | "community" | "contact";
+type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
 
 interface UseScrollNavReturn {
   activeSection: SectionId;
