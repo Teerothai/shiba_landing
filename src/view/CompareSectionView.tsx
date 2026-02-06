@@ -77,9 +77,9 @@ export function CompareSectionView({
               <Image
                 src="/assets/toro-face.png"
                 alt="Toro mascot"
-                width={64}
-                height={64}
-                className="w-16 h-16 object-contain animate-float"
+                width={168}
+                height={168}
+                className="w-42 h-42 object-contain animate-float"
               />
             </div>
           </div>

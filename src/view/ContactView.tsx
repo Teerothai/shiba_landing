@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Phone, Clock, MapPin } from "lucide-react";
-import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 
@@ -29,9 +28,9 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
               <Image
                 src="/assets/toro-handle-phone.png"
                 alt="Toro handling phone"
-                width={64}
-                height={64}
-                className="w-16 h-16 object-contain animate-wave"
+                width={168}
+                height={168}
+                className="w-42 h-42 object-contain animate-wave"
               />
             </div>
           </div>
@@ -67,10 +66,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
                 <Phone className="w-5 h-5 text-[var(--kawaii-gold)] mt-0.5" />
                 <div>
                   <p className="font-medium text-[var(--kawaii-brown)]">
-                    02-XXX-XXXX
-                  </p>
-                  <p className="font-medium text-[var(--kawaii-brown)]">
-                    08X-XXX-XXXX
+                    064-771-2246
                   </p>
                 </div>
               </div>
@@ -82,7 +78,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
                     เปิดบริการ
                   </p>
                   <p className="text-sm text-[var(--kawaii-brown)]/70">
-                    09:00 - 21:00 น. (ทุกวัน)
+                    09:00 - 18:00 น. (ทุกวัน)
                   </p>
                 </div>
               </div>
@@ -91,10 +87,10 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
                 <MapPin className="w-5 h-5 text-[var(--kawaii-pink)] mt-0.5" />
                 <div>
                   <p className="font-medium text-[var(--kawaii-brown)]">
-                    สำนักงานใหญ่
+                    บริษัท ชิบะ โฟน จำกัด
                   </p>
                   <p className="text-sm text-[var(--kawaii-brown)]/70">
-                    กรุงเทพมหานคร
+                    แขวงคลองต้นไทร คลองสาน กรุงเทพมหานคร 10600
                   </p>
                 </div>
               </div>
@@ -102,30 +98,40 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
           </Card>
 
           {/* Map Card */}
-          <Card className="overflow-hidden">
-            <div className="relative h-48 bg-gradient-to-br from-[var(--kawaii-light-pink)]/20 to-[var(--kawaii-gold)]/20">
-              <Image
-                src="https://images.unsplash.com/photo-1696452941955-0708c9ede972?w=600&h=400&fit=crop"
-                alt="Store location"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
-              <div className="absolute inset-0 bg-[var(--kawaii-pink)]/20 flex items-center justify-center">
-                <div className="bg-white/90 rounded-full p-4 shadow-kawaii-md">
-                  <MapPin className="w-8 h-8 text-[var(--kawaii-pink)]" />
-                </div>
+          <a
+            href="https://maps.app.goo.gl/LkvGvmDfNRNhW6979"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group"
+          >
+            <Card className="overflow-hidden transition-all group-hover:shadow-kawaii-md group-hover:-translate-y-1">
+              <div className="relative h-48">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.8!2d100.505!3d13.727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzM3LjIiTiAxMDDCsDMwJzE4LjAiRQ!5e0!3m2!1sth!2sth!4v1700000000000"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="แผนที่ บริษัท ชิบะ โฟน จำกัด"
+                />
+                {/* Overlay to make the whole card clickable */}
+                <div className="absolute inset-0 bg-transparent group-hover:bg-[var(--kawaii-pink)]/10 transition-colors" />
               </div>
-            </div>
-            <CardContent className="p-4">
-              <p className="font-semibold text-[var(--kawaii-brown)]">
-                หาเราได้ที่นี่
-              </p>
-              <p className="text-sm text-[var(--kawaii-brown)]/70">
-                คลิกดูแผนที่และเส้นทาง
-              </p>
-            </CardContent>
-          </Card>
+              <CardContent className="p-4 flex items-center justify-between">
+                <div>
+                  <p className="font-semibold text-[var(--kawaii-brown)]">
+                    หาเราได้ที่นี่
+                  </p>
+                  <p className="text-sm text-[var(--kawaii-brown)]/70">
+                    คลิกดูแผนที่และเส้นทาง
+                  </p>
+                </div>
+                <div className="bg-[var(--kawaii-pink)]/10 rounded-full p-2 group-hover:bg-[var(--kawaii-pink)]/20 transition-colors">
+                  <MapPin className="w-5 h-5 text-[var(--kawaii-pink)]" />
+                </div>
+              </CardContent>
+            </Card>
+          </a>
         </div>
 
         {/* Final CTA Section */}

@@ -138,9 +138,9 @@ export function PackagesView({
               <Image
                 src="/assets/toro-with-phone.png"
                 alt="Toro with phone"
-                width={64}
-                height={64}
-                className="w-16 h-16 object-contain animate-bounce-soft"
+                width={168}
+                height={168}
+                className="w-42 h-42 object-contain animate-bounce-soft"
               />
             </div>
           </div>
@@ -158,7 +158,8 @@ export function PackagesView({
             ref={(node) => {
               if (!node) return;
               // Auto-scroll to the promoted (Pro Max) card on mount
-              const promoted = node.querySelector<HTMLElement>("[data-promoted]");
+              const promoted =
+                node.querySelector<HTMLElement>("[data-promoted]");
               if (promoted) {
                 const scrollLeft =
                   promoted.offsetLeft -
@@ -194,6 +195,19 @@ export function PackagesView({
           <h3 className="text-xl font-bold text-[var(--kawaii-brown)] text-center mb-8">
             ขั้นตอนการสมัครง่ายๆ
           </h3>
+          {/* Video */}
+          <div className="max-w-sm mx-auto mb-16">
+            <div className="rounded-2xl overflow-hidden shadow-kawaii-md aspect-[9/16]">
+              <iframe
+                src="https://www.youtube.com/embed/UtV_nRfMXgg"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                title="SHiBA Phone - วิธีสมัคร"
+              />
+            </div>
+          </div>
 
           <div className="relative">
             {/* Steps */}
@@ -201,7 +215,10 @@ export function PackagesView({
               {roadmapSteps.map((step, index) => {
                 const isLast = index === roadmapSteps.length - 1;
                 return (
-                  <div key={step.id} className="flex gap-4 items-start relative">
+                  <div
+                    key={step.id}
+                    className="flex gap-4 items-start relative"
+                  >
                     {/* Vertical line connecting to next step */}
                     {!isLast && (
                       <div className="absolute left-6 top-12 h-[calc(100%-48px+24px)] w-0.5 -translate-x-1/2 bg-[var(--kawaii-brown)]/20" />

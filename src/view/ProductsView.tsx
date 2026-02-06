@@ -130,9 +130,9 @@ export function ProductsView({
               <Image
                 src="/assets/toro-with-phone.png"
                 alt="Toro with phone"
-                width={64}
-                height={64}
-                className="w-16 h-16 object-contain animate-float"
+                width={168}
+                height={168}
+                className="w-42 h-42 object-contain animate-float"
               />
             </div>
           </div>
