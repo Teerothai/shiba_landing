@@ -46,13 +46,6 @@ const specConfig: Record<
   connectivity: { label: "การเชื่อมต่อ", icon: Monitor, color: "var(--kawaii-gold)" },
 };
 
-// Package options
-const packageOptions = [
-  { name: "Shiba Puppy", period: 36, icon: "🐕", color: "var(--kawaii-pink)" },
-  { name: "Shiba Plus", period: 24, icon: "⚖️", color: "var(--kawaii-mint-green)", popular: true },
-  { name: "Shiba Pro Max", period: 12, icon: "👑", color: "var(--kawaii-soft-purple)" },
-];
-
 /**
  * ProductDetailView - Product detail modal UI
  * Stateless presentation component

@@ -39,7 +39,7 @@ function PackageCard({
   return (
     <Card
       data-promoted={pkg.popular ? "true" : undefined}
-      className={`relative overflow-visible gsap-package-card min-w-[280px] w-[280px] shrink-0 snap-center ${
+      className={`relative overflow-visible gsap-package-card min-w-[280px] w-[280px] shrink-0 snap-center flex flex-col ${
         pkg.popular ? "ring-2 ring-[var(--kawaii-soft-purple)] scale-105" : ""
       }`}
     >
@@ -58,7 +58,7 @@ function PackageCard({
         <p className="text-sm text-[var(--kawaii-brown)]/70">{pkg.subtitle}</p>
       </CardHeader>
 
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 flex-1 flex flex-col">
         {/* Pricing */}
         <div
           className="text-center p-4 rounded-xl"
@@ -87,27 +87,10 @@ function PackageCard({
         </ul>
 
         {/* Steps indicator */}
-        <div className="text-center text-xs text-[var(--kawaii-brown)]/60">
+        <div className="text-center text-xs text-[var(--kawaii-brown)]/60 whitespace-nowrap mt-auto pt-2">
           Battle Pass {pkg.steps} ขั้น
         </div>
 
-        {/* Actions */}
-        <div className="flex flex-col gap-2">
-          <Button
-            onClick={onSelect}
-            variant={pkg.popular ? "purple" : "outline"}
-            size="lg"
-            className="w-full"
-          >
-            เลือกแพ็กเกจนี้
-          </Button>
-          <LineButton
-            onClick={onOpenLINE}
-            size="sm"
-            label="สอบถามเพิ่มเติม"
-            className="w-full"
-          />
-        </div>
       </CardContent>
     </Card>
   );
