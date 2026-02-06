@@ -25,7 +25,7 @@ export function BannerSliderView({
   return (
     <section className="relative w-full pt-[72px] sm:pt-[80px]">
       {/* Banner Container */}
-      <div className="relative w-full aspect-[16/6] sm:aspect-[16/5] lg:aspect-[16/4] overflow-hidden bg-gradient-to-r from-[var(--kawaii-light-pink)] to-[var(--kawaii-cream)]">
+      <div className="relative w-full aspect-[16/6] sm:aspect-[16/5] lg:aspect-[16/4] max-h-[300px] overflow-hidden bg-gradient-to-r from-[var(--kawaii-light-pink)] to-[var(--kawaii-cream)]">
         {/* Slides */}
         <div
           className="flex transition-transform duration-500 ease-out h-full"
