@@ -71,9 +71,9 @@ export function CompareSectionView({
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 gsap-section-header">
           <div className="flex justify-center mb-4">
-            <div className="relative">
+            <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
                 src="/assets/toro-face.png"
                 alt="Toro mascot"
@@ -92,7 +92,7 @@ export function CompareSectionView({
         </div>
 
         {/* Product Selectors */}
-        <Card className="mb-8 animate-slide-in-up">
+        <Card className="mb-8 gsap-compare-selector">
           <CardHeader className="pb-2">
             <CardTitle className="text-base flex items-center gap-2">
               เลือกรุ่นที่ต้องการเปรียบเทียบ
@@ -155,13 +155,13 @@ export function CompareSectionView({
 
         {/* Product Overview Cards */}
         <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
-          {([product1, product2] as const).map((product) => {
+          {([product1, product2] as const).map((product, i) => {
             if (!product) return null;
             const monthlyPrice = Math.floor(product.price / 24);
             return (
               <Card
                 key={product.id}
-                className="overflow-hidden animate-slide-in-up"
+                className="overflow-hidden gsap-compare-card"
               >
                 <CardContent className="p-4 md:p-6 text-center">
                   {/* Image */}
@@ -240,7 +240,7 @@ export function CompareSectionView({
         </div>
 
         {/* Comparison Table */}
-        <Card className="mb-8 animate-slide-in-up">
+        <Card className="mb-8 gsap-compare-table">
           <CardHeader className="pb-2">
             <CardTitle className="text-lg">
               เปรียบเทียบคุณสมบัติ
@@ -248,7 +248,7 @@ export function CompareSectionView({
           </CardHeader>
           <CardContent className="p-0">
             {/* Price Row */}
-            <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20">
+            <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 gsap-compare-row">
               <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
                 <Smartphone className="w-4 h-4 text-[var(--kawaii-pink)]" />
                 ราคา
@@ -278,7 +278,7 @@ export function CompareSectionView({
             {specRows.map((spec) => (
               <div
                 key={spec.key}
-                className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 last:border-b-0"
+                className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 last:border-b-0 gsap-compare-row"
               >
                 <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
                   <span style={{ color: spec.color }}>
@@ -302,7 +302,7 @@ export function CompareSectionView({
 
             {/* Connectivity (for iPads) */}
             {(product1?.specs.connectivity || product2?.specs.connectivity) && (
-              <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20">
+              <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 gsap-compare-row">
                 <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
                   <Smartphone className="w-4 h-4 text-[var(--kawaii-soft-purple)]" />
                   <span className="hidden sm:inline">การเชื่อมต่อ</span>
@@ -325,7 +325,7 @@ export function CompareSectionView({
 
         {/* Features Comparison */}
         {(product1?.features || product2?.features) && (
-          <Card className="mb-8 animate-slide-in-up">
+          <Card className="mb-8 gsap-fade-up">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">
                 ฟีเจอร์พิเศษ
@@ -363,7 +363,7 @@ export function CompareSectionView({
         )}
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center gsap-compare-cta">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 inline-block shadow-kawaii-md">
             <Image
               src="/assets/toro-handle-phone.png"

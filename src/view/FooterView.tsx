@@ -33,7 +33,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 gsap-footer-col">
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/assets/toro-face.png"
@@ -58,7 +58,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="gsap-footer-col">
             <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
               เมนู
             </h4>
@@ -77,7 +77,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="gsap-footer-col">
             <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
               ติดต่อเรา
             </h4>
@@ -111,7 +111,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
           </div>
 
           {/* Social & Trust */}
-          <div>
+          <div className="gsap-footer-col">
             <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
               ทำไมต้องเลือกเรา
             </h4>

@@ -28,7 +28,6 @@ const categories = [
 function ProductCard({
   product,
   onClick,
-  index,
 }: {
   product: Product;
   onClick: (productId: string) => void;
@@ -38,8 +37,7 @@ function ProductCard({
 
   return (
     <Card
-      className="group cursor-pointer hover:scale-[1.02] animate-slide-in-up"
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="group cursor-pointer gsap-product-card gsap-hover-lift"
       onClick={() => onClick(product.id)}
     >
       {/* Image Container */}
@@ -124,9 +122,9 @@ export function ProductsView({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 gsap-section-header">
           <div className="flex justify-center mb-4">
-            <div className="relative">
+            <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
                 src="/assets/toro-with-phone.png"
                 alt="Toro with phone"
@@ -153,11 +151,11 @@ export function ProductsView({
               size="lg"
               rounded="full"
               onClick={() => onCategoryChange(cat.id)}
-              className={
+              className={`gsap-filter-btn ${
                 selectedCategory === cat.id
                   ? ""
                   : "bg-white/60 hover:bg-white/80"
-              }
+              }`}
             >
               <cat.icon className="w-5 h-5" />
               {cat.name}
@@ -168,7 +166,7 @@ export function ProductsView({
         {/* Products Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
           {products.slice(0, 9).map((product, index) => (
-              <ProductCard
+            <ProductCard
               key={product.id}
               product={product}
               index={index}
@@ -179,7 +177,7 @@ export function ProductsView({
 
         {/* CTA */}
         <div className="text-center">
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 inline-block shadow-kawaii-sm">
+          <div className="gsap-product-cta bg-white/70 backdrop-blur-sm rounded-2xl p-6 inline-block shadow-kawaii-sm">
             <p className="text-[var(--kawaii-brown)] mb-4">
               แสดง <strong>{Math.min(9, products.length)}</strong> จาก{" "}
               <strong>{products.length}</strong> รายการ

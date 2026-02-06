@@ -104,12 +104,6 @@ export function ProductDetailView({
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" size="icon" className="rounded-full">
-                    <Heart className="w-5 h-5" />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="rounded-full">
-                    <Share2 className="w-5 h-5" />
-                  </Button>
                   <Button
                     onClick={onClose}
                     variant="ghost"
@@ -278,55 +272,6 @@ export function ProductDetailView({
                 </div>
               </div>
 
-              {/* Package Options */}
-              <div>
-                <h3 className="text-lg font-bold text-[var(--kawaii-brown)] mb-4">
-                  แพ็กเกจผ่อนชำระ
-                </h3>
-                <div className="grid sm:grid-cols-3 gap-4">
-                  {packageOptions.map((pkg) => {
-                    const monthly = Math.floor(product.price / pkg.period);
-                    return (
-                      <div
-                        key={pkg.name}
-                        className={`kawaii-card p-4 text-center relative ${
-                          pkg.popular
-                            ? "ring-2 ring-[var(--kawaii-mint-green)]"
-                            : ""
-                        }`}
-                      >
-                        {pkg.popular && (
-                          <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-[var(--kawaii-mint-green)] text-white text-[10px] font-semibold px-3 py-0.5 rounded-full flex items-center gap-1">
-                            <Star className="w-3 h-3 fill-current" />
-                            ฮิตสุด
-                          </div>
-                        )}
-                        <div className="text-2xl mb-2">{pkg.icon}</div>
-                        <h4 className="font-bold text-[var(--kawaii-brown)] text-sm mb-1">
-                          {pkg.name}
-                        </h4>
-                        <div
-                          className="text-xl font-bold mb-0.5"
-                          style={{ color: pkg.color }}
-                        >
-                          ฿{formatPriceCompact(monthly)}/เดือน
-                        </div>
-                        <div className="text-xs text-[var(--kawaii-brown)]/60 mb-3">
-                          {pkg.period} เดือน
-                        </div>
-                        <Button
-                          onClick={onOpenLINE}
-                          variant={pkg.popular ? "mint" : "outline"}
-                          size="sm"
-                          className="w-full text-xs"
-                        >
-                          เลือก
-                        </Button>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>

@@ -55,7 +55,7 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
       <div className="relative z-10 max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center">
         {/* Mascot with wave emoji */}
         <div className="flex justify-center mb-8">
-          <div className="relative">
+          <div className="relative hero-mascot">
             <Image
               src="/assets/toro-with-phone.png"
               alt="Toro with phone"
@@ -64,10 +64,10 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
               className="w-32 h-32 object-contain animate-float"
               priority
             />
-            <span className="absolute -top-4 -right-4 text-4xl animate-wave">
+            <span className="absolute -top-4 -right-4 text-4xl hero-wave">
               👋
             </span>
-            <span className="absolute -bottom-2 -left-2 text-2xl animate-bounce">
+            <span className="absolute -bottom-2 -left-2 text-2xl hero-heart">
               💖
             </span>
           </div>
@@ -75,14 +75,16 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
 
         {/* Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-[var(--kawaii-brown)] mb-6">
-          ผ่อนมือถือให้ง่าย—สบายใจ
-          <span className="block text-white mt-2">
+          <span className="hero-title inline-block">
+            ผ่อนมือถือให้ง่าย—สบายใจ
+          </span>
+          <span className="block text-white mt-2 hero-title-accent">
             มีน้องชิบะอยู่เคียงข้าง
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-center text-[var(--kawaii-brown)]/80 mb-10 max-w-2xl mx-auto">
+        <p className="hero-subtitle text-lg md:text-xl text-center text-[var(--kawaii-brown)]/80 mb-10 max-w-2xl mx-auto">
           เริ่มวันละ 50 บาท โปร่งใส เข้าใจง่าย
           <br />
           ตรวจเช็คสถานะได้ 24 ชม. พร้อมของแถมสูงสุด 30 ชิ้น++
@@ -90,31 +92,34 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <LineButton
-            onClick={onOpenLINE}
-            size="xl"
-            className="border-2 border-[#05a045] shadow-lg"
-          />
+          <div className="hero-cta-btn">
+            <LineButton
+              onClick={onOpenLINE}
+              size="xl"
+              className="border-2 border-[#05a045] shadow-lg"
+            />
+          </div>
 
-          <Button
-            onClick={onScrollToPackages}
-            variant="secondary"
-            size="xl"
-            rounded="full"
-          >
-            <Package className="w-6 h-6" />
-            ดูแพ็กเกจ
-            <ArrowDown className="w-5 h-5 animate-bounce" />
-          </Button>
+          <div className="hero-cta-btn">
+            <Button
+              onClick={onScrollToPackages}
+              variant="secondary"
+              size="xl"
+              rounded="full"
+            >
+              <Package className="w-6 h-6" />
+              ดูแพ็กเกจ
+              <ArrowDown className="w-5 h-5 animate-bounce" />
+            </Button>
+          </div>
         </div>
 
         {/* Feature Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-kawaii-sm hover:shadow-kawaii-md transition-all hover:-translate-y-1 animate-slide-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="hero-feature gsap-hover-lift bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-kawaii-sm"
             >
               <div
                 className={`${feature.color} w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3`}

@@ -30,7 +30,6 @@ function PackageCard({
   pkg,
   onSelect,
   onOpenLINE,
-  index,
 }: {
   pkg: Package;
   onSelect: () => void;
@@ -40,10 +39,9 @@ function PackageCard({
   return (
     <Card
       data-promoted={pkg.popular ? "true" : undefined}
-      className={`relative overflow-visible animate-slide-in-up min-w-[280px] w-[280px] shrink-0 snap-center ${
+      className={`relative overflow-visible gsap-package-card min-w-[280px] w-[280px] shrink-0 snap-center ${
         pkg.popular ? "ring-2 ring-[var(--kawaii-soft-purple)] scale-105" : ""
       }`}
-      style={{ animationDelay: `${index * 150}ms` }}
     >
       {/* Popular Badge */}
       {pkg.popular && (
@@ -132,9 +130,9 @@ export function PackagesView({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 gsap-section-header">
           <div className="flex justify-center mb-4">
-            <div className="relative">
+            <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
                 src="/assets/toro-with-phone.png"
                 alt="Toro with phone"
@@ -192,11 +190,11 @@ export function PackagesView({
 
         {/* Roadmap */}
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-xl font-bold text-[var(--kawaii-brown)] text-center mb-8">
+          <h3 className="text-xl font-bold text-[var(--kawaii-brown)] text-center mb-8 gsap-fade-up">
             ขั้นตอนการสมัครง่ายๆ
           </h3>
           {/* Video */}
-          <div className="max-w-sm mx-auto mb-16">
+          <div className="max-w-sm mx-auto mb-16 gsap-video">
             <div className="rounded-2xl overflow-hidden shadow-kawaii-md aspect-[9/16]">
               <iframe
                 src="https://www.youtube.com/embed/UtV_nRfMXgg"
@@ -217,20 +215,20 @@ export function PackagesView({
                 return (
                   <div
                     key={step.id}
-                    className="flex gap-4 items-start relative"
+                    className="flex gap-4 items-start relative gsap-roadmap-step"
                   >
                     {/* Vertical line connecting to next step */}
                     {!isLast && (
-                      <div className="absolute left-6 top-12 h-[calc(100%-48px+24px)] w-0.5 -translate-x-1/2 bg-[var(--kawaii-brown)]/20" />
+                      <div className="gsap-step-line absolute left-6 top-12 h-[calc(100%-48px+24px)] w-0.5 -translate-x-1/2 bg-[var(--kawaii-brown)]/20" />
                     )}
 
                     {/* Step number */}
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 relative z-10 bg-white border-2 border-[var(--kawaii-brown)]/20 text-[var(--kawaii-brown)]">
+                    <div className="gsap-step-circle w-12 h-12 rounded-full flex items-center justify-center shrink-0 relative z-10 bg-white border-2 border-[var(--kawaii-brown)]/20 text-[var(--kawaii-brown)]">
                       <span className="font-bold">{step.id}</span>
                     </div>
 
                     {/* Step content */}
-                    <div className="flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-4">
+                    <div className="gsap-step-content flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-4">
                       <h4 className="font-semibold text-[var(--kawaii-brown)]">
                         {step.title}
                       </h4>

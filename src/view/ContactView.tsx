@@ -22,9 +22,9 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 gsap-section-header">
           <div className="flex justify-center mb-4">
-            <div className="relative">
+            <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
                 src="/assets/toro-handle-phone.png"
                 alt="Toro handling phone"
@@ -43,7 +43,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
         </div>
 
         {/* Main CTA */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 gsap-contact-cta">
           <LineButton
             onClick={onOpenLINE}
             size="xl"
@@ -54,7 +54,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
         {/* Contact Cards Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
           {/* Contact Info Card */}
-          <Card>
+          <Card className="gsap-contact-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-[var(--kawaii-gold)]" />
@@ -102,7 +102,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
             href="https://maps.app.goo.gl/LkvGvmDfNRNhW6979"
             target="_blank"
             rel="noopener noreferrer"
-            className="block group"
+            className="block group gsap-contact-card"
           >
             <Card className="overflow-hidden transition-all group-hover:shadow-kawaii-md group-hover:-translate-y-1">
               <div className="relative h-48">
@@ -135,14 +135,14 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
         </div>
 
         {/* Final CTA Section */}
-        <Card className="max-w-3xl mx-auto text-center p-8 sm:p-12">
+        <Card className="gsap-final-cta max-w-3xl mx-auto text-center p-8 sm:p-12">
           <div className="flex justify-center mb-6">
             <Image
               src="/assets/toro-handle-phone.png"
               alt="Toro handling phone"
               width={96}
               height={96}
-              className="w-24 h-24 object-contain animate-bounce-soft"
+              className="gsap-cta-mascot w-24 h-24 object-contain animate-bounce-soft"
             />
           </div>
 

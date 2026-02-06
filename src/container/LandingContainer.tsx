@@ -5,6 +5,7 @@ import { useProducts } from "@/hook/useProducts";
 import { useScrollNav } from "@/hook/useScrollNav";
 import { useProductDetail } from "@/hook/useProductDetail";
 import { useCompare } from "@/hook/useCompare";
+import { useGSAPAnimations } from "@/hook/useGSAPAnimations";
 import { HeroView } from "@/view/HeroView";
 import { ProductsView } from "@/view/ProductsView";
 import { CompareSectionView } from "@/view/CompareSectionView";
@@ -33,6 +34,7 @@ export function LandingContainer() {
   const { activeSection, scrollToSection } = useScrollNav();
   const productDetail = useProductDetail();
   const compare = useCompare();
+  const gsapContainerRef = useGSAPAnimations();
 
   // LINE Chat handler
   const openLINEChat = useCallback(() => {
@@ -70,7 +72,7 @@ export function LandingContainer() {
   }, [scrollToSection]);
 
   return (
-    <div className="min-h-screen w-full scroll-smooth bg-[var(--background)]">
+    <div ref={gsapContainerRef} className="min-h-screen w-full scroll-smooth bg-[var(--background)]">
       {/* Fixed Header */}
       <HeaderContainer
         activeSection={activeSection}

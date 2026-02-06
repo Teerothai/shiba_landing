@@ -52,16 +52,12 @@ const timelinePosts = [
  */
 function TimelinePost({
   post,
-  index,
 }: {
   post: (typeof timelinePosts)[0];
   index: number;
 }) {
   return (
-    <Card
-      className="animate-slide-in-up"
-      style={{ animationDelay: `${index * 150}ms` }}
-    >
+    <Card className="gsap-community-post">
       <CardContent className="p-4 sm:p-6">
         {/* Author Header */}
         <div className="flex items-center gap-3 mb-4">
@@ -159,9 +155,9 @@ export function CommunityView({ onOpenLINE }: CommunityViewProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 gsap-section-header">
           <div className="flex justify-center mb-4">
-            <div className="relative">
+            <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
                 src="/assets/toro-with-phone.png"
                 alt="Toro with phone"

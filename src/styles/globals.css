@@ -182,6 +182,21 @@ h1, h2, h3, h4, h5, h6 {
 .shadow-kawaii-lg { box-shadow: var(--kawaii-shadow-lg); }
 .shadow-kawaii-xl { box-shadow: var(--kawaii-shadow-xl); }
 
+/* ========================================
+   Stacking / Overlapping Sections
+   ======================================== */
+.stack-section {
+  position: relative;
+}
+
+.stack-section:not(:first-child) {
+  margin-top: -3rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow:
+    0 -10px 40px rgba(0, 0, 0, 0.08),
+    0 -2px 6px rgba(0, 0, 0, 0.04);
+}
+
 /* Hide scrollbar but keep scrolling */
 .scrollbar-hide {
   -ms-overflow-style: none;
