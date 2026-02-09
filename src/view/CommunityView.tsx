@@ -168,10 +168,10 @@ export function CommunityView({ onOpenLINE }: CommunityViewProps) {
             </div>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-[var(--kawaii-brown)] mb-3">
-            Community Board
+            รีวิวลูกค้าชิบะโฟน
           </h2>
           <p className="text-lg text-[var(--kawaii-brown)]/80">
-            รีวิวจากสมาชิก ข่าวสาร และโปรโมชั่นใหม่ๆ
+            มาฟังเสียงรีวิวจากลูกค้าชิบะโฟนกัน
           </p>
         </div>
 

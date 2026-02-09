@@ -2,9 +2,6 @@
 
 import Image from "next/image";
 import { Check, Star } from "lucide-react";
-import { Button } from "@/lib/ui/button";
-import { LineButton } from "@/lib/ui/line-button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Package } from "@/data/products";
 
@@ -16,52 +13,82 @@ interface PackagesViewProps {
 
 // Roadmap steps
 const roadmapSteps = [
-  { id: 1, title: "สมัครสมาชิก", description: "ลงทะเบียนผ่าน LINE 2 นาที" },
-  { id: 2, title: "เลือกแพ็กเกจ", description: "เลือกแบบที่เหมาะกับคุณ" },
-  { id: 3, title: "เลือกสินค้า", description: "เลือกมือถือที่ต้องการ" },
-  { id: 4, title: "อนุมัติ", description: "รอผลอนุมัติ 6-24 ชม." },
-  { id: 5, title: "รับสินค้า", description: "จัดส่งถึงบ้านฟรี" },
+  { id: 1, text: "เพิ่มเพื่อน Line : @shibaphone\nหรือ คลิกที่นี่!" },
+  { id: 2, text: "กดเข้าเมนูสินค้า เลือกสินค้าที่สนใจ\nรุ่น สี ความจุ รูปแบบการผ่อน" },
+  { id: 3, text: "กรอกข้อมูล พร้อมเซ็นสัญญาออมดาวน์\nเพียง 2นาที" },
+  { id: 4, text: 'กดเมนู "ส่งยอด" ชำระยอดเปิดบิลเพื่อจองเครื่อง ขั้นต่ำเพียง 50บาท' },
+  { id: 5, text: 'กดเมนู "ส่งยอด" อัพสลิปของคุณได้เลย' },
 ];
 
+// Package card background images
+const packageImageMap: Record<string, string> = {
+  puppy: "/assets/packages/shiba-puppy.png",
+  plus: "/assets/packages/shiba-plus.png",
+  promax: "/assets/packages/shiba-pro-max.png",
+};
+
+// Promotion badge images
+const promotionImageMap: Record<string, string> = {
+  puppy: "/assets/promotion/promotion-50-thb.png",
+  plus: "/assets/promotion/promotion-100-thb.png",
+  promax: "/assets/promotion/promotion-350-thb.png",
+};
+
 /**
- * PackageCard - Individual package display
+ * PackageCard - The package image IS the card.
+ * Content is overlaid on the white area of the image.
  */
 function PackageCard({
   pkg,
-  onSelect,
-  onOpenLINE,
 }: {
   pkg: Package;
   onSelect: () => void;
   onOpenLINE: () => void;
   index: number;
 }) {
+  const packageImage = packageImageMap[pkg.id];
+  const promotionImage = promotionImageMap[pkg.id];
+
   return (
-    <Card
+    <div
       data-promoted={pkg.popular ? "true" : undefined}
-      className={`relative overflow-visible gsap-package-card min-w-[280px] w-[280px] shrink-0 snap-center flex flex-col ${
-        pkg.popular ? "ring-2 ring-[var(--kawaii-soft-purple)] scale-105" : ""
+      className={`relative gsap-package-card min-w-[280px] w-[280px] shrink-0 snap-center ${
+        pkg.popular ? "scale-105" : ""
       }`}
     >
       {/* Popular Badge */}
       {pkg.popular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--kawaii-soft-purple)] text-white text-xs font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-[var(--kawaii-soft-purple)] text-white text-xs font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md z-20">
           <Star className="w-3 h-3 fill-current" />
           แนะนำ
         </div>
       )}
 
-      <CardHeader className="text-center pb-2">
-        {/* Icon */}
-        <div className="text-5xl mb-2">{pkg.icon}</div>
-        <CardTitle className="text-xl">{pkg.name}</CardTitle>
-        <p className="text-sm text-[var(--kawaii-brown)]/70">{pkg.subtitle}</p>
-      </CardHeader>
+      {/* The image IS the card */}
+      <Image
+        src={packageImage}
+        alt={pkg.name}
+        width={325}
+        height={900}
+        className="w-full h-auto"
+        sizes="280px"
+        priority
+      />
 
-      <CardContent className="space-y-4 flex-1 flex flex-col">
+      {/* Content overlaid on the white area of the image */}
+      <div
+        className={`absolute inset-x-0 top-[33%] bottom-0 flex flex-col pb-5 ${
+          pkg.id === "promax" ? "pl-14 pr-4" : "px-5"
+        }`}
+      >
+        {/* Subtitle */}
+        <p className="text-center text-sm text-[var(--kawaii-brown)]/70 font-medium mb-2">
+          {pkg.subtitle}
+        </p>
+
         {/* Pricing */}
         <div
-          className="text-center p-4 rounded-xl"
+          className="text-center p-3 rounded-xl mb-3"
           style={{ backgroundColor: `${pkg.color}15` }}
         >
           <p className="text-sm text-[var(--kawaii-brown)]/70">เริ่มต้นวันละ</p>
@@ -74,11 +101,11 @@ function PackageCard({
         </div>
 
         {/* Benefits */}
-        <ul className="space-y-2">
+        <ul className="space-y-1.5 mb-2">
           {pkg.benefits.map((benefit, i) => (
             <li key={i} className="flex items-center gap-2 text-sm">
               <Check
-                className="w-4 h-4 flex-shrink-0"
+                className="w-4 h-4 shrink-0"
                 style={{ color: pkg.color }}
               />
               <span className="text-[var(--kawaii-brown)]">{benefit}</span>
@@ -87,12 +114,22 @@ function PackageCard({
         </ul>
 
         {/* Steps indicator */}
-        <div className="text-center text-xs text-[var(--kawaii-brown)]/60 whitespace-nowrap mt-auto pt-2">
+        <div className="text-center text-xs text-[var(--kawaii-brown)]/60 whitespace-nowrap">
           Battle Pass {pkg.steps} ขั้น
         </div>
 
-      </CardContent>
-    </Card>
+        {/* Promotion badge */}
+        <div className="flex justify-center mt-auto pt-2">
+          <Image
+            src={promotionImage}
+            alt={`โปรโมชั่น ฿${pkg.pay}`}
+            width={200}
+            height={56}
+            className="w-[180px] h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -126,10 +163,12 @@ export function PackagesView({
             </div>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-[var(--kawaii-brown)] mb-3">
-            แพ็กเกจ SHIBA
+            แพ็กเกจการผ่อน
           </h2>
           <p className="text-lg text-[var(--kawaii-brown)]/80">
-            เลือกแพ็กเกจที่เหมาะกับคุณ พร้อมติดตาม milestone แบบน้องหมา
+            เลือกแพ็กเกจสุดคุ้ม พร้อมระดับสมาชิกสุดพิเศษ
+            <br />
+            อย่างอิสระตามต้องการ!
           </p>
         </div>
 
@@ -173,8 +212,8 @@ export function PackagesView({
 
         {/* Roadmap */}
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-xl font-bold text-[var(--kawaii-brown)] text-center mb-8 gsap-fade-up">
-            ขั้นตอนการสมัครง่ายๆ
+          <h3 className="text-3xl font-bold text-[var(--kawaii-brown)] text-center mb-8 gsap-fade-up">
+            5 ขั้นตอนการผ่อน
           </h3>
           {/* Video */}
           <div className="max-w-sm mx-auto mb-16 gsap-video">
@@ -212,11 +251,8 @@ export function PackagesView({
 
                     {/* Step content */}
                     <div className="gsap-step-content flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                      <h4 className="font-semibold text-[var(--kawaii-brown)]">
-                        {step.title}
-                      </h4>
-                      <p className="text-sm text-[var(--kawaii-brown)]/70">
-                        {step.description}
+                      <p className="text-sm font-semibold text-[var(--kawaii-brown)">
+                        {step.text}
                       </p>
                     </div>
                   </div>
