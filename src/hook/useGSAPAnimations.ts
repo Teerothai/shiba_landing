@@ -59,32 +59,6 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
 
     const ctx = gsap.context(() => {
       // ═══════════════════════════════════════
-      // 0. STACKING SECTIONS - Overlapping scroll
-      // Each section scrolls normally (all content visible).
-      // After content is fully scrolled, the section PINS in place.
-      // The next section then scrolls up and covers it (higher z-index).
-      // ═══════════════════════════════════════
-      const mainSections = container.querySelectorAll<HTMLElement>(
-        "main > section"
-      );
-      mainSections.forEach((section, i) => {
-        section.classList.add("stack-section");
-        section.style.zIndex = `${(i + 1) * 10}`;
-
-        // Pin every section except the last one
-        if (i < mainSections.length - 1) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "bottom bottom", // pin when section bottom hits viewport bottom
-            endTrigger: mainSections[i + 1],
-            end: "top top", // unpin when next section top hits viewport top
-            pin: true,
-            pinSpacing: false,
-          });
-        }
-      });
-
-      // ═══════════════════════════════════════
       // 1. HERO SECTION - Plays on page load
       // ═══════════════════════════════════════
       const heroTl = gsap.timeline({

@@ -54,40 +54,36 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 min-h-screen flex flex-col justify-center">
         {/* Mascot with wave emoji */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-4">
           <div className="relative hero-mascot">
             <Image
               src="/assets/toro-with-phone.png"
               alt="Toro with phone"
               width={128}
               height={128}
-              className="w-32 h-32 object-contain animate-float"
+              className="w-52 h-52 md:w-64 md:h-64 object-contain animate-float"
               priority
             />
-            <span className="absolute -top-4 -right-4 text-4xl hero-wave">
-              👋
-            </span>
-            <span className="absolute -bottom-2 -left-2 text-2xl hero-heart">
-              💖
-            </span>
           </div>
         </div>
 
         {/* Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-[var(--kawaii-brown)] mb-6">
           <span className="hero-title inline-block">
-            ผ่อนมือถือให้ง่าย—สบายใจ
+            ผ่อนไปใช้ไป ไว้ใจชิบะโฟน
           </span>
-          <span className="block text-white mt-2 hero-title-accent">
-            มีน้องชิบะอยู่เคียงข้าง
+          <span className="block text-white mt-2 hero-title-accent text-3xl">
+            เริ่มต้นผ่อน เพียงวันละ 50บาท
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="hero-subtitle text-lg md:text-xl text-center text-[var(--kawaii-brown)]/80 mb-10 max-w-2xl mx-auto">
-          เริ่มวันละ 50 บาท โปร่งใส เข้าใจง่าย
+          ไม่ต้องมีเครดิต ชิบะโฟนพร้อมอยู่ข้างคุณ
           <br />
-          ตรวจเช็คสถานะได้ 24 ชม. พร้อมของแถมสูงสุด 30 ชิ้น++
+          ช่วยให้เข้าถึงเทคโนโลยีที่จำเป็น
+          <br />
+          และค่อย ๆ สร้างอนาคตทางการเงินที่ดีขึ้นไปด้วยกัน
         </p>
 
         {/* CTA Buttons */}

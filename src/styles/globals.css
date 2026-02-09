@@ -43,6 +43,11 @@
 /* ========================================
    Base Styles
    ======================================== */
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -181,20 +186,6 @@ h1, h2, h3, h4, h5, h6 {
 .shadow-kawaii-md { box-shadow: var(--kawaii-shadow-md); }
 .shadow-kawaii-lg { box-shadow: var(--kawaii-shadow-lg); }
 .shadow-kawaii-xl { box-shadow: var(--kawaii-shadow-xl); }
-
-/* ========================================
-   Stacking / Overlapping Sections
-   ======================================== */
-.stack-section {
-  position: relative;
-}
-
-.stack-section:not(:first-child) {
-  border-radius: 1.5rem 1.5rem 0 0;
-  box-shadow:
-    0 -10px 40px rgba(0, 0, 0, 0.1),
-    0 -2px 8px rgba(0, 0, 0, 0.06);
-}
 
 /* Hide scrollbar but keep scrolling */
 .scrollbar-hide {
