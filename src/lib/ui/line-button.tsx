@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button, type ButtonProps } from "@/lib/ui/button";
+import { ICON } from "@/data/images";
 
 interface LineButtonProps extends Omit<ButtonProps, "variant"> {
   label?: string;
@@ -19,7 +20,7 @@ export function LineButton({
   return (
     <Button variant="line" size={size} rounded={rounded} className={className} {...props}>
       <Image
-        src="/assets/icon/line-icon.png"
+        src={ICON.line}
         alt="LINE"
         width={28}
         height={28}

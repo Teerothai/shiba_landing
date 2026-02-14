@@ -3,8 +3,15 @@
 import Image from "next/image";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { LineButton } from "@/lib/ui/line-button";
+import { MASCOT } from "@/data/images";
 
-type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
+type SectionId =
+  | "home"
+  | "products"
+  | "compare"
+  | "packages"
+  | "community"
+  | "contact";
 
 interface FooterViewProps {
   onOpenLINE: () => void;
@@ -28,7 +35,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--kawaii-brown)] text-white">
+    <footer className="bg-kawaii-brown text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -36,7 +43,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
           <div className="lg:col-span-1 gsap-footer-col">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/assets/toro-face.png"
+                src={MASCOT.toroFace}
                 alt="Toro mascot"
                 width={48}
                 height={48}
@@ -51,10 +58,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
               ผ่อนมือถือให้ง่าย สบายใจ มีน้องชิบะอยู่เคียงข้าง
               ระบบผ่อนที่โปร่งใส เข้าใจง่าย เริ่มต้นวันละ 50 บาท
             </p>
-            <LineButton
-              onClick={onOpenLINE}
-              size="default"
-            />
+            <LineButton onClick={onOpenLINE} size="default" />
           </div>
 
           {/* Quick Links */}
@@ -83,17 +87,17 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-[var(--kawaii-gold)] mt-0.5 shrink-0" />
+                <Phone className="w-4 h-4 text-kawaii-gold mt-0.5 shrink-0" />
                 <span className="text-sm text-white/70">064-771-2246</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-[var(--kawaii-mint-green)] mt-0.5 shrink-0" />
+                <Clock className="w-4 h-4 text-kawaii-mint-green mt-0.5 shrink-0" />
                 <span className="text-sm text-white/70">
                   เปิดบริการ 09:00 - 18:00 น. (ทุกวัน)
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[var(--kawaii-pink)] mt-0.5 shrink-0" />
+                <MapPin className="w-4 h-4 text-kawaii-pink mt-0.5 shrink-0" />
                 <a
                   href="https://maps.app.goo.gl/LkvGvmDfNRNhW6979"
                   target="_blank"
@@ -118,19 +122,19 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
             <ul className="space-y-2.5">
               <li className="flex items-center gap-2 text-sm text-white/70">
                 <span className="text-base">✅</span>
-                โปร่งใส ไม่มีค่าใช้จ่ายซ่อนเร้น
+                ผ่อนเริ่มต้น วันละ 50บาท
               </li>
               <li className="flex items-center gap-2 text-sm text-white/70">
-                <span className="text-base">🛡️</span>
-                สินค้าแท้ ประกันศูนย์
+                <span className="text-base">✅</span>
+                ไม่มีเครดิตก็ผ่อนได้ ใช้บัตรประชาชนใบเดียว
               </li>
               <li className="flex items-center gap-2 text-sm text-white/70">
-                <span className="text-base">🎁</span>
-                ของแถมสูงสุด 30 ชิ้น++
+                <span className="text-base">✅</span>
+                สินค้าแท้ ประกันศูนย์ มีบริการหลังการขาย
               </li>
               <li className="flex items-center gap-2 text-sm text-white/70">
-                <span className="text-base">📱</span>
-                เช็คสถานะได้ 24 ชม.
+                <span className="text-base">✅</span>
+                มีระบบตรวจสอบสถานะ และ มีทีมช่วยแนะนำส่วนตัว 24 ชั่วโมง
               </li>
             </ul>
           </div>
@@ -146,7 +150,7 @@ export function FooterView({ onOpenLINE, onNavigate }: FooterViewProps) {
             </p>
             <div className="flex items-center gap-1 text-xs text-white/50">
               <span>Made with</span>
-              <span className="text-[var(--kawaii-pink)] animate-pulse">♥</span>
+              <span className="text-kawaii-pink animate-pulse">♥</span>
               <span>by SHiBA Team</span>
             </div>
           </div>

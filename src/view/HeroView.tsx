@@ -1,41 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { Package, ArrowDown, Phone, Shield, Clock, Gift } from "lucide-react";
+import { Package, ArrowDown } from "lucide-react";
 import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
+import { MASCOT, FEATURE } from "@/data/images";
 
 interface HeroViewProps {
   onOpenLINE: () => void;
   onScrollToPackages: () => void;
 }
 
-// Feature highlights data
+// Feature highlights — each image already contains icon, title & description
 const features = [
-  {
-    icon: Phone,
-    title: "ผ่อนวันละ 50 บาท",
-    description: "เริ่มต้นง่าย ไม่หนักกระเป๋า",
-    color: "bg-[var(--kawaii-pink)]",
-  },
-  {
-    icon: Shield,
-    title: "โปร่งใส 100%",
-    description: "ไม่มีค่าใช้จ่ายซ่อนเร้น",
-    color: "bg-[var(--kawaii-mint-green)]",
-  },
-  {
-    icon: Clock,
-    title: "ตรวจสอบ 24 ชม.",
-    description: "เช็คสถานะได้ตลอดเวลา",
-    color: "bg-[var(--kawaii-gold)]",
-  },
-  {
-    icon: Gift,
-    title: "ของแถม 30+ ชิ้น",
-    description: "สิทธิพิเศษสำหรับสมาชิก",
-    color: "bg-[var(--kawaii-soft-purple)]",
-  },
+  { src: FEATURE.startWith50Thb, alt: "ผ่อนเริ่มต้นวันละ 50 บาท" },
+  { src: FEATURE.idCard, alt: "ใช้บัตรประชาชนใบเดียว ไม่มีเครดิตก็ผ่อนได้" },
+  { src: FEATURE.checkStatus, alt: "มีระบบตรวจสอบสถานะ และทีมช่วยแนะนำ 24 ชม." },
+  { src: FEATURE.authentic, alt: "สินค้าแท้ ประกันศูนย์ มีบริการหลังการขาย" },
 ];
 
 /**
@@ -57,7 +38,7 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
         <div className="flex justify-center mb-4">
           <div className="relative hero-mascot">
             <Image
-              src="/assets/toro-with-phone.png"
+              src={MASCOT.toroWithPhone}
               alt="Toro with phone"
               width={128}
               height={128}
@@ -111,23 +92,19 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {features.map((feature) => (
             <div
-              key={feature.title}
-              className="hero-feature gsap-hover-lift bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-kawaii-sm"
+              key={feature.src}
+              className="hero-feature gsap-hover-lift"
             >
-              <div
-                className={`${feature.color} w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3`}
-              >
-                <feature.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="font-semibold text-[var(--kawaii-brown)] text-sm mb-1">
-                {feature.title}
-              </h3>
-              <p className="text-xs text-[var(--kawaii-brown)]/70">
-                {feature.description}
-              </p>
+              <Image
+                src={feature.src}
+                alt={feature.alt}
+                width={500}
+                height={500}
+                className="w-full h-auto object-contain"
+              />
             </div>
           ))}
         </div>

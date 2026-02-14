@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "ชิบะโฟน | ผ่อนมือถือง่าย สบายใจ มีชิบะคอยดูแล",
   description:
     "ผ่อนมือถือ iPhone iPad ราคาถูก เริ่มต้นวันละ 50 บาท ไม่ต้องใช้บัตรเครดิต อนุมัติไว โปร่งใส ตรวจสอบสถานะได้ 24 ชม. พร้อมของแถมสูงสุด 30 ชิ้น",
+  icons: {
+    icon: "/assets/toro-face.png",
+    apple: "/assets/toro-face.png",
+  },
   keywords: [
     "ผ่อนมือถือ",
     "ผ่อน iPhone",

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
+import { MASCOT } from "@/data/images";
 
 type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
 
@@ -54,7 +55,7 @@ export function HeaderContainer({
           >
             <div className="relative">
               <Image
-                src="/assets/toro-face.png"
+                src={MASCOT.toroFace}
                 alt="Toro mascot"
                 width={32}
                 height={32}

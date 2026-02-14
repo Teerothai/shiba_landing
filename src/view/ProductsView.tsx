@@ -6,6 +6,7 @@ import { Button } from "@/lib/ui/button";
 import { Card, CardContent } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
+import { MASCOT } from "@/data/images";
 
 interface ProductsViewProps {
   products: Product[];
@@ -80,7 +81,7 @@ function ProductCard({
 
         {/* Specs Summary */}
         <p className="text-xs text-[var(--kawaii-brown)]/60 mb-3">
-          {product.specs.storage} • {product.specs.processor}
+          {product.specs.processor} • {product.specs.display}
         </p>
 
         {/* Pricing */}
@@ -126,7 +127,7 @@ export function ProductsView({
           <div className="flex justify-center mb-4">
             <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
-                src="/assets/toro-with-phone.png"
+                src={MASCOT.toroWithPhone}
                 alt="Toro with phone"
                 width={168}
                 height={168}

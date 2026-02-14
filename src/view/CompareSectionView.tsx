@@ -16,6 +16,7 @@ import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
+import { MASCOT } from "@/data/images";
 
 interface CompareSectionViewProps {
   selectedProducts: [Product | undefined, Product | undefined];
@@ -26,14 +27,13 @@ interface CompareSectionViewProps {
   onViewDetail: (productId: string) => void;
 }
 
-// Spec comparison rows
+// Spec comparison rows (non-array specs)
 const specRows: {
   label: string;
   key: keyof Product["specs"];
   icon: React.ComponentType<{ className?: string }>;
   color: string;
 }[] = [
-  { label: "ความจุ", key: "storage", icon: HardDrive, color: "var(--kawaii-gold)" },
   { label: "ชิประมวลผล", key: "processor", icon: Cpu, color: "var(--kawaii-pink)" },
   { label: "หน้าจอ", key: "display", icon: Monitor, color: "var(--kawaii-soft-purple)" },
   { label: "กล้อง", key: "camera", icon: Camera, color: "var(--kawaii-mint-green)" },
@@ -75,7 +75,7 @@ export function CompareSectionView({
           <div className="flex justify-center mb-4">
             <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
-                src="/assets/toro-face.png"
+                src={MASCOT.toroFace}
                 alt="Toro mascot"
                 width={168}
                 height={168}
@@ -274,6 +274,29 @@ export function CompareSectionView({
               ))}
             </div>
 
+            {/* Storage Row */}
+            <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 gsap-compare-row">
+              <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
+                <span style={{ color: "var(--kawaii-gold)" }}>
+                  <HardDrive className="w-4 h-4" />
+                </span>
+                <span className="hidden sm:inline">ความจุ</span>
+                <span className="sm:hidden text-xs">ความจุ</span>
+              </div>
+              {([product1, product2] as const).map((product, i) => (
+                <div
+                  key={i}
+                  className="p-3 md:p-4 text-center text-xs md:text-sm text-[var(--kawaii-brown)] border-l border-[var(--kawaii-light-pink)]/20"
+                >
+                  {product ? (
+                    product.specs.storage.join(", ")
+                  ) : (
+                    <span className="text-[var(--kawaii-brown)]/30">—</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
             {/* Spec Rows */}
             {specRows.map((spec) => (
               <div
@@ -366,7 +389,7 @@ export function CompareSectionView({
         <div className="text-center gsap-compare-cta">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 inline-block shadow-kawaii-md">
             <Image
-              src="/assets/toro-handle-phone.png"
+              src={MASCOT.toroHandlePhone}
               alt="Toro"
               width={56}
               height={56}

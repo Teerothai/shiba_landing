@@ -1,6 +1,6 @@
 // Product Type Definitions
 export interface ProductSpecs {
-  storage: string;
+  storage: string[];
   processor: string;
   display: string;
   camera?: string;
@@ -44,8 +44,8 @@ export interface Package {
 // iPhone Products
 export const iPhones: Product[] = [
   {
-    id: "iphone-13-128gb",
-    name: "iPhone 13 128GB",
+    id: "iphone-13",
+    name: "iPhone 13",
     price: 22900,
     down: 2900,
     hot: true,
@@ -54,7 +54,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "128GB",
+      storage: ["128GB", "256GB", "512GB"],
       processor: "A15 Bionic",
       display: '6.1"',
       camera: "12MP Dual",
@@ -65,8 +65,8 @@ export const iPhones: Product[] = [
     features: ["5G", "Face ID", "Wireless Charging", "Water Resistant IP68", "Cinematic Mode"],
   },
   {
-    id: "iphone-15-128gb",
-    name: "iPhone 15 128GB",
+    id: "iphone-15",
+    name: "iPhone 15",
     price: 31200,
     down: 7900,
     image:
@@ -74,7 +74,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "128GB",
+      storage: ["128GB", "256GB", "512GB"],
       processor: "A16 Bionic",
       display: '6.1"',
       camera: "48MP Main",
@@ -85,8 +85,8 @@ export const iPhones: Product[] = [
     features: ["5G", "Face ID", "USB-C", "Dynamic Island", "48MP Camera", "Wireless Charging"],
   },
   {
-    id: "iphone-16-128gb",
-    name: "iPhone 16 128GB",
+    id: "iphone-16",
+    name: "iPhone 16",
     price: 37900,
     down: 10300,
     hot: true,
@@ -95,7 +95,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "128GB",
+      storage: ["128GB", "256GB", "512GB"],
       processor: "A18",
       display: '6.1"',
       camera: "48MP Fusion",
@@ -106,8 +106,8 @@ export const iPhones: Product[] = [
     features: ["5G", "Face ID", "USB-C", "Camera Control", "Action Button", "A18 Chip", "Wireless Charging"],
   },
   {
-    id: "iphone-16-pro-256gb",
-    name: "iPhone 16 Pro 256GB",
+    id: "iphone-16-pro",
+    name: "iPhone 16 Pro",
     price: 52300,
     down: 18900,
     hot: true,
@@ -116,7 +116,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "256GB",
+      storage: ["128GB", "256GB", "512GB", "1TB"],
       processor: "A18 Pro",
       display: '6.3"',
       camera: "48MP Pro",
@@ -127,8 +127,8 @@ export const iPhones: Product[] = [
     features: ["5G", "Face ID", "USB-C", "ProMotion 120Hz", "Titanium Design", "Camera Control", "Action Button", "4K Dolby Vision"],
   },
   {
-    id: "iphone-16-pro-max-256gb",
-    name: "iPhone 16 Pro Max 256GB",
+    id: "iphone-16-pro-max",
+    name: "iPhone 16 Pro Max",
     price: 55900,
     down: 19500,
     image:
@@ -136,7 +136,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "256GB",
+      storage: ["256GB", "512GB", "1TB"],
       processor: "A18 Pro",
       display: '6.9"',
       camera: "48MP Pro",
@@ -147,8 +147,8 @@ export const iPhones: Product[] = [
     features: ["5G", "Face ID", "USB-C", "ProMotion 120Hz", "Titanium Design", "Spatial Video", "Action Button", "แบตอึดที่สุด"],
   },
   {
-    id: "iphone-17-128gb",
-    name: "iPhone 17 128GB",
+    id: "iphone-17",
+    name: "iPhone 17",
     price: 40900,
     down: 16400,
     new: true,
@@ -157,7 +157,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "128GB",
+      storage: ["128GB", "256GB", "512GB"],
       processor: "A19",
       display: '6.1"',
       camera: "48MP Advanced",
@@ -168,8 +168,8 @@ export const iPhones: Product[] = [
     features: ["5G", "Face ID", "USB-C", "A19 Chip", "Dynamic Island", "48MP Advanced", "Wireless Charging"],
   },
   {
-    id: "iphone-17-pro-max-256gb",
-    name: "iPhone 17 Pro Max 256GB",
+    id: "iphone-17-pro-max",
+    name: "iPhone 17 Pro Max",
     price: 67900,
     down: 27200,
     new: true,
@@ -178,7 +178,7 @@ export const iPhones: Product[] = [
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: "256GB",
+      storage: ["256GB", "512GB", "1TB"],
       processor: "A19 Pro",
       display: '6.9"',
       camera: "48MP Pro Max",
@@ -193,8 +193,8 @@ export const iPhones: Product[] = [
 // iPad Products
 export const iPads: Product[] = [
   {
-    id: "ipad-gen11-wifi-128gb",
-    name: "iPad Gen 11 (A16) Wifi 128GB",
+    id: "ipad-gen11-wifi",
+    name: "iPad Gen 11 (A16) Wifi",
     price: 19200,
     down: 6000,
     hot: true,
@@ -203,7 +203,7 @@ export const iPads: Product[] = [
     category: "iPad",
     brand: "Apple",
     specs: {
-      storage: "128GB",
+      storage: ["128GB", "256GB"],
       processor: "A16 Bionic",
       display: '10.9"',
       connectivity: "Wi-Fi",
@@ -214,8 +214,8 @@ export const iPads: Product[] = [
     features: ["Wi-Fi 6", "USB-C", "Apple Pencil", "Liquid Retina", "Center Stage"],
   },
   {
-    id: "ipad-air-11-m3-wifi-256gb",
-    name: "iPad Air 11 M3 Wifi 256GB",
+    id: "ipad-air-11-m3-wifi",
+    name: "iPad Air 11 M3 Wifi",
     price: 35900,
     down: 12900,
     hot: true,
@@ -224,7 +224,7 @@ export const iPads: Product[] = [
     category: "iPad",
     brand: "Apple",
     specs: {
-      storage: "256GB",
+      storage: ["128GB", "256GB", "512GB", "1TB"],
       processor: "M3",
       display: '11"',
       connectivity: "Wi-Fi",
@@ -235,8 +235,8 @@ export const iPads: Product[] = [
     features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard", "Center Stage"],
   },
   {
-    id: "ipad-mini-a17-wifi-256gb",
-    name: "iPad Mini A17 Pro Wifi 256GB",
+    id: "ipad-mini-a17-wifi",
+    name: "iPad Mini A17 Pro Wifi",
     price: 29900,
     down: 12000,
     image:
@@ -244,7 +244,7 @@ export const iPads: Product[] = [
     category: "iPad",
     brand: "Apple",
     specs: {
-      storage: "256GB",
+      storage: ["128GB", "256GB", "512GB"],
       processor: "A17 Pro",
       display: '8.3"',
       connectivity: "Wi-Fi",

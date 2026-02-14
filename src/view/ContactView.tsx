@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Phone, Clock, MapPin } from "lucide-react";
 import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
+import { MASCOT } from "@/data/images";
 
 interface ContactViewProps {
   onOpenLINE: () => void;
@@ -26,7 +27,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
           <div className="flex justify-center mb-4">
             <div className="relative gsap-section-mascot gsap-parallax-mascot">
               <Image
-                src="/assets/toro-handle-phone.png"
+                src={MASCOT.toroHandlePhone}
                 alt="Toro handling phone"
                 width={168}
                 height={168}
@@ -138,7 +139,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
         <Card className="gsap-final-cta max-w-3xl mx-auto text-center p-8 sm:p-12">
           <div className="flex justify-center mb-6">
             <Image
-              src="/assets/toro-handle-phone.png"
+              src={MASCOT.toroHandlePhone}
               alt="Toro handling phone"
               width={96}
               height={96}

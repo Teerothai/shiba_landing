@@ -1,12 +1,9 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import type { BannerSlide } from "@/data/banners";
 
-export interface BannerSlide {
-  id: number;
-  src: string;
-  alt: string;
-}
+export type { BannerSlide };
 
 interface UseBannerSliderOptions {
   slides: BannerSlide[];

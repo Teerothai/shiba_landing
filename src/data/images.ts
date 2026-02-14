@@ -1,0 +1,110 @@
+/**
+ * Centralized Image Registry — Cloudinary CDN
+ *
+ * ============================================================
+ * ไฟล์นี้เป็น "source of truth" ของรูปทั้งหมดในโปรเจกต์
+ * เวลาจะเปลี่ยน path หรือย้ายไป CDN — แก้ที่ไฟล์นี้ไฟล์เดียว
+ * ============================================================
+ *
+ * SSG: ทุกค่าเป็น string constant → resolve ตอน build time
+ *
+ * Cloudinary Transforms:
+ *   f_auto  = เลือก format อัตโนมัติ (WebP/AVIF) ลดขนาด 60-80%
+ *   q_auto  = ปรับ quality อัตโนมัติ ลดขนาดอีก 20-40%
+ *   w_XXX   = resize ให้กว้าง XXX pixel (2x ของขนาดแสดงผล สำหรับจอ Retina)
+ */
+
+const C = "https://res.cloudinary.com/db7aaytcs/image/upload";
+
+// ============================================================
+// Mascot Images — ตัว Toro
+// ============================================================
+
+export const MASCOT = {
+  /** Toro ถือมือถือ — ใช้ใน Hero (256px), Products, Packages, Community (168px) → w_512 */
+  toroWithPhone: `${C}/f_auto,q_auto,w_512/v1771064868/toro-with-phone_zkyaiv.png`,
+
+  /** หน้า Toro — ใช้ใน Header (32px), Footer (48px), Compare (168px), ProductDetail (36px) → w_336 */
+  // TODO: อัปโหลด toro-face.png ขึ้น Cloudinary แล้วเปลี่ยน URL
+  toroFace: "/assets/toro-face.png",
+
+  /** Toro ถือโทรศัพท์ (ท่ายืน) — ใช้ใน Compare CTA, Contact (168px) → w_336 */
+  toroHandlePhone: `${C}/f_auto,q_auto,w_336/v1771064867/toro-handle-phone_b6spwl.png`,
+} as const;
+
+// ============================================================
+// Package Card Images — รูปพื้นหลังการ์ดแพ็กเกจ
+// แสดงที่ 180-240px → w_480 (2x Retina)
+// ============================================================
+
+export const PACKAGE_CARD = {
+  puppy: `${C}/f_auto,q_auto,w_480/v1771064651/shiba-puppy_zqshvw.png`,
+  plus: `${C}/f_auto,q_auto,w_480/v1771064651/shiba-plus_urr2ot.png`,
+  promax: `${C}/f_auto,q_auto,w_480/v1771064652/shiba-pro-max_a2fiqb.png`,
+} as const;
+
+export const PACKAGE_BADGE = {
+  /** Like badge สำหรับ Pro Max — แสดงที่ 52px → w_104 */
+  like: `${C}/f_auto,q_auto,w_104/v1771064651/like_yz7zkp.png`,
+} as const;
+
+// ============================================================
+// Promotion Badge Images — ป้ายโปรโมชั่น
+// แสดงที่ 120-180px → w_360 (2x Retina)
+// ============================================================
+
+export const PROMOTION = {
+  puppy: `${C}/f_auto,q_auto,w_360/v1771064829/promotion-50-thb_slcy8r.png`,
+  plus: `${C}/f_auto,q_auto,w_360/v1771064830/promotion-100-thb_hhnb7r.png`,
+  promax: `${C}/f_auto,q_auto,w_360/v1771064831/promotion-350-thb_nbj83k.png`,
+} as const;
+
+// ============================================================
+// Banner Images — สไลด์หน้าแรก
+// TODO: อัปโหลดขึ้น Cloudinary แล้วเปลี่ยน URL
+// ============================================================
+
+export const BANNER = {
+  slide1: "/assets/banner/mock-banner-1.png",
+  slide2: "/assets/banner/mock-banner-2.png",
+  slide3: "/assets/banner/mock-banner-3.png",
+} as const;
+
+// ============================================================
+// Feature Images — จุดเด่น 4 ข้อ (Hero Section)
+// แสดงที่ ~320px (grid-cols-4) → w_640 (2x Retina)
+// ============================================================
+
+export const FEATURE = {
+  startWith50Thb: `${C}/f_auto,q_auto,w_640/v1771064708/start-with-50thb_ig5gjw.png`,
+  idCard: `${C}/f_auto,q_auto,w_640/v1771064707/id-card_hh3nyp.png`,
+  checkStatus: `${C}/f_auto,q_auto,w_640/v1771064706/check-status_gmytea.png`,
+  authentic: `${C}/f_auto,q_auto,w_640/v1771064705/authentic_yoxpfr.png`,
+} as const;
+
+// ============================================================
+// Icon Images
+// TODO: อัปโหลดขึ้น Cloudinary แล้วเปลี่ยน URL
+// ============================================================
+
+export const ICON = {
+  line: "/assets/icon/line-icon.png",
+} as const;
+
+// ============================================================
+// Lookup Maps — ใช้ใน dynamic rendering (key = package id)
+// ============================================================
+
+/** Package card image by package id */
+export const packageImageMap: Record<string, string> = {
+  puppy: PACKAGE_CARD.puppy,
+  plus: PACKAGE_CARD.plus,
+  promax: PACKAGE_CARD.promax,
+};
+
+/** Promotion badge image by package id */
+export const promotionImageMap: Record<string, string> = {
+  puppy: PROMOTION.puppy,
+  plus: PROMOTION.plus,
+  promax: PROMOTION.promax,
+};

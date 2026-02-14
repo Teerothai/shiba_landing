@@ -27,3 +27,4 @@ export function formatPrice(price: number): string {
 export function formatPriceCompact(price: number): string {
   return new Intl.NumberFormat("th-TH").format(price);
 }
+

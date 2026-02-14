@@ -22,6 +22,7 @@ import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
+import { MASCOT } from "@/data/images";
 
 interface ProductDetailViewProps {
   product: Product;
@@ -68,7 +69,7 @@ export function ProductDetailView({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/assets/toro-face.png"
+                    src={MASCOT.toroFace}
                     alt="Toro mascot"
                     width={36}
                     height={36}
@@ -228,6 +229,23 @@ export function ProductDetailView({
                 </div>
               </div>
 
+              {/* Storage Options */}
+              <div className="mb-8">
+                <h3 className="text-lg font-bold text-[var(--kawaii-brown)] mb-4">
+                  ความจุให้เลือก
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {product.specs.storage.map((size) => (
+                    <span
+                      key={size}
+                      className="px-4 py-2 rounded-xl border-2 border-[var(--kawaii-gold)]/30 bg-[var(--kawaii-gold)]/5 text-sm font-medium text-[var(--kawaii-brown)]"
+                    >
+                      {size}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               {/* Specifications */}
               <div className="mb-8">
                 <h3 className="text-lg font-bold text-[var(--kawaii-brown)] mb-4">
@@ -235,7 +253,7 @@ export function ProductDetailView({
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {Object.entries(product.specs).map(([key, value]) => {
-                    if (!value) return null;
+                    if (!value || key === "storage") return null;
                     const config = specConfig[key];
                     if (!config) return null;
                     return (
