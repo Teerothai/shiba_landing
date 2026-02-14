@@ -62,66 +62,81 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
       // 1. HERO SECTION - Plays on page load
       // ═══════════════════════════════════════
       const heroTl = gsap.timeline({
-        defaults: { ease: "power3.out", duration: 0.8 },
-        delay: 0.2,
+        defaults: { ease: "power3.out", duration: 0.6 },
+        delay: 0.1,
       });
 
-      // Mascot entrance - playful elastic bounce
-      heroTl.from(".hero-mascot", {
-        scale: 0,
-        rotation: -20,
+      // Everything enters together — slight stagger (0.05s) for a natural cascade
+
+      // Hero section background reveal
+      heroTl.from(".hero-section", {
         opacity: 0,
-        duration: 1,
-        ease: "elastic.out(1, 0.4)",
+        scale: 1.03,
+        duration: 0.8,
+        ease: "power2.out",
       });
 
-      // Wave emoji pop
+      // Yellow features body
+      heroTl.from(
+        ".hero-features-body",
+        { y: 40, opacity: 0, duration: 0.8, ease: "power2.out" },
+        "<"
+      );
+
+      // Mascot entrance
+      heroTl.from(
+        ".hero-mascot",
+        { scale: 0, rotation: -15, opacity: 0, duration: 0.7, ease: "elastic.out(1, 0.5)" },
+        "<0.05"
+      );
+
+      // Wave emoji
       heroTl.from(
         ".hero-wave",
-        { scale: 0, rotation: -45, opacity: 0, duration: 0.6, ease: "back.out(3)" },
-        "-=0.6"
+        { scale: 0, rotation: -45, opacity: 0, duration: 0.5, ease: "back.out(3)" },
+        "<0.05"
       );
 
       // Heart emoji
       heroTl.from(
         ".hero-heart",
-        { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(2)" },
-        "-=0.3"
+        { scale: 0, opacity: 0, duration: 0.4, ease: "back.out(2)" },
+        "<0.05"
       );
 
       // Title
       heroTl.from(
         ".hero-title",
-        { y: 60, opacity: 0, duration: 0.9 },
-        "-=0.3"
+        { y: 30, opacity: 0, duration: 0.6 },
+        "<0.05"
       );
 
       // Title accent line
       heroTl.from(
         ".hero-title-accent",
-        { y: 40, opacity: 0, duration: 0.7 },
-        "-=0.5"
+        { y: 20, opacity: 0, duration: 0.5 },
+        "<0.05"
       );
 
       // Subtitle
       heroTl.from(
         ".hero-subtitle",
-        { y: 30, opacity: 0, duration: 0.6 },
-        "-=0.3"
+        { y: 20, opacity: 0, duration: 0.5 },
+        "<0.05"
       );
 
       // CTA buttons
       heroTl.from(
         ".hero-cta-btn",
-        { y: 30, opacity: 0, scale: 0.9, stagger: 0.15, duration: 0.5, ease: "back.out(1.5)" },
-        "-=0.2"
+        { y: 20, opacity: 0, scale: 0.95, stagger: 0.08, duration: 0.4, ease: "back.out(1.5)" },
+        "<0.05"
       );
 
       // Feature cards
       heroTl.from(
         ".hero-feature",
-        { y: 50, opacity: 0, scale: 0.8, rotation: -3, stagger: 0.1, duration: 0.6, ease: "back.out(1.7)" },
-        "-=0.3"
+        { y: 30, opacity: 0, scale: 0.9, rotation: -2, stagger: 0.06, duration: 0.5, ease: "back.out(1.7)" },
+        "<0.1"
       );
 
       // ═══════════════════════════════════════

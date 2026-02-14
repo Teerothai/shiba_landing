@@ -8,10 +8,11 @@
  *
  * SSG: ทุกค่าเป็น string constant → resolve ตอน build time
  *
- * Cloudinary Transforms:
- *   f_auto  = เลือก format อัตโนมัติ (WebP/AVIF) ลดขนาด 60-80%
- *   q_auto  = ปรับ quality อัตโนมัติ ลดขนาดอีก 20-40%
- *   w_XXX   = resize ให้กว้าง XXX pixel (2x ของขนาดแสดงผล สำหรับจอ Retina)
+ * Cloudinary Quality Levels:
+ *   q_auto:good  = default (~80%) — สำหรับรูปที่ต้องชัด
+ *   q_auto:eco   = eco (~60%) — สำหรับรูปทั่วไป ประหยัดกว่า
+ *   q_auto:low   = low (~40%) — สำหรับ background ที่มีเนื้อหาซ้อนทับ
+ *   q_XX         = กำหนดเอง (เช่น q_50)
  */
 
 const C = "https://res.cloudinary.com/db7aaytcs/image/upload";
@@ -21,15 +22,25 @@ const C = "https://res.cloudinary.com/db7aaytcs/image/upload";
 // ============================================================
 
 export const MASCOT = {
-  /** Toro ถือมือถือ — ใช้ใน Hero (256px), Products, Packages, Community (168px) → w_512 */
-  toroWithPhone: `${C}/f_auto,q_auto,w_512/v1771064868/toro-with-phone_zkyaiv.png`,
+  /** Toro ถือมือถือ — ใช้ใน Hero (256px), Products, Packages, Community (168px) */
+  toroWithPhone: `${C}/f_auto,q_auto:eco,w_512/v1771064868/toro-with-phone_zkyaiv.png`,
 
-  /** หน้า Toro — ใช้ใน Header (32px), Footer (48px), Compare (168px), ProductDetail (36px) → w_336 */
+  /** หน้า Toro — ใช้ใน Header (32px), Footer (48px), Compare (168px), ProductDetail (36px) */
   // TODO: อัปโหลด toro-face.png ขึ้น Cloudinary แล้วเปลี่ยน URL
   toroFace: "/assets/toro-face.png",
 
-  /** Toro ถือโทรศัพท์ (ท่ายืน) — ใช้ใน Compare CTA, Contact (168px) → w_336 */
-  toroHandlePhone: `${C}/f_auto,q_auto,w_336/v1771064867/toro-handle-phone_b6spwl.png`,
+  /** Toro ถือโทรศัพท์ (ท่ายืน) — ใช้ใน Compare CTA, Contact (168px) */
+  toroHandlePhone: `${C}/f_auto,q_auto:eco,w_336/v1771064867/toro-handle-phone_b6spwl.png`,
+} as const;
+
+// ============================================================
+// Background Images
+// q_auto:low + w_1440 เพราะอยู่หลังเนื้อหา ไม่ต้องคมมาก
+// ============================================================
+
+export const BACKGROUND = {
+  /** Hero section background — เต็มจอ, มีตัวอักษรซ้อนทับ → q_auto:low ลดได้เยอะ */
+  hero: `${C}/f_auto,q_auto:low,w_1440/v1771092255/20250605-151005_1_uqtljh.png`,
 } as const;
 
 // ============================================================
@@ -38,14 +49,14 @@ export const MASCOT = {
 // ============================================================
 
 export const PACKAGE_CARD = {
-  puppy: `${C}/f_auto,q_auto,w_480/v1771064651/shiba-puppy_zqshvw.png`,
-  plus: `${C}/f_auto,q_auto,w_480/v1771064651/shiba-plus_urr2ot.png`,
-  promax: `${C}/f_auto,q_auto,w_480/v1771064652/shiba-pro-max_a2fiqb.png`,
+  puppy: `${C}/f_auto,q_auto:eco,w_480/v1771064651/shiba-puppy_zqshvw.png`,
+  plus: `${C}/f_auto,q_auto:eco,w_480/v1771064651/shiba-plus_urr2ot.png`,
+  promax: `${C}/f_auto,q_auto:eco,w_480/v1771064652/shiba-pro-max_a2fiqb.png`,
 } as const;
 
 export const PACKAGE_BADGE = {
   /** Like badge สำหรับ Pro Max — แสดงที่ 52px → w_104 */
-  like: `${C}/f_auto,q_auto,w_104/v1771064651/like_yz7zkp.png`,
+  like: `${C}/f_auto,q_auto:eco,w_104/v1771064651/like_yz7zkp.png`,
 } as const;
 
 // ============================================================
@@ -54,9 +65,9 @@ export const PACKAGE_BADGE = {
 // ============================================================
 
 export const PROMOTION = {
-  puppy: `${C}/f_auto,q_auto,w_360/v1771064829/promotion-50-thb_slcy8r.png`,
-  plus: `${C}/f_auto,q_auto,w_360/v1771064830/promotion-100-thb_hhnb7r.png`,
-  promax: `${C}/f_auto,q_auto,w_360/v1771064831/promotion-350-thb_nbj83k.png`,
+  puppy: `${C}/f_auto,q_auto:eco,w_360/v1771064829/promotion-50-thb_slcy8r.png`,
+  plus: `${C}/f_auto,q_auto:eco,w_360/v1771064830/promotion-100-thb_hhnb7r.png`,
+  promax: `${C}/f_auto,q_auto:eco,w_360/v1771064831/promotion-350-thb_nbj83k.png`,
 } as const;
 
 // ============================================================
@@ -76,10 +87,10 @@ export const BANNER = {
 // ============================================================
 
 export const FEATURE = {
-  startWith50Thb: `${C}/f_auto,q_auto,w_640/v1771064708/start-with-50thb_ig5gjw.png`,
-  idCard: `${C}/f_auto,q_auto,w_640/v1771064707/id-card_hh3nyp.png`,
-  checkStatus: `${C}/f_auto,q_auto,w_640/v1771064706/check-status_gmytea.png`,
-  authentic: `${C}/f_auto,q_auto,w_640/v1771064705/authentic_yoxpfr.png`,
+  startWith50Thb: `${C}/f_auto,q_auto:eco,w_640/v1771064708/start-with-50thb_ig5gjw.png`,
+  idCard: `${C}/f_auto,q_auto:eco,w_640/v1771064707/id-card_hh3nyp.png`,
+  checkStatus: `${C}/f_auto,q_auto:eco,w_640/v1771064706/check-status_gmytea.png`,
+  authentic: `${C}/f_auto,q_auto:eco,w_640/v1771064705/authentic_yoxpfr.png`,
 } as const;
 
 // ============================================================
