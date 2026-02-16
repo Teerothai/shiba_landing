@@ -25,10 +25,16 @@ import { ProductDetailContainer } from "./ProductDetailContainer";
 export function LandingContainer() {
   // Hooks
   const {
-    filteredProducts,
+    paginatedProducts,
     packages,
     selectedCategory,
     setCategory,
+    sortBy,
+    setSortBy,
+    currentPage,
+    totalPages,
+    setPage,
+    filteredCount,
   } = useProducts();
 
   const { activeSection, scrollToSection } = useScrollNav();
@@ -93,9 +99,15 @@ export function LandingContainer() {
 
         {/* Products Section */}
         <ProductsView
-          products={filteredProducts}
+          products={paginatedProducts}
           selectedCategory={selectedCategory}
-          onCategoryChange={(cat) => setCategory(cat as "all" | "iPhone" | "iPad")}
+          sortBy={sortBy}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          totalProducts={filteredCount}
+          onCategoryChange={(cat) => setCategory(cat as "all" | "iPhone" | "iPad" | "android")}
+          onSortChange={setSortBy}
+          onPageChange={setPage}
           onProductClick={handleProductClick}
           onOpenLINE={openLINEChat}
         />

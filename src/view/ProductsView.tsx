@@ -1,17 +1,35 @@
 "use client";
 
 import Image from "next/image";
-import { Smartphone, Tablet, ShoppingCart, Flame, Sparkles } from "lucide-react";
+import {
+  Smartphone,
+  Tablet,
+  ShoppingCart,
+  Flame,
+  Sparkles,
+  Monitor,
+  ChevronLeft,
+  ChevronRight,
+  ArrowUpDown,
+} from "lucide-react";
 import { Button } from "@/lib/ui/button";
 import { Card, CardContent } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
 import { MASCOT } from "@/data/images";
 
+type SortOption = "popular" | "price-low" | "price-high" | "newest";
+
 interface ProductsViewProps {
   products: Product[];
   selectedCategory: string;
+  sortBy: SortOption;
+  currentPage: number;
+  totalPages: number;
+  totalProducts: number;
   onCategoryChange: (category: string) => void;
+  onSortChange: (sort: SortOption) => void;
+  onPageChange: (page: number) => void;
   onProductClick: (productId: string) => void;
   onOpenLINE: () => void;
 }
@@ -21,6 +39,15 @@ const categories = [
   { id: "all", name: "ทั้งหมด", icon: ShoppingCart },
   { id: "iPhone", name: "iPhone", icon: Smartphone },
   { id: "iPad", name: "iPad", icon: Tablet },
+  { id: "android", name: "Android", icon: Monitor },
+];
+
+// Sort options
+const sortOptions: { id: SortOption; label: string }[] = [
+  { id: "popular", label: "ยอดนิยม" },
+  { id: "newest", label: "ใหม่ล่าสุด" },
+  { id: "price-low", label: "ราคาต่ำ → สูง" },
+  { id: "price-high", label: "ราคาสูง → ต่ำ" },
 ];
 
 /**
@@ -42,7 +69,7 @@ function ProductCard({
       onClick={() => onClick(product.id)}
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="relative aspect-4/3 overflow-hidden rounded-t-2xl bg-linear-to-br from-gray-50 to-gray-100">
         <Image
           src={product.image}
           alt={product.name}
@@ -53,13 +80,13 @@ function ProductCard({
         {/* Badges */}
         <div className="absolute top-3 left-3 flex gap-2">
           {product.hot && (
-            <span className="bg-[var(--kawaii-pink)] text-white text-xs font-medium px-2 py-1 rounded-full flex items-center gap-1">
+            <span className="bg-kawaii-pink text-white text-xs font-medium px-2 py-1 rounded-full flex items-center gap-1">
               <Flame className="w-3 h-3" />
               ฮิต
             </span>
           )}
           {product.new && (
-            <span className="bg-[var(--kawaii-soft-purple)] text-white text-xs font-medium px-2 py-1 rounded-full flex items-center gap-1">
+            <span className="bg-kawaii-soft-purple text-white text-xs font-medium px-2 py-1 rounded-full flex items-center gap-1">
               <Sparkles className="w-3 h-3" />
               ใหม่
             </span>
@@ -70,31 +97,31 @@ function ProductCard({
       {/* Content */}
       <CardContent className="p-4">
         {/* Category Badge */}
-        <span className="text-xs text-[var(--kawaii-brown)]/60 bg-[var(--kawaii-light-pink)]/20 px-2 py-0.5 rounded-full">
+        <span className="text-xs text-(--kawaii-brown)/60 bg-(--kawaii-light-pink)/20 px-2 py-0.5 rounded-full">
           {product.category}
         </span>
 
         {/* Product Name */}
-        <h3 className="font-semibold text-[var(--kawaii-brown)] mt-2 mb-1 line-clamp-2">
+        <h3 className="font-semibold text-kawaii-brown mt-2 mb-1 line-clamp-2">
           {product.name}
         </h3>
 
         {/* Specs Summary */}
-        <p className="text-xs text-[var(--kawaii-brown)]/60 mb-3">
+        <p className="text-xs text-(--kawaii-brown)/60 mb-3">
           {product.specs.processor} • {product.specs.display}
         </p>
 
         {/* Pricing */}
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-xs text-[var(--kawaii-brown)]/60">ราคาเต็ม</p>
-            <p className="text-lg font-bold text-[var(--kawaii-brown)]">
+            <p className="text-xs text-(--kawaii-brown)/60">ราคาเต็ม</p>
+            <p className="text-lg font-bold text-kawaii-brown">
               ฿{formatPriceCompact(product.price)}
             </p>
           </div>
           <div className="text-right">
-            <p className="text-xs text-[var(--kawaii-pink)]">เริ่มต้น/เดือน</p>
-            <p className="text-lg font-bold text-[var(--kawaii-pink)]">
+            <p className="text-xs text-kawaii-pink">เริ่มต้น/เดือน</p>
+            <p className="text-lg font-bold text-kawaii-pink">
               ฿{formatPriceCompact(monthlyPrice)}
             </p>
           </div>
@@ -111,7 +138,13 @@ function ProductCard({
 export function ProductsView({
   products,
   selectedCategory,
+  sortBy,
+  currentPage,
+  totalPages,
+  totalProducts,
   onCategoryChange,
+  onSortChange,
+  onPageChange,
   onProductClick,
   onOpenLINE,
 }: ProductsViewProps) {
@@ -135,11 +168,11 @@ export function ProductsView({
               />
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[var(--kawaii-brown)] mb-3">
+          <h2 className="text-3xl md:text-5xl font-bold text-kawaii-brown mb-3">
             สินค้าแนะนำ
           </h2>
-          <p className="text-lg text-[var(--kawaii-brown)]/80">
-            iPhone & iPad คุณภาพ ราคาดี พร้อมแพ็กเกจผ่อนที่เหมาะกับคุณ
+          <p className="text-lg text-(--kawaii-brown)/80">
+            iPhone, iPad & Android คุณภาพ ราคาดี พร้อมแพ็กเกจผ่อนที่เหมาะกับคุณ
           </p>
         </div>
 
@@ -164,9 +197,31 @@ export function ProductsView({
           ))}
         </div>
 
+        {/* Sort Bar */}
+        <div className="flex items-center justify-end gap-2 mb-6">
+          <ArrowUpDown className="w-4 h-4 text-(--kawaii-brown)/60" />
+          <span className="text-sm text-(--kawaii-brown)/60 mr-1">เรียงตาม:</span>
+          {sortOptions.map((opt) => (
+            <Button
+              key={opt.id}
+              variant={sortBy === opt.id ? "default" : "ghost"}
+              size="sm"
+              rounded="full"
+              onClick={() => onSortChange(opt.id)}
+              className={`text-xs ${
+                sortBy === opt.id
+                  ? ""
+                  : "bg-white/60 hover:bg-white/80"
+              }`}
+            >
+              {opt.label}
+            </Button>
+          ))}
+        </div>
+
         {/* Products Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
-          {products.slice(0, 9).map((product, index) => (
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
+          {products.map((product, index) => (
             <ProductCard
               key={product.id}
               product={product}
@@ -176,15 +231,73 @@ export function ProductsView({
           ))}
         </div>
 
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex flex-col items-center gap-4 mb-10">
+            {/* Page info */}
+            <p className="text-sm text-(--kawaii-brown)/70">
+              หน้า {currentPage} / {totalPages} — แสดง{" "}
+              <strong>{products.length}</strong> จาก{" "}
+              <strong>{totalProducts}</strong> รายการ
+            </p>
+
+            {/* Pagination controls */}
+            <div className="flex items-center gap-2">
+              {/* Prev */}
+              <Button
+                variant="ghost"
+                size="sm"
+                rounded="full"
+                disabled={currentPage <= 1}
+                onClick={() => onPageChange(currentPage - 1)}
+                className="bg-white/60 hover:bg-white/80 disabled:opacity-40"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+
+              {/* Page numbers */}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <Button
+                    key={page}
+                    variant={page === currentPage ? "default" : "ghost"}
+                    size="sm"
+                    rounded="full"
+                    onClick={() => onPageChange(page)}
+                    className={`min-w-9 h-9 ${
+                      page === currentPage
+                        ? ""
+                        : "bg-white/60 hover:bg-white/80"
+                    }`}
+                  >
+                    {page}
+                  </Button>
+                )
+              )}
+
+              {/* Next */}
+              <Button
+                variant="ghost"
+                size="sm"
+                rounded="full"
+                disabled={currentPage >= totalPages}
+                onClick={() => onPageChange(currentPage + 1)}
+                className="bg-white/60 hover:bg-white/80 disabled:opacity-40"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        )}
+
         {/* CTA */}
         <div className="text-center">
           <div className="gsap-product-cta bg-white/70 backdrop-blur-sm rounded-2xl p-6 inline-block shadow-kawaii-sm">
-            <p className="text-[var(--kawaii-brown)] mb-4">
-              แสดง <strong>{Math.min(9, products.length)}</strong> จาก{" "}
-              <strong>{products.length}</strong> รายการ
+            <p className="text-kawaii-brown mb-4">
+              สนใจสินค้า? สอบถามราคาพิเศษได้เลย
             </p>
             <Button onClick={onOpenLINE} variant="default" size="lg">
-              ดูสินค้าทั้งหมด & สอบถามราคา
+              สอบถามราคา & ผ่อนสินค้า
             </Button>
           </div>
         </div>

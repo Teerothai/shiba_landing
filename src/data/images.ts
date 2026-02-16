@@ -49,14 +49,14 @@ export const BACKGROUND = {
 // ============================================================
 
 export const PACKAGE_CARD = {
-  puppy: `${C}/f_auto,q_auto:eco,w_480/v1771064651/shiba-puppy_zqshvw.png`,
-  plus: `${C}/f_auto,q_auto:eco,w_480/v1771064651/shiba-plus_urr2ot.png`,
-  promax: `${C}/f_auto,q_auto:eco,w_480/v1771064652/shiba-pro-max_a2fiqb.png`,
+  puppy: `${C}/f_auto,q_auto:low,w_480/v1771064651/shiba-puppy_zqshvw.png`,
+  plus: `${C}/f_auto,q_auto:low,w_480/v1771064651/shiba-plus_urr2ot.png`,
+  promax: `${C}/f_auto,q_auto:low,w_480/v1771064652/shiba-pro-max_a2fiqb.png`,
 } as const;
 
 export const PACKAGE_BADGE = {
   /** Like badge สำหรับ Pro Max — แสดงที่ 52px → w_104 */
-  like: `${C}/f_auto,q_auto:eco,w_104/v1771064651/like_yz7zkp.png`,
+  like: `${C}/f_auto,q_auto:low,w_104/v1771064651/like_yz7zkp.png`,
 } as const;
 
 // ============================================================
@@ -65,9 +65,9 @@ export const PACKAGE_BADGE = {
 // ============================================================
 
 export const PROMOTION = {
-  puppy: `${C}/f_auto,q_auto:eco,w_360/v1771064829/promotion-50-thb_slcy8r.png`,
-  plus: `${C}/f_auto,q_auto:eco,w_360/v1771064830/promotion-100-thb_hhnb7r.png`,
-  promax: `${C}/f_auto,q_auto:eco,w_360/v1771064831/promotion-350-thb_nbj83k.png`,
+  puppy: `${C}/f_auto,q_auto:low,w_360/v1771064829/promotion-50-thb_slcy8r.png`,
+  plus: `${C}/f_auto,q_auto:low,w_360/v1771064830/promotion-100-thb_hhnb7r.png`,
+  promax: `${C}/f_auto,q_auto:low,w_360/v1771064831/promotion-350-thb_nbj83k.png`,
 } as const;
 
 // ============================================================
@@ -87,10 +87,10 @@ export const BANNER = {
 // ============================================================
 
 export const FEATURE = {
-  startWith50Thb: `${C}/f_auto,q_auto:eco,w_640/v1771064708/start-with-50thb_ig5gjw.png`,
-  idCard: `${C}/f_auto,q_auto:eco,w_640/v1771064707/id-card_hh3nyp.png`,
-  checkStatus: `${C}/f_auto,q_auto:eco,w_640/v1771064706/check-status_gmytea.png`,
-  authentic: `${C}/f_auto,q_auto:eco,w_640/v1771064705/authentic_yoxpfr.png`,
+  startWith50Thb: `${C}/f_auto,q_auto:low,w_640/v1771064708/start-with-50thb_ig5gjw.png`,
+  idCard: `${C}/f_auto,q_auto:low,w_640/v1771064707/id-card_hh3nyp.png`,
+  checkStatus: `${C}/f_auto,q_auto:low,w_640/v1771064706/check-status_gmytea.png`,
+  authentic: `${C}/f_auto,q_auto:low,w_640/v1771064705/authentic_yoxpfr.png`,
 } as const;
 
 // ============================================================

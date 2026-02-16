@@ -4,24 +4,32 @@ import { useState, useMemo, useCallback } from "react";
 import { allProducts, packages } from "@/data/products";
 import type { Product, Package } from "@/data/products";
 
-type CategoryFilter = "all" | "iPhone" | "iPad";
+type CategoryFilter = "all" | "iPhone" | "iPad" | "android";
 type SortOption = "popular" | "price-low" | "price-high" | "newest";
+
+const ITEMS_PER_PAGE = 6;
 
 interface UseProductsReturn {
   // Data
   products: Product[];
   filteredProducts: Product[];
+  paginatedProducts: Product[];
   packages: Package[];
-  
+
   // Filter state
   selectedCategory: CategoryFilter;
   sortBy: SortOption;
-  
+
+  // Pagination state
+  currentPage: number;
+  totalPages: number;
+
   // Actions
   setCategory: (category: CategoryFilter) => void;
   setSortBy: (sort: SortOption) => void;
+  setPage: (page: number) => void;
   resetFilters: () => void;
-  
+
   // Helpers
   getProductById: (id: string) => Product | undefined;
   productCount: number;
@@ -29,12 +37,13 @@ interface UseProductsReturn {
 }
 
 /**
- * useProducts - Product data and filtering hook
+ * useProducts - Product data, filtering, and pagination hook
  * Encapsulates all product-related state and logic
  */
 export function useProducts(): UseProductsReturn {
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("all");
   const [sortBy, setSortBy] = useState<SortOption>("popular");
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Memoized filtered and sorted products
   const filteredProducts = useMemo(() => {
@@ -53,26 +62,57 @@ export function useProducts(): UseProductsReturn {
       case "price-high":
         result.sort((a, b) => b.price - a.price);
         break;
-      case "newest":
-        result.sort((a, b) => (b.new ? 1 : 0) - (a.new ? 1 : 0));
+      case "newest": {
+        // ใหม่สุด→เก่าสุด โดยคงลำดับ iPhone → iPad → Android
+        const categoryOrder: Record<string, number> = { iPhone: 0, iPad: 1, android: 2 };
+        const originalIdx = new Map(allProducts.map((p, i) => [p.id, i]));
+        result.sort((a, b) => {
+          const catDiff = (categoryOrder[a.category] ?? 99) - (categoryOrder[b.category] ?? 99);
+          if (catDiff !== 0) return catDiff;
+          // ภายในกลุ่มเดียวกัน เรียงจากใหม่→เก่า (reverse index)
+          return (originalIdx.get(b.id) ?? 0) - (originalIdx.get(a.id) ?? 0);
+        });
         break;
+      }
       case "popular":
       default:
-        result.sort((a, b) => (b.hot ? 1 : 0) - (a.hot ? 1 : 0));
+        // เรียงตามลำดับใน products.ts (รุ่นเก่าสุด → ใหม่สุด) — ไม่ต้อง sort เพิ่ม
         break;
     }
 
     return result;
   }, [selectedCategory, sortBy]);
 
+  // Pagination
+  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
+
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
+
   // Actions
   const setCategory = useCallback((category: CategoryFilter) => {
     setSelectedCategory(category);
+    setCurrentPage(1); // reset to page 1 on category change
+  }, []);
+
+  const setPage = useCallback(
+    (page: number) => {
+      setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+    },
+    [totalPages]
+  );
+
+  const handleSetSortBy = useCallback((sort: SortOption) => {
+    setSortBy(sort);
+    setCurrentPage(1); // reset to page 1 on sort change
   }, []);
 
   const resetFilters = useCallback(() => {
     setSelectedCategory("all");
     setSortBy("popular");
+    setCurrentPage(1);
   }, []);
 
   // Helper to get product by ID
@@ -83,11 +123,15 @@ export function useProducts(): UseProductsReturn {
   return {
     products: allProducts,
     filteredProducts,
+    paginatedProducts,
     packages,
     selectedCategory,
     sortBy,
+    currentPage,
+    totalPages,
     setCategory,
-    setSortBy,
+    setSortBy: handleSetSortBy,
+    setPage,
     resetFilters,
     getProductById,
     productCount: allProducts.length,
