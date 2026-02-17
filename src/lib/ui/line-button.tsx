@@ -1,32 +1,56 @@
 import Image from "next/image";
-import { Button, type ButtonProps } from "@/lib/ui/button";
-import { ICON } from "@/data/images";
+import { cn } from "@/lib/utils";
 
-interface LineButtonProps extends Omit<ButtonProps, "variant"> {
+const LINE_BUTTON_IMG =
+  "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low,w_800/v1771325205/Add_Line_t9rlwi.png";
+
+const sizeMap = {
+  default: "h-12",
+  sm: "h-10",
+  lg: "h-16",
+  xl: "h-20",
+  icon: "h-12",
+} as const;
+
+type LineButtonSize = keyof typeof sizeMap;
+
+interface LineButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+  /** kept for backward compat – unused now (image contains label) */
   label?: string;
+  size?: LineButtonSize;
+  rounded?: string;
 }
 
 /**
- * LineButton - LINE CTA button with official LINE icon
- * Reusable component for all LINE chat call-to-action buttons
+ * LineButton - LINE CTA using the official "Add Line" image
+ * Scales to fit via the `size` prop while preserving aspect ratio.
  */
 export function LineButton({
-  label = "ทักไลน์เลย",
   size = "default",
-  rounded = "full",
   className,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  label,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  rounded,
   ...props
 }: LineButtonProps) {
   return (
-    <Button variant="line" size={size} rounded={rounded} className={className} {...props}>
+    <button
+      type="button"
+      className={cn(
+        "inline-flex items-center cursor-pointer transition-opacity hover:opacity-80 active:opacity-70",
+        className,
+      )}
+      {...props}
+    >
       <Image
-        src={ICON.line}
-        alt="LINE"
-        width={28}
-        height={28}
-        className="w-7 h-7 object-contain"
+        src={LINE_BUTTON_IMG}
+        alt="Add LINE"
+        width={400}
+        height={100}
+        className={cn("w-auto object-contain", sizeMap[size])}
       />
-      {label}
-    </Button>
+    </button>
   );
 }

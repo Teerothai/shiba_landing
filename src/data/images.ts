@@ -26,7 +26,6 @@ export const MASCOT = {
   toroWithPhone: `${C}/f_auto,q_auto:eco,w_512/v1771064868/toro-with-phone_zkyaiv.png`,
 
   /** หน้า Toro — ใช้ใน Header (32px), Footer (48px), Compare (168px), ProductDetail (36px) */
-  // TODO: อัปโหลด toro-face.png ขึ้น Cloudinary แล้วเปลี่ยน URL
   toroFace: "/assets/toro-face.png",
 
   /** Toro ถือโทรศัพท์ (ท่ายืน) — ใช้ใน Compare CTA, Contact (168px) */
@@ -72,13 +71,11 @@ export const PROMOTION = {
 
 // ============================================================
 // Banner Images — สไลด์หน้าแรก
-// TODO: อัปโหลดขึ้น Cloudinary แล้วเปลี่ยน URL
 // ============================================================
 
 export const BANNER = {
-  slide1: "/assets/banner/mock-banner-1.png",
-  slide2: "/assets/banner/mock-banner-2.png",
-  slide3: "/assets/banner/mock-banner-3.png",
+  slide1: `${C}/f_auto,q_auto:low,w_1920/v1771325073/Banner1_ihgrx3.png`,
+  slide2: `${C}/f_auto,q_auto:low,w_1920/v1771325073/Banner2_o0srn4.png`,
 } as const;
 
 // ============================================================
@@ -87,19 +84,10 @@ export const BANNER = {
 // ============================================================
 
 export const FEATURE = {
-  startWith50Thb: `${C}/f_auto,q_auto:low,w_640/v1771064708/start-with-50thb_ig5gjw.png`,
-  idCard: `${C}/f_auto,q_auto:low,w_640/v1771064707/id-card_hh3nyp.png`,
-  checkStatus: `${C}/f_auto,q_auto:low,w_640/v1771064706/check-status_gmytea.png`,
-  authentic: `${C}/f_auto,q_auto:low,w_640/v1771064705/authentic_yoxpfr.png`,
-} as const;
-
-// ============================================================
-// Icon Images
-// TODO: อัปโหลดขึ้น Cloudinary แล้วเปลี่ยน URL
-// ============================================================
-
-export const ICON = {
-  line: "/assets/icon/line-icon.png",
+  startWith50Thb: `${C}/f_auto,q_auto:low,w_640/v1771325142/50B_mvkueh.png`,
+  idCard: `${C}/f_auto,q_auto:low,w_640/v1771325143/id_card_legavp.png`,
+  checkStatus: `${C}/f_auto,q_auto:low,w_640/v1771325144/%E0%B8%A1%E0%B8%B5%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A_dteudb.png`,
+  authentic: `${C}/f_auto,q_auto:low,w_640/v1771325146/%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%97%E0%B9%89_n2oywq.png`,
 } as const;
 
 // ============================================================

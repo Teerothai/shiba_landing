@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import type { BannerSlide } from "@/data/banners";
 
 export type { BannerSlide };
@@ -23,6 +23,7 @@ interface UseBannerSliderReturn {
 
 /**
  * useBannerSlider - Hook for managing banner slider state and autoplay
+ * Manual navigation (goToSlide / goToNext / goToPrevious) resets the timer.
  */
 export function useBannerSlider({
   slides,
@@ -31,40 +32,49 @@ export function useBannerSlider({
 }: UseBannerSliderOptions): UseBannerSliderReturn {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(initialAutoPlay);
+  const resetKey = useRef(0);
 
   const totalSlides = slides.length;
+
+  const resetTimer = useCallback(() => {
+    resetKey.current += 1;
+  }, []);
 
   const goToSlide = useCallback(
     (index: number) => {
       if (index >= 0 && index < totalSlides) {
         setCurrentSlide(index);
+        resetTimer();
       }
     },
-    [totalSlides]
+    [totalSlides, resetTimer]
   );
 
   const goToNext = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  }, [totalSlides]);
+    resetTimer();
+  }, [totalSlides, resetTimer]);
 
   const goToPrevious = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  }, [totalSlides]);
+    resetTimer();
+  }, [totalSlides, resetTimer]);
 
   const toggleAutoPlay = useCallback(() => {
     setIsPlaying((prev) => !prev);
   }, []);
 
-  // Auto-play effect
+  // Auto-play effect — re-runs whenever resetKey changes (manual nav resets the interval)
   useEffect(() => {
     if (!isPlaying || totalSlides <= 1) return;
 
     const interval = setInterval(() => {
-      goToNext();
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [isPlaying, totalSlides, autoPlayInterval, goToNext]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying, totalSlides, autoPlayInterval, resetKey.current]);
 
   return {
     currentSlide,

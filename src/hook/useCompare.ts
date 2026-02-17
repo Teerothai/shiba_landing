@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { allProducts } from "@/data/products";
-import type { Product } from "@/data/products";
+import { allProducts, getGroupedProducts } from "@/data/products";
+import type { Product, ProductGroup } from "@/data/products";
 
 interface UseCompareReturn {
   // State
@@ -10,6 +10,7 @@ interface UseCompareReturn {
   selectedIds: [string, string];
   selectedProducts: [Product | undefined, Product | undefined];
   availableProducts: Product[];
+  groupedProducts: ProductGroup[];
 
   // Actions
   open: () => void;
@@ -44,6 +45,8 @@ export function useCompare(): UseCompareReturn {
     });
   }, []);
 
+  const groupedProducts = useMemo(() => getGroupedProducts(), []);
+
   const open = useCallback(() => setIsOpen(true), []);
   const close = useCallback(() => setIsOpen(false), []);
 
@@ -52,6 +55,7 @@ export function useCompare(): UseCompareReturn {
     selectedIds,
     selectedProducts,
     availableProducts: allProducts,
+    groupedProducts,
     open,
     close,
     selectProduct,

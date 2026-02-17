@@ -58,7 +58,6 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
             <LineButton
               onClick={onOpenLINE}
               size="xl"
-              className="border-2 border-[#05a045] shadow-lg"
             />
           </div>
 

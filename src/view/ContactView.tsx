@@ -48,7 +48,6 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
           <LineButton
             onClick={onOpenLINE}
             size="xl"
-            className="border-2 border-[#05a045] shadow-xl text-xl px-12 py-8"
           />
         </div>
 
@@ -167,7 +166,6 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
             <LineButton
               onClick={onOpenLINE}
               size="xl"
-              className="border-2 border-[#05a045] shadow-lg"
             />
           </div>
         </Card>

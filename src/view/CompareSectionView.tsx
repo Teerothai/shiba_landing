@@ -15,13 +15,14 @@ import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
-import type { Product } from "@/data/products";
+import type { Product, ProductGroup } from "@/data/products";
 import { MASCOT } from "@/data/images";
 
 interface CompareSectionViewProps {
   selectedProducts: [Product | undefined, Product | undefined];
   selectedIds: [string, string];
   availableProducts: Product[];
+  groupedProducts: ProductGroup[];
   onSelectProduct: (index: 0 | 1, productId: string) => void;
   onOpenLINE: () => void;
   onViewDetail: (productId: string) => void;
@@ -55,6 +56,7 @@ export function CompareSectionView({
   selectedProducts,
   selectedIds,
   availableProducts,
+  groupedProducts,
   onSelectProduct,
   onOpenLINE,
   onViewDetail,
@@ -111,10 +113,14 @@ export function CompareSectionView({
                   className="w-full px-3 py-2.5 rounded-xl border-2 border-[var(--kawaii-light-pink)]/30 bg-white text-[var(--kawaii-brown)] text-sm focus:border-[var(--kawaii-pink)] focus:outline-none transition-colors appearance-none cursor-pointer"
                   style={selectStyle}
                 >
-                  {availableProducts.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name} — ฿{formatPriceCompact(p.price)}
-                    </option>
+                  {groupedProducts.map((group) => (
+                    <optgroup key={group.label} label={group.label}>
+                      {group.products.map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {p.name} — ฿{formatPriceCompact(p.price)}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </select>
               </div>
@@ -142,10 +148,14 @@ export function CompareSectionView({
                   className="w-full px-3 py-2.5 rounded-xl border-2 border-[var(--kawaii-light-pink)]/30 bg-white text-[var(--kawaii-brown)] text-sm focus:border-[var(--kawaii-pink)] focus:outline-none transition-colors appearance-none cursor-pointer"
                   style={selectStyle}
                 >
-                  {availableProducts.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name} — ฿{formatPriceCompact(p.price)}
-                    </option>
+                  {groupedProducts.map((group) => (
+                    <optgroup key={group.label} label={group.label}>
+                      {group.products.map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {p.name} — ฿{formatPriceCompact(p.price)}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </select>
               </div>

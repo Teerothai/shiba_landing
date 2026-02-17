@@ -15,7 +15,6 @@ import { ContactView } from "@/view/ContactView";
 import { FooterView } from "@/view/FooterView";
 import { HeaderContainer } from "./HeaderContainer";
 import { BannerSliderContainer } from "./BannerSliderContainer";
-import { ScrollNavigator } from "./ScrollNavigator";
 import { ProductDetailContainer } from "./ProductDetailContainer";
 
 /**
@@ -117,6 +116,7 @@ export function LandingContainer() {
           selectedProducts={compare.selectedProducts}
           selectedIds={compare.selectedIds}
           availableProducts={compare.availableProducts}
+          groupedProducts={compare.groupedProducts}
           onSelectProduct={compare.selectProduct}
           onOpenLINE={openLINEChat}
           onViewDetail={handleCompareViewDetail}
@@ -138,12 +138,6 @@ export function LandingContainer() {
 
       {/* Footer */}
       <FooterView onOpenLINE={openLINEChat} onNavigate={scrollToSection} />
-
-      {/* Scroll Navigator */}
-      <ScrollNavigator
-        activeSection={activeSection}
-        onNavigate={scrollToSection}
-      />
 
       {/* Product Detail Modal */}
       <ProductDetailContainer

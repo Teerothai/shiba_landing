@@ -805,6 +805,48 @@ export const packages: Package[] = [
 export const allProducts: Product[] = [...iPhones, ...iPads, ...androids];
 
 // ============================================================
+// Product Grouping (for categorized dropdowns)
+// ============================================================
+
+export interface ProductGroup {
+  label: string;
+  products: Product[];
+}
+
+/** Group products by series/brand for categorized dropdowns */
+export function getGroupedProducts(): ProductGroup[] {
+  const groups: ProductGroup[] = [];
+
+  // iPhone — group by series (newest first)
+  const iphoneSeries = [17, 16, 15, 14] as const;
+  for (const series of iphoneSeries) {
+    const prefix = `iPhone ${series}`;
+    const matched = iPhones.filter((p) => p.name.startsWith(prefix));
+    if (matched.length) {
+      groups.push({ label: prefix, products: matched });
+    }
+  }
+
+  // Android — group by brand
+  const brandMap = new Map<string, Product[]>();
+  for (const p of androids) {
+    const list = brandMap.get(p.brand) ?? [];
+    list.push(p);
+    brandMap.set(p.brand, list);
+  }
+  for (const [brand, products] of brandMap) {
+    groups.push({ label: brand, products });
+  }
+
+  // iPad — single group
+  if (iPads.length) {
+    groups.push({ label: "iPad", products: iPads });
+  }
+
+  return groups;
+}
+
+// ============================================================
 // Helper functions
 // ============================================================
 

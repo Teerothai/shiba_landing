@@ -12,16 +12,11 @@ export const bannerSlides: BannerSlide[] = [
   {
     id: 1,
     src: BANNER.slide1,
-    alt: "ชิบะโฟน โปรโมชั่นพิเศษ - ผ่อนง่าย สบายใจ",
+    alt: "Shiba website promotion banner 1",
   },
   {
     id: 2,
     src: BANNER.slide2,
-    alt: "iPhone รุ่นใหม่ล่าสุด - ผ่อน 0% นาน 10 เดือน",
-  },
-  {
-    id: 3,
-    src: BANNER.slide3,
-    alt: "iPad Pro - สำหรับทุกการสร้างสรรค์",
+    alt: "Shiba website promotion banner 2",
   },
 ];

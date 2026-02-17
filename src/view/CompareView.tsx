@@ -18,13 +18,14 @@ import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
-import type { Product } from "@/data/products";
+import type { Product, ProductGroup } from "@/data/products";
 import { MASCOT } from "@/data/images";
 
 interface CompareViewProps {
   selectedProducts: [Product | undefined, Product | undefined];
   selectedIds: [string, string];
   availableProducts: Product[];
+  groupedProducts: ProductGroup[];
   onSelectProduct: (index: 0 | 1, productId: string) => void;
   onClose: () => void;
   onOpenLINE: () => void;
@@ -51,6 +52,7 @@ export function CompareView({
   selectedProducts,
   selectedIds,
   availableProducts,
+  groupedProducts,
   onSelectProduct,
   onClose,
   onOpenLINE,
@@ -111,10 +113,14 @@ export function CompareView({
                         paddingRight: "36px",
                       }}
                     >
-                      {availableProducts.map((p) => (
-                        <option key={p.id} value={p.id}>
-                          {p.name} — ฿{formatPriceCompact(p.price)}
-                        </option>
+                      {groupedProducts.map((group) => (
+                        <optgroup key={group.label} label={group.label}>
+                          {group.products.map((p) => (
+                            <option key={p.id} value={p.id}>
+                              {p.name} — ฿{formatPriceCompact(p.price)}
+                            </option>
+                          ))}
+                        </optgroup>
                       ))}
                     </select>
                   </div>

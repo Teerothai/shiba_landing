@@ -20,7 +20,7 @@ export function CompareContainer({
   onOpenLINE,
   onViewDetail,
 }: CompareContainerProps) {
-  const { selectedIds, selectedProducts, availableProducts, selectProduct } =
+  const { selectedIds, selectedProducts, availableProducts, groupedProducts, selectProduct } =
     useCompare();
 
   if (!isOpen) return null;
@@ -30,6 +30,7 @@ export function CompareContainer({
       selectedProducts={selectedProducts}
       selectedIds={selectedIds}
       availableProducts={availableProducts}
+      groupedProducts={groupedProducts}
       onSelectProduct={selectProduct}
       onClose={onClose}
       onOpenLINE={onOpenLINE}
