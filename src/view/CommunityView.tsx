@@ -13,12 +13,7 @@ interface CommunityViewProps {
 /**
  * TimelinePost - Individual community post
  */
-function TimelinePostCard({
-  post,
-}: {
-  post: TimelinePost;
-  index: number;
-}) {
+function TimelinePostCard({ post }: { post: TimelinePost; index: number }) {
   return (
     <Card className="gsap-community-post">
       <CardContent className="p-4 sm:p-6">
@@ -49,57 +44,58 @@ function TimelinePostCard({
                 </span>
               )}
             </div>
-            <span className="text-xs text-(--kawaii-brown)/60">
-              {post.time}
-            </span>
+            {/* Rating (if exists) */}
+            {post.rating && (
+              <div className="flex items-center gap-1 mb-3">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${
+                      i < (post.rating ?? 0)
+                        ? "text-kawaii-gold fill-current"
+                        : "text-gray-200"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
         {/* Content */}
-        <p className="text-kawaii-brown mb-4 leading-relaxed">
-          {post.content}
-        </p>
+        <p className="text-kawaii-brown mb-4 leading-relaxed">{post.content}</p>
 
-        {/* Image (if exists) */}
-        {post.image && (
-          <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
-            <Image
-              src={post.image}
-              alt="Post image"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 600px"
-            />
-          </div>
-        )}
-
-        {/* Rating (if exists) */}
-        {post.rating && (
-          <div className="flex items-center gap-1 mb-3">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
+        {/* Images (if exists) */}
+        {post.images && post.images.length > 0 && (
+          <div
+            className={`grid gap-2 mb-4 ${
+              post.images.length === 1
+                ? "grid-cols-1"
+                : post.images.length === 2
+                  ? "grid-cols-2"
+                  : "grid-cols-2"
+            }`}
+          >
+            {post.images.map((img, i) => (
+              <div
                 key={i}
-                className={`w-4 h-4 ${
-                  i < (post.rating ?? 0)
-                    ? "text-kawaii-gold fill-current"
-                    : "text-gray-200"
+                className={`relative rounded-xl overflow-hidden ${
+                  post.images!.length === 3 && i === 0
+                    ? "col-span-2 aspect-video"
+                    : "aspect-square"
                 }`}
-              />
+              >
+                <Image
+                  src={img}
+                  alt={`Post image ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                />
+              </div>
             ))}
           </div>
         )}
-
-        {/* Footer */}
-        <div className="flex items-center gap-4 pt-3 border-t border-gray-100">
-          <button className="flex items-center gap-1 text-sm text-(--kawaii-brown)/60 hover:text-kawaii-pink transition-colors">
-            <Heart className="w-4 h-4" />
-            <span>{post.likes}</span>
-          </button>
-          <button className="flex items-center gap-1 text-sm text-(--kawaii-brown)/60 hover:text-kawaii-pink transition-colors">
-            <MessageCircle className="w-4 h-4" />
-            <span>ตอบกลับ</span>
-          </button>
-        </div>
       </CardContent>
     </Card>
   );
@@ -109,7 +105,7 @@ function TimelinePostCard({
  * CommunityView - Community and reviews section
  * Stateless presentation component
  */
-export function CommunityView({ }: CommunityViewProps) {
+export function CommunityView({}: CommunityViewProps) {
   return (
     <section
       id="community"
@@ -144,7 +140,6 @@ export function CommunityView({ }: CommunityViewProps) {
             <TimelinePostCard key={post.id} post={post} index={index} />
           ))}
         </div>
-
       </div>
     </section>
   );

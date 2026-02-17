@@ -4,11 +4,9 @@ export interface TimelinePost {
   author: string;
   avatar: string;
   content: string;
-  image?: string;
+  images?: string[];
   isOfficial?: boolean;
   rating?: number;
-  likes: number;
-  time: string;
 }
 
 // Community timeline posts data
@@ -17,35 +15,39 @@ export const timelinePosts: TimelinePost[] = [
     id: 1,
     author: "คุณมินต์",
     avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b2e09b88?w=100&h=100&fit=crop&crop=face",
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771324140/unnamed_ufncjr.png",
     content:
-      "ได้ iPhone 15 Pro Max แล้ว! ผ่อน 0% ง่ายมากจริงๆ ขอบคุณทีมชิบะโฟนค่ะ",
-    image:
-      "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop",
+      "ให้เลยค่ะร้านนี้ ลองออมดาวน์ครั้งแรก พี่แอดมินน่ารักมากตอบไวสุด ๆ ให้คำปรึกแนะนำดีมาก ตอบกันจนดึกเลย ㅜㅜ คอยดูแลให้คำแนะนำชวนคุยสนุกมาก ร้านสวยเดินทางสะดวก ของแถมให้เยอะมากอีก คือคุ้มสุด",
+    images: [
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771324130/unnamed_3_sgpx9d.jpg",
+    ],
     rating: 5,
-    likes: 23,
-    time: "2 ชั่วโมงที่แล้ว",
   },
   {
     id: 2,
-    author: "SHiBA Phone Official",
+    author: "คุณเจมส์",
     avatar:
-      "https://images.unsplash.com/photo-1586836605934-c8fe00a0de4e?w=100&h=100&fit=crop",
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771141946/unnamed_ydn9ge.png",
     content:
-      "iPhone 16 Series ลดพิเศษ 25% สำหรับสมาชิก Gold ขึ้นไป! เหลือเพียง 3 วันเท่านั้น",
-    isOfficial: true,
-    likes: 80,
-    time: "5 ชั่วโมงที่แล้ว",
+      "ทีแรกก็ชั่งใจอยู่ว่าจะผ่อนออนไลน์ดีไหม ดูรีวิวของร้านมานานพอสมควรก่อนจะตัดสินใจ ทางร้านก็ให้เราผ่อนเท่าที่ผ่อนไหว จึงตัดสินใจ ผ่อนมาตามจำนวนกำหนด ทางร้านนัดทำสัญญาและส่งของให้ ของแถมคืออลังการมากกกก ขอบคุณครับ",
+    images: [
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771142056/unnamed_4_yjppqj.jpg",
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771142006/unnamed_4_cnvwcf.jpg",
+    ],
+    rating: 5,
   },
   {
     id: 3,
-    author: "คุณปีเตอร์",
+    author: "คุณแพร",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771322244/unnamed_u3kbgf.png",
     content:
-      "iPad Air M3 ใช้งานดีมาก บางเบา แบตอยู่ทน ขอบคุณพี่ๆ ที่แนะนำครับ",
+      "บัตรประชาชนใบเดี่ยวเครดิตรผ่านเลยงับ พี่ๆแอดมินน่ารักมากๆค่ะ 😘❤️❤️",
+    images: [
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771324091/unnamed_3_xehdzf.jpg",
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771322244/unnamed_ar5qet.jpg",
+      "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low/v1771323148/unnamed_3_tk3axq.jpg",
+    ],
     rating: 5,
-    likes: 15,
-    time: "1 วันที่แล้ว",
   },
 ];

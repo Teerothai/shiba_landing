@@ -55,7 +55,7 @@ export const iPhones: Product[] = [
     price: 24900,
     down: 3900,
     image:
-      "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -84,7 +84,7 @@ export const iPhones: Product[] = [
     price: 27900,
     down: 4900,
     image:
-      "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -114,7 +114,7 @@ export const iPhones: Product[] = [
     price: 39900,
     down: 7900,
     image:
-      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -145,7 +145,7 @@ export const iPhones: Product[] = [
     price: 44900,
     down: 9900,
     image:
-      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -181,7 +181,7 @@ export const iPhones: Product[] = [
     price: 29900,
     down: 5900,
     image:
-      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -210,7 +210,7 @@ export const iPhones: Product[] = [
     price: 33900,
     down: 6900,
     image:
-      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -240,7 +240,7 @@ export const iPhones: Product[] = [
     price: 42900,
     down: 9900,
     image:
-      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -271,7 +271,7 @@ export const iPhones: Product[] = [
     price: 48900,
     down: 12900,
     image:
-      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -308,7 +308,7 @@ export const iPhones: Product[] = [
     down: 7900,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -338,7 +338,7 @@ export const iPhones: Product[] = [
     price: 36900,
     down: 8900,
     image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -370,7 +370,7 @@ export const iPhones: Product[] = [
     down: 12900,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -402,7 +402,7 @@ export const iPhones: Product[] = [
     down: 14900,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -438,7 +438,7 @@ export const iPhones: Product[] = [
     down: 8900,
     new: true,
     image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -470,7 +470,7 @@ export const iPhones: Product[] = [
     down: 10900,
     new: true,
     image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -504,7 +504,7 @@ export const iPhones: Product[] = [
     new: true,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -538,7 +538,7 @@ export const iPhones: Product[] = [
     new: true,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -580,7 +580,7 @@ export const androids: Product[] = [
     down: 1990,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1",
     category: "android",
     brand: "Samsung",
     specs: {
@@ -613,7 +613,7 @@ export const androids: Product[] = [
     hot: true,
     new: true,
     image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1",
     category: "android",
     brand: "Samsung",
     specs: {
@@ -653,7 +653,7 @@ export const iPads: Product[] = [
     down: 6000,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop&q=1",
     category: "iPad",
     brand: "Apple",
     specs: {
@@ -676,7 +676,7 @@ export const iPads: Product[] = [
     down: 12900,
     hot: true,
     image:
-      "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=300&fit=crop&q=1",
     category: "iPad",
     brand: "Apple",
     specs: {
@@ -705,7 +705,7 @@ export const iPads: Product[] = [
     price: 29900,
     down: 12000,
     image:
-      "https://images.unsplash.com/photo-1609902726285-00668009f004?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1609902726285-00668009f004?w=400&h=300&fit=crop&q=1",
     category: "iPad",
     brand: "Apple",
     specs: {

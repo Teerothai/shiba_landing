@@ -10,7 +10,7 @@
  *
  * Cloudinary Quality Levels:
  *   q_auto:good  = default (~80%) — สำหรับรูปที่ต้องชัด
- *   q_auto:eco   = eco (~60%) — สำหรับรูปทั่วไป ประหยัดกว่า
+ *   q_auto:low   = eco (~60%) — สำหรับรูปทั่วไป ประหยัดกว่า
  *   q_auto:low   = low (~40%) — สำหรับ background ที่มีเนื้อหาซ้อนทับ
  *   q_XX         = กำหนดเอง (เช่น q_50)
  */
@@ -23,13 +23,13 @@ const C = "https://res.cloudinary.com/db7aaytcs/image/upload";
 
 export const MASCOT = {
   /** Toro ถือมือถือ — ใช้ใน Hero (256px), Products, Packages, Community (168px) */
-  toroWithPhone: `${C}/f_auto,q_auto:eco,w_512/v1771064868/toro-with-phone_zkyaiv.png`,
+  toroWithPhone: `${C}/f_auto,q_auto:low,w_512/v1771064868/toro-with-phone_zkyaiv.png`,
 
   /** หน้า Toro — ใช้ใน Header (32px), Footer (48px), Compare (168px), ProductDetail (36px) */
   toroFace: "/assets/toro-face.png",
 
   /** Toro ถือโทรศัพท์ (ท่ายืน) — ใช้ใน Compare CTA, Contact (168px) */
-  toroHandlePhone: `${C}/f_auto,q_auto:eco,w_336/v1771064867/toro-handle-phone_b6spwl.png`,
+  toroHandlePhone: `${C}/f_auto,q_auto:low,w_336/v1771064867/toro-handle-phone_b6spwl.png`,
 } as const;
 
 // ============================================================

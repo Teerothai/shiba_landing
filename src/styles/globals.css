@@ -1,5 +1,159 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
+/* ========================================
+   FC Subject Rounded - Local Font
+   ======================================== */
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FC Subject Rounded";
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ========================================
+   TCS 4Koya - Local Font
+   ======================================== */
+@font-face {
+  font-family: "TCS 4Koya";
+  src: url("/assets/font/tcs-4koya/TCS 4Koya-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TCS 4Koya";
+  src: url("/assets/font/tcs-4koya/TCS 4Koya.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TCS 4Koya";
+  src: url("/assets/font/tcs-4koya/TCS 4Koya-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ========================================
    CSS Variables - Kawaii Theme
@@ -26,7 +180,7 @@
   --kawaii-shadow-xl: 0 16px 64px rgba(255, 138, 183, 0.3);
 
   /* Fonts */
-  --font-thai: "Kanit", "Noto Sans Thai", sans-serif;
+  --font-thai: "FC Subject Rounded", "TCS 4Koya", "Kanit", "Noto Sans Thai", sans-serif;
 }
 
 @theme inline {
