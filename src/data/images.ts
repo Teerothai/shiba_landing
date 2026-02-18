@@ -39,7 +39,7 @@ export const MASCOT = {
 
 export const BACKGROUND = {
   /** Hero section background — เต็มจอ, มีตัวอักษรซ้อนทับ → q_auto:low ลดได้เยอะ */
-  hero: `${C}/f_auto,q_auto:low,w_1440/v1771092255/20250605-151005_1_uqtljh.png`,
+  hero: `${C}/f_auto,q_auto:low/v1771407041/background_gohynm.png`,
 } as const;
 
 // ============================================================
