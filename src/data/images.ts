@@ -74,8 +74,10 @@ export const PROMOTION = {
 // ============================================================
 
 export const BANNER = {
-  slide1: `${C}/f_auto,q_auto:low,w_1920/v1771325073/Banner1_ihgrx3.png`,
-  slide2: `${C}/f_auto,q_auto:low,w_1920/v1771325073/Banner2_o0srn4.png`,
+  slide1: `${C}/f_auto,q_auto:low,w_1440/v1771412658/Banner1_%E0%B9%81%E0%B8%81%E0%B9%89_zf0n39.jpg`,
+  slide2: `${C}/f_auto,q_auto:low,w_1440/v1771412658/Banner2_%E0%B9%81%E0%B8%81%E0%B9%89_rjecox.jpg`,
+  slide1Mobile: `${C}/f_auto,q_auto:low,w_768/v1771325073/Banner1_ihgrx3.png`,
+  slide2Mobile: `${C}/f_auto,q_auto:low,w_768/v1771325073/Banner2_o0srn4.png`,
 } as const;
 
 // ============================================================

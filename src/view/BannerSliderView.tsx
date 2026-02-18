@@ -35,15 +35,28 @@ export function BannerSliderView({
               key={slide.id}
               className="w-full shrink-0"
             >
+              {/* Mobile banner */}
               <Image
-                src={slide.src}
+                src={slide.mobileSrc}
                 alt={slide.alt}
-                width={1920}
-                height={600}
+                width={768}
+                height={400}
                 priority={slide.id === 1}
-                className="w-full h-auto block"
+                className="w-full h-auto block md:hidden"
                 sizes="100vw"
               />
+              {/* Desktop banner — scaled down, full content visible */}
+              <div className="hidden md:flex items-center justify-center bg-[#bc6187]">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={1440}
+                  height={480}
+                  priority={slide.id === 1}
+                  className="w-auto h-auto max-w-[75%] max-h-[400px] object-contain"
+                  sizes="75vw"
+                />
+              </div>
             </div>
           ))}
         </div>
