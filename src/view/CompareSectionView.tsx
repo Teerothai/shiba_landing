@@ -55,7 +55,6 @@ const selectStyle = {
 export function CompareSectionView({
   selectedProducts,
   selectedIds,
-  availableProducts,
   groupedProducts,
   onSelectProduct,
   onOpenLINE,
@@ -104,13 +103,13 @@ export function CompareSectionView({
             <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-end">
               {/* Slot 1 */}
               <div>
-                <label className="text-xs font-medium text-[var(--kawaii-brown)]/70 mb-1 block">
+                <label className="text-xs font-medium text-kawaii-brown/70 mb-1 block">
                   สินค้า 1
                 </label>
                 <select
                   value={selectedIds[0]}
                   onChange={(e) => onSelectProduct(0, e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border-2 border-[var(--kawaii-light-pink)]/30 bg-white text-[var(--kawaii-brown)] text-sm focus:border-[var(--kawaii-pink)] focus:outline-none transition-colors appearance-none cursor-pointer"
+                  className="w-full px-3 py-2.5 rounded-xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
                   style={selectStyle}
                 >
                   {groupedProducts.map((group) => (
@@ -127,25 +126,25 @@ export function CompareSectionView({
 
               {/* VS Divider */}
               <div className="hidden sm:flex items-center justify-center pb-1">
-                <span className="text-xl font-bold text-[var(--kawaii-pink)]">
+                <span className="text-xl font-bold text-kawaii-pink">
                   VS
                 </span>
               </div>
               <div className="flex sm:hidden items-center justify-center">
-                <span className="text-lg font-bold text-[var(--kawaii-pink)]">
+                <span className="text-lg font-bold text-kawaii-pink">
                   VS
                 </span>
               </div>
 
               {/* Slot 2 */}
               <div>
-                <label className="text-xs font-medium text-[var(--kawaii-brown)]/70 mb-1 block">
+                <label className="text-xs font-medium text-kawaii-brown/70 mb-1 block">
                   สินค้า 2
                 </label>
                 <select
                   value={selectedIds[1]}
                   onChange={(e) => onSelectProduct(1, e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border-2 border-[var(--kawaii-light-pink)]/30 bg-white text-[var(--kawaii-brown)] text-sm focus:border-[var(--kawaii-pink)] focus:outline-none transition-colors appearance-none cursor-pointer"
+                  className="w-full px-3 py-2.5 rounded-xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
                   style={selectStyle}
                 >
                   {groupedProducts.map((group) => (
@@ -165,7 +164,7 @@ export function CompareSectionView({
 
         {/* Product Overview Cards */}
         <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
-          {([product1, product2] as const).map((product, i) => {
+          {([product1, product2] as const).map((product) => {
             if (!product) return null;
             const monthlyPrice = Math.floor(product.price / 24);
             return (
@@ -188,12 +187,12 @@ export function CompareSectionView({
                     {/* Badges */}
                     <div className="absolute top-0 left-0 flex gap-1">
                       {product.hot && (
-                        <span className="bg-[var(--kawaii-pink)] text-white text-[10px] font-medium px-1.5 py-0.5 rounded-full">
+                        <span className="bg-kawaii-pink text-white text-[10px] font-medium px-1.5 py-0.5 rounded-full">
                           ฮิต
                         </span>
                       )}
                       {product.new && (
-                        <span className="bg-[var(--kawaii-soft-purple)] text-white text-[10px] font-medium px-1.5 py-0.5 rounded-full">
+                        <span className="bg-kawaii-soft-purple text-white text-[10px] font-medium px-1.5 py-0.5 rounded-full">
                           ใหม่
                         </span>
                       )}
@@ -201,25 +200,25 @@ export function CompareSectionView({
                   </div>
 
                   {/* Info */}
-                  <h3 className="font-semibold text-[var(--kawaii-brown)] text-sm md:text-base mb-1">
+                  <h3 className="font-semibold text-kawaii-brown text-sm md:text-base mb-1">
                     {product.name}
                   </h3>
 
                   {/* Rating */}
                   {product.rating && (
                     <div className="flex items-center justify-center gap-1 mb-2">
-                      <Star className="w-3.5 h-3.5 fill-[var(--kawaii-gold)] text-[var(--kawaii-gold)]" />
-                      <span className="text-xs text-[var(--kawaii-brown)]/70">
+                      <Star className="w-3.5 h-3.5 fill-kawaii-gold text-kawaii-gold" />
+                      <span className="text-xs text-kawaii-brown/70">
                         {product.rating}
                       </span>
                     </div>
                   )}
 
                   {/* Price */}
-                  <p className="text-lg md:text-xl font-bold text-[var(--kawaii-pink)] mb-0.5">
+                  <p className="text-lg md:text-xl font-bold text-kawaii-pink mb-0.5">
                     ฿{formatPriceCompact(product.price)}
                   </p>
-                  <p className="text-xs text-[var(--kawaii-brown)]/70 mb-3">
+                  <p className="text-xs text-kawaii-brown/70 mb-3">
                     ผ่อน ฿{formatPriceCompact(monthlyPrice)}/เดือน
                   </p>
 
@@ -258,35 +257,35 @@ export function CompareSectionView({
           </CardHeader>
           <CardContent className="p-0">
             {/* Price Row */}
-            <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 gsap-compare-row">
-              <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
-                <Smartphone className="w-4 h-4 text-[var(--kawaii-pink)]" />
+            <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 gsap-compare-row">
+              <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+                <Smartphone className="w-4 h-4 text-kawaii-pink" />
                 ราคา
               </div>
               {([product1, product2] as const).map((product, i) => (
                 <div
                   key={i}
-                  className="p-3 md:p-4 text-center border-l border-[var(--kawaii-light-pink)]/20"
+                  className="p-3 md:p-4 text-center border-l border-(--kawaii-light-pink)/20"
                 >
                   {product ? (
                     <>
-                      <p className="font-bold text-[var(--kawaii-pink)] text-sm md:text-base">
+                      <p className="font-bold text-kawaii-pink text-sm md:text-base">
                         ฿{formatPriceCompact(product.price)}
                       </p>
-                      <p className="text-[10px] md:text-xs text-[var(--kawaii-brown)]/60">
+                      <p className="text-[10px] md:text-xs text-kawaii-brown/60">
                         ดาวน์ ฿{formatPriceCompact(product.down)}
                       </p>
                     </>
                   ) : (
-                    <span className="text-[var(--kawaii-brown)]/30">—</span>
+                    <span className="text-kawaii-brown/30">—</span>
                   )}
                 </div>
               ))}
             </div>
 
             {/* Storage Row */}
-            <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 gsap-compare-row">
-              <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
+            <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 gsap-compare-row">
+              <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
                 <span style={{ color: "var(--kawaii-gold)" }}>
                   <HardDrive className="w-4 h-4" />
                 </span>
@@ -296,12 +295,12 @@ export function CompareSectionView({
               {([product1, product2] as const).map((product, i) => (
                 <div
                   key={i}
-                  className="p-3 md:p-4 text-center text-xs md:text-sm text-[var(--kawaii-brown)] border-l border-[var(--kawaii-light-pink)]/20"
+                  className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
                 >
                   {product ? (
                     product.specs.storage.join(", ")
                   ) : (
-                    <span className="text-[var(--kawaii-brown)]/30">—</span>
+                    <span className="text-kawaii-brown/30">—</span>
                   )}
                 </div>
               ))}
@@ -311,9 +310,9 @@ export function CompareSectionView({
             {specRows.map((spec) => (
               <div
                 key={spec.key}
-                className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 last:border-b-0 gsap-compare-row"
+                className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 last:border-b-0 gsap-compare-row"
               >
-                <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
+                <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
                   <span style={{ color: spec.color }}>
                     <spec.icon className="w-4 h-4" />
                   </span>
@@ -323,10 +322,10 @@ export function CompareSectionView({
                 {([product1, product2] as const).map((product, i) => (
                   <div
                     key={i}
-                    className="p-3 md:p-4 text-center text-xs md:text-sm text-[var(--kawaii-brown)] border-l border-[var(--kawaii-light-pink)]/20"
+                    className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
                   >
                     {product?.specs[spec.key] ?? (
-                      <span className="text-[var(--kawaii-brown)]/30">—</span>
+                      <span className="text-kawaii-brown/30">—</span>
                     )}
                   </div>
                 ))}
@@ -335,19 +334,19 @@ export function CompareSectionView({
 
             {/* Connectivity (for iPads) */}
             {(product1?.specs.connectivity || product2?.specs.connectivity) && (
-              <div className="grid grid-cols-3 border-b border-[var(--kawaii-light-pink)]/20 gsap-compare-row">
-                <div className="p-3 md:p-4 font-medium text-sm text-[var(--kawaii-brown)] bg-[var(--kawaii-light-pink)]/10 flex items-center gap-2">
-                  <Smartphone className="w-4 h-4 text-[var(--kawaii-soft-purple)]" />
+              <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 gsap-compare-row">
+                <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+                  <Smartphone className="w-4 h-4 text-kawaii-soft-purple" />
                   <span className="hidden sm:inline">การเชื่อมต่อ</span>
                   <span className="sm:hidden text-xs">เชื่อมต่อ</span>
                 </div>
                 {([product1, product2] as const).map((product, i) => (
                   <div
                     key={i}
-                    className="p-3 md:p-4 text-center text-xs md:text-sm text-[var(--kawaii-brown)] border-l border-[var(--kawaii-light-pink)]/20"
+                    className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
                   >
                     {product?.specs.connectivity ?? (
-                      <span className="text-[var(--kawaii-brown)]/30">—</span>
+                      <span className="text-kawaii-brown/30">—</span>
                     )}
                   </div>
                 ))}
@@ -368,7 +367,7 @@ export function CompareSectionView({
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 {([product1, product2] as const).map((product, i) => (
                   <div key={i}>
-                    <h4 className="font-medium text-sm text-[var(--kawaii-brown)] mb-2">
+                    <h4 className="font-medium text-sm text-kawaii-brown mb-2">
                       {product?.name ?? "—"}
                     </h4>
                     {product?.features ? (
@@ -376,15 +375,15 @@ export function CompareSectionView({
                         {product.features.map((feature, fi) => (
                           <li
                             key={fi}
-                            className="flex items-center gap-1.5 text-xs text-[var(--kawaii-brown)]/80"
+                            className="flex items-center gap-1.5 text-xs text-kawaii-brown/80"
                           >
-                            <Check className="w-3.5 h-3.5 text-[var(--kawaii-mint-green)] shrink-0" />
+                            <Check className="w-3.5 h-3.5 text-kawaii-mint-green shrink-0" />
                             {feature}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-xs text-[var(--kawaii-brown)]/40">
+                      <p className="text-xs text-kawaii-brown/40">
                         ไม่มีข้อมูล
                       </p>
                     )}
@@ -405,10 +404,10 @@ export function CompareSectionView({
               height={56}
               className="w-14 h-14 object-contain mx-auto mb-3 animate-float"
             />
-            <h4 className="text-lg font-bold text-[var(--kawaii-brown)] mb-1">
+            <h4 className="text-lg font-bold text-kawaii-brown mb-1">
               พบสินค้าที่ใช่แล้ว?
             </h4>
-            <p className="text-sm text-[var(--kawaii-brown)]/70 mb-4 max-w-sm">
+            <p className="text-sm text-kawaii-brown/70 mb-4 max-w-sm">
               ทีม SHiBA พร้อมให้คำปรึกษาและช่วยเลือกแพ็กเกจที่เหมาะกับคุณ
             </p>
             <LineButton
