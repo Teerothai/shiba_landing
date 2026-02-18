@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, MessageCircle, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { Card, CardContent } from "@/lib/ui/card";
 import { timelinePosts, type TimelinePost } from "@/data/community";
 import { MASCOT } from "@/data/images";
