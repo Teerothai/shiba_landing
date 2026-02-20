@@ -143,9 +143,11 @@ export function LandingContainer() {
       <ProductDetailContainer
         isOpen={productDetail.isOpen}
         product={productDetail.product}
+        selectedColorIndex={productDetail.selectedColorIndex}
         onClose={productDetail.close}
         onOpenLINE={openLINEChat}
         onCompare={handleOpenCompare}
+        onColorSelect={productDetail.selectColor}
       />
     </div>
   );
