@@ -125,6 +125,16 @@ export function CommunityView({}: CommunityViewProps) {
           ))}
         </div>
       </div>
+      <div className="text-center mt-8">
+        <a
+          href="https://maps.app.goo.gl/75DFAPuW1dWSSF6Q9"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full bg-kawaii-brown px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:brightness-110 hover:shadow-lg active:scale-95"
+        >
+          ดูรีวิวเพิ่มเติม คลิกเลยงับ
+        </a>
+      </div>
     </section>
   );
 }

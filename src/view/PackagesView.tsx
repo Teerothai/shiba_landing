@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { formatPriceCompact } from "@/lib/utils";
+import { cn, formatPriceCompact } from "@/lib/utils";
 import type { Package } from "@/data/products";
 import { roadmapSteps } from "@/data/roadmap";
 import { MASCOT, PACKAGE_BADGE, packageImageMap, promotionImageMap } from "@/data/images";
@@ -235,9 +235,25 @@ export function PackagesView({
                     </div>
 
                     {/* Step content */}
-                    <div className="gsap-step-content flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-4">
+                    <div className={cn("gsap-step-content flex-1 rounded-xl p-4 bg-white/80 backdrop-blur-sm")}>
                       <p className="text-sm font-semibold text-[var(--kawaii-brown)">
-                        {step.text}
+                        {step.text}{" "}
+                        {step.lineAction && (
+                          <button
+                            type="button"
+                            onClick={onOpenLINE}
+                            className="inline-flex items-center gap-1.5 rounded-full bg-[#06C755] px-3 py-1 text-sm font-bold text-white shadow-sm transition-all hover:brightness-110 hover:shadow-md active:scale-95 align-middle"
+                          >
+                            <Image
+                              src="/assets/icon/line-icon.png"
+                              alt="LINE"
+                              width={18}
+                              height={18}
+                              className="w-4.5 h-4.5 object-contain"
+                            />
+                            คลิกที่นี่!
+                          </button>
+                        )}
                       </p>
                     </div>
                   </div>

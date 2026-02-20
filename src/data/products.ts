@@ -21,7 +21,7 @@ export interface Product {
   hot?: boolean;
   new?: boolean;
   image: string;
-  category: "iPhone" | "iPad" | "android";
+  category: "iPhone" | "iPad" | "android" | "Combo set Apple Pencil";
   brand: string;
   specs: ProductSpecs;
   description?: string;

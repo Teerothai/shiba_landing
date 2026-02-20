@@ -18,6 +18,18 @@
 const C = "https://res.cloudinary.com/db7aaytcs/image/upload";
 
 // ============================================================
+// Logo
+// ============================================================
+
+export const LOGO = {
+  /** Logo */
+  logo_landscape: `${C}/f_auto,q_auto:low,w_400/v1771578493/Logo_%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AD%E0%B8%99_1_fbwskb.png`,
+  logo_portrait: `${C}/f_auto,q_auto:low,w_32/v1771578492/LOGO_%E0%B8%8A%E0%B8%B4%E0%B8%9A%E0%B8%B0_%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%83%E0%B8%AA_cfe8n5.png`,
+  logo_no_word: `${C}/f_auto,q_auto:low,w_32/v1771578492/LOGO_%E0%B8%8A%E0%B8%B4%E0%B8%9A%E0%B8%B0%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%83%E0%B8%AA_y6pela.png`,
+  logo_footer: `${C}/f_auto,q_auto:low,w_400/v1771578491/Logo_Shiba_phone-01_sq7r3x.jpg`,
+} as const;
+
+// ============================================================
 // Mascot Images — ตัว Toro
 // ============================================================
 

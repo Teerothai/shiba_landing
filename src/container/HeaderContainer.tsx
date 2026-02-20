@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
-import { MASCOT } from "@/data/images";
+import { LOGO } from "@/data/images";
 
 type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
 
@@ -21,7 +21,7 @@ const navItems: { key: SectionId; label: string }[] = [
   { key: "products", label: "สินค้า" },
   { key: "compare", label: "เทียบรุ่น" },
   { key: "packages", label: "แพ็กเกจ" },
-  { key: "community", label: "Community" },
+  { key: "community", label: "รีวิวชิบะโฟน" },
   { key: "contact", label: "ติดต่อ" },
 ];
 
@@ -53,24 +53,13 @@ export function HeaderContainer({
             onClick={() => handleNavigate("home")}
             className="flex items-center gap-3 hover:scale-105 transition-transform"
           >
-            <div className="relative">
-              <Image
-                src={MASCOT.toroFace}
-                alt="Toro mascot"
-                width={32}
-                height={32}
-                className="w-8 h-8 object-contain"
-              />
-              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[var(--kawaii-pink)] rounded-full animate-pulse" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-[var(--kawaii-brown)]">
-                ชิบะโฟน
-              </h1>
-              <p className="text-xs text-[var(--kawaii-brown)]/70 hidden sm:block">
-                ผ่อนง่าย สบายใจ มีชิบะคอยดูแล
-              </p>
-            </div>
+            <Image
+              src={LOGO.logo_landscape}
+              alt="ชิบะโฟน logo"
+              width={160}
+              height={40}
+              className="h-9 w-auto object-contain"
+            />
           </button>
 
           {/* Desktop Navigation */}
