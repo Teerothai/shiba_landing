@@ -45,7 +45,7 @@ export function HeaderContainer({
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 kawaii-glass border-b-2 border-[var(--kawaii-light-pink)]/20">
+    <header className="fixed top-0 left-0 right-0 z-50 kawaii-glass border-b-2 border-kawaii-light-pink/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -68,10 +68,10 @@ export function HeaderContainer({
               <button
                 key={item.key}
                 onClick={() => handleNavigate(item.key)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all hover:bg-[var(--kawaii-light-pink)]/20 ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all hover:bg-kawaii-light-pink/20 ${
                   activeSection === item.key
-                    ? "text-[var(--kawaii-pink)] bg-[var(--kawaii-light-pink)]/10"
-                    : "text-[var(--kawaii-brown)]"
+                    ? "text-kawaii-pink bg-kawaii-light-pink/10"
+                    : "text-kawaii-brown"
                 }`}
               >
                 {item.label}
@@ -106,7 +106,7 @@ export function HeaderContainer({
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-[var(--kawaii-light-pink)]/20 animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-kawaii-light-pink/20 animate-fade-in">
             <nav className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <button
@@ -114,8 +114,8 @@ export function HeaderContainer({
                   onClick={() => handleNavigate(item.key)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left font-medium transition-all ${
                     activeSection === item.key
-                      ? "text-[var(--kawaii-pink)] bg-[var(--kawaii-light-pink)]/10"
-                      : "text-[var(--kawaii-brown)] hover:bg-[var(--kawaii-light-pink)]/10"
+                      ? "text-kawaii-pink bg-kawaii-light-pink/10"
+                      : "text-kawaii-brown hover:bg-kawaii-light-pink/10"
                   }`}
                 >
                   {item.label}

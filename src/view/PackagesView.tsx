@@ -5,7 +5,12 @@ import { Check } from "lucide-react";
 import { cn, formatPriceCompact } from "@/lib/utils";
 import type { Package } from "@/data/products";
 import { roadmapSteps } from "@/data/roadmap";
-import { MASCOT, PACKAGE_BADGE, packageImageMap, promotionImageMap } from "@/data/images";
+import {
+  MASCOT,
+  PACKAGE_BADGE,
+  packageImageMap,
+  promotionImageMap,
+} from "@/data/images";
 
 interface PackagesViewProps {
   packages: Package[];
@@ -97,11 +102,6 @@ function PackageCard({
 
         {/* Bottom section - pinned to bottom so all cards align */}
         <div className="mt-auto flex flex-col items-center">
-          {/* Steps indicator */}
-          <div className="text-center text-xs text-(--kawaii-brown)/60 whitespace-nowrap">
-            Battle Pass {pkg.steps} ขั้น
-          </div>
-
           {/* Promotion badge */}
           <div className="flex justify-center pt-2">
             <Image
@@ -235,7 +235,11 @@ export function PackagesView({
                     </div>
 
                     {/* Step content */}
-                    <div className={cn("gsap-step-content flex-1 rounded-xl p-4 bg-white/80 backdrop-blur-sm")}>
+                    <div
+                      className={cn(
+                        "gsap-step-content flex-1 rounded-xl p-4 bg-white/80 backdrop-blur-sm",
+                      )}
+                    >
                       <p className="text-sm font-semibold text-[var(--kawaii-brown)">
                         {step.text}{" "}
                         {step.lineAction && (

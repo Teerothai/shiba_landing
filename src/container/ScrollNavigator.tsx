@@ -13,7 +13,7 @@ const sections: { id: SectionId; label: string }[] = [
   { id: "products", label: "สินค้า" },
   { id: "compare", label: "เทียบรุ่น" },
   { id: "packages", label: "แพ็กเกจ" },
-  { id: "community", label: "Community" },
+  { id: "community", label: "รีวิวชิบะโฟน" },
   { id: "contact", label: "ติดต่อ" },
 ];
 
@@ -35,7 +35,7 @@ export function ScrollNavigator({
           aria-label={`Go to ${section.label}`}
         >
           {/* Tooltip */}
-          <span className="absolute right-full mr-3 px-2 py-1 bg-[var(--kawaii-brown)] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute right-full mr-3 px-2 py-1 bg-kawaii-brown text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {section.label}
           </span>
 
@@ -43,8 +43,8 @@ export function ScrollNavigator({
           <span
             className={`w-3 h-3 rounded-full transition-all ${
               activeSection === section.id
-                ? "bg-[var(--kawaii-pink)] scale-125 shadow-kawaii-sm"
-                : "bg-[var(--kawaii-brown)]/30 hover:bg-[var(--kawaii-brown)]/50"
+                ? "bg-kawaii-pink scale-125 shadow-kawaii-sm"
+                : "bg-kawaii-brown/30 hover:bg-kawaii-brown/50"
             }`}
           />
         </button>
