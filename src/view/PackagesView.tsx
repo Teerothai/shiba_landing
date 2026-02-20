@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Check } from "lucide-react";
-import { cn, formatPriceCompact } from "@/lib/utils";
+import { Check, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { Package } from "@/data/products";
 import { roadmapSteps } from "@/data/roadmap";
 import {
@@ -64,45 +64,47 @@ function PackageCard({
 
       {/* Content overlaid on the white area of the image */}
       <div
-        className={`absolute inset-x-0 bottom-0 flex flex-col px-3 pb-3 md:px-5 md:pb-5 ${
-          pkg.id === "promax" ? "top-[36%]" : "top-[33%]"
-        }`}
+        className="absolute inset-x-0 bottom-0 flex flex-col px-3 pb-3 md:px-5 md:pb-5 top-[36%]"
       >
-        {/* Subtitle */}
-        <p className="text-center text-sm text-(--kawaii-brown)/70 font-medium mb-2">
-          {pkg.subtitle}
-        </p>
-
-        {/* Pricing */}
-        <div
-          className="text-center p-2 md:p-3 rounded-xl mb-2 md:mb-3"
-          style={{ backgroundColor: `${pkg.color}15` }}
-        >
-          <p className="text-sm text-(--kawaii-brown)/70">เริ่มต้นวันละ</p>
-          <p className="text-3xl font-bold" style={{ color: pkg.color }}>
-            ฿{pkg.pay}
-          </p>
-          <p className="text-xs text-(--kawaii-brown)/60">
-            หรือ ฿{formatPriceCompact(pkg.monthlyStart)}/เดือน
-          </p>
-        </div>
-
         {/* Benefits */}
-        <ul className="space-y-1.5 mb-2">
-          {pkg.benefits.map((benefit, i) => (
-            <li key={i} className="flex items-center gap-2 text-sm">
-              <Check
-                className="w-4 h-4 shrink-0"
-                style={{ color: pkg.color }}
-              />
-              <span className="text-kawaii-brown">{benefit}</span>
-            </li>
-          ))}
+        <ul className="mb-2">
+          {pkg.benefits.map((benefit, i) => {
+            const included = benefit.included !== false;
+            const isLast = i === pkg.benefits.length - 1;
+            return (
+              <li
+                key={i}
+                className={cn(
+                  "flex items-start gap-2 text-[15.5px] md:text-[19px] py-1.5 sm:py-2",
+                  !isLast && "border-b border-kawaii-brown/30",
+                )}
+              >
+                {included ? (
+                  <Check className="w-5 h-5 shrink-0 text-green-500 mt-0.5" />
+                ) : (
+                  <X className="w-5 h-5 shrink-0 text-red-500 mt-0.5" />
+                )}
+                <span
+                  className={cn(
+                    "font-semibold leading-tight",
+                    !included && "text-(--kawaii-brown)/50",
+                    benefit.highlight ? "text-[#f95a9a]" : included && "text-kawaii-brown",
+                  )}
+                >
+                  {benefit.text}
+                  {benefit.sub && (
+                    <span className="block text-xs font-normal text-(--kawaii-brown)/60">
+                      {benefit.sub}
+                    </span>
+                  )}
+                </span>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* Bottom section - pinned to bottom so all cards align */}
+        {/* Promotion badge - pinned to bottom */}
         <div className="mt-auto flex flex-col items-center">
-          {/* Promotion badge */}
           <div className="flex justify-center pt-2">
             <Image
               src={promotionImage}

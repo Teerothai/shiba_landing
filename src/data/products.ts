@@ -29,19 +29,27 @@ export interface Product {
   features?: string[];
 }
 
+export interface PackageBenefit {
+  text: string;
+  sub?: string;
+  included?: boolean;
+  highlight?: boolean;
+}
+
 export interface Package {
   id: string;
   name: string;
   subtitle: string;
   pay: number;
   discount: number;
+  originalPay?: number;
   color: string;
   steps: number;
   price: number;
   monthlyStart: number;
   bgGradient: string;
   icon: string;
-  benefits: string[];
+  benefits: PackageBenefit[];
   popular?: boolean;
 }
 
@@ -822,10 +830,11 @@ export const packages: Package[] = [
     bgGradient: "from-pink-100 to-rose-50",
     icon: "",
     benefits: [
-      "ส่วนลด 5%",
-      "รับประกัน 1 ปี",
-      "เก็บเงินได้ 3 วัน",
-      "อนุมัติภายใน 24 ชม.",
+      { text: "ไม่มีส่วนลด", included: false },
+      { text: "ของแถม 10+ชิ้น", highlight: true },
+      { text: "ของแถม Exclusive", sub: "(สามารถเลือกสีขาว สีดำได้)" },
+      { text: "เช็คยอดผ่านระบบได้", sub: "ด้วยตนเอง 24ชม." },
+      { text: "ระบบคืนเงิน" },
     ],
   },
   {
@@ -841,11 +850,11 @@ export const packages: Package[] = [
     bgGradient: "from-teal-100 to-emerald-50",
     icon: "",
     benefits: [
-      "ส่วนลด 10%",
-      "รับประกัน 2 ปี",
-      "เก็บเงินได้ 5 วัน",
-      "ฟรีเคส + ฟิล์ม",
-      "อนุมัติด่วน 12 ชม.",
+      { text: "ส่วนลด 200", highlight: true },
+      { text: "ของแถม 15+ชิ้น", highlight: true },
+      { text: "ของแถม Exclusive", sub: "(สามารถเลือกสีขาว สีดำได้)" },
+      { text: "เช็คยอดผ่านระบบได้", sub: "ด้วยตนเอง 24ชม." },
+      { text: "ระบบคืนเงิน" },
     ],
   },
   {
@@ -853,6 +862,7 @@ export const packages: Package[] = [
     name: "Shiba Pro Max",
     subtitle: "ครบครัน พรีเมียมสุด",
     pay: 350,
+    originalPay: 500,
     discount: 1000,
     color: "#b2a5f2",
     steps: 30,
@@ -861,12 +871,12 @@ export const packages: Package[] = [
     bgGradient: "from-violet-100 to-purple-50",
     icon: "",
     benefits: [
-      "ส่วนลด 20%",
-      "รับประกัน 3 ปี",
-      "เก็บเงินได้ 10 วัน",
-      "ของแถมครบชุด",
-      "VIP Support",
-      "อนุมัติทันที 6 ชม.",
+      { text: "ส่วนลด 1,000", highlight: true },
+      { text: "ของแถม 30+ชิ้น", highlight: true },
+      { text: "ของแถม Exclusive", sub: "(สามารถเลือกสีขาว สีดำได้)", highlight: true },
+      { text: "เช็คยอดผ่านระบบได้", sub: "ด้วยตนเอง 24ชม." },
+      { text: "ระบบคืนเงิน" },
+      { text: "พิจารณารับเครื่องเร็วขึ้น", highlight: true },
     ],
     popular: true,
   },
