@@ -77,7 +77,7 @@ export function LandingContainer() {
   }, [scrollToSection]);
 
   return (
-    <div ref={gsapContainerRef} className="min-h-screen w-full scroll-smooth bg-[var(--background)]">
+    <div ref={gsapContainerRef} className="min-h-screen w-full scroll-smooth bg-background">
       {/* Fixed Header */}
       <HeaderContainer
         activeSection={activeSection}

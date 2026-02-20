@@ -458,8 +458,6 @@ export const iPhones: Product[] = [
     },
     description:
       "iPhone 16 Pro Max จอใหญ่ 6.9 นิ้ว แบตอึดที่สุดในตระกูล iPhone ชิป A18 Pro ถ่ายวิดีโอ 4K 120fps Spatial Video Titanium Design",
-    rating: 4.9,
-    reviewCount: 298,
     colors: [
       { name: "Desert Titanium", hex: "#C4A882", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
       { name: "Natural Titanium", hex: "#C2BCB0", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
@@ -499,8 +497,6 @@ export const iPhones: Product[] = [
     },
     description:
       "iPhone 17 ชิป A19 ดีไซน์ใหม่หมด กล้อง 48MP Dual Fusion พร้อม Ultra Wide 48MP Ceramic Shield 2 ทนทานขึ้น 3 เท่า กล้องหน้า 18MP",
-    rating: 4.8,
-    reviewCount: 156,
     colors: [
       { name: "Black", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
       { name: "Lavender", hex: "#CFC4E8", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
@@ -574,8 +570,6 @@ export const iPhones: Product[] = [
     },
     description:
       "iPhone 17 Pro ชิป A19 Pro กล้อง 48MP Pro Fusion 3 ตัว ซูม 8x Optical จอ 6.3 นิ้ว Ceramic Shield 2 หน้า-หลัง ProRes RAW",
-    rating: 4.9,
-    reviewCount: 134,
     colors: [
       { name: "Deep Blue", hex: "#1E3A5F", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
       { name: "Cosmic Orange", hex: "#D47A3E", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
@@ -612,8 +606,6 @@ export const iPhones: Product[] = [
     },
     description:
       "iPhone 17 Pro Max เรือธงสุดท้อปของ Apple ชิป A19 Pro จอ 6.9 นิ้ว กล้อง 8x Zoom Ceramic Shield 2 หน้า-หลัง รองรับ 2TB แรกของ iPhone",
-    rating: 5.0,
-    reviewCount: 89,
     colors: [
       { name: "Deep Blue", hex: "#1E3A5F", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
       { name: "Cosmic Orange", hex: "#D47A3E", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
@@ -658,8 +650,6 @@ export const androids: Product[] = [
     },
     description:
       "Galaxy A36 5G จอ Super AMOLED 120Hz ชิป Snapdragon 6 Gen 3 กล้อง 50MP OIS กันน้ำ IP67 ชาร์จเร็ว 45W แบต 5000mAh ใช้ได้ทั้งวัน",
-    rating: 4.4,
-    reviewCount: 189,
     colors: [
       { name: "Awesome Lavender", hex: "#C9B8D9", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
       { name: "Awesome White", hex: "#F0EFEA", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
@@ -696,8 +686,6 @@ export const androids: Product[] = [
     },
     description:
       "Galaxy A56 5G จอ Super AMOLED 120Hz HDR10+ ชิป Exynos 1580 ตัวเครื่องอลูมิเนียม กล้อง 50MP OIS กันน้ำ IP67 อัปเดต Android 6 รุ่น",
-    rating: 4.5,
-    reviewCount: 142,
     colors: [
       { name: "Awesome Graphite", hex: "#575757", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
       { name: "Awesome Light Gray", hex: "#D4D4D4", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
@@ -741,8 +729,6 @@ export const iPads: Product[] = [
     },
     description:
       "iPad Gen 11 ชิป A16 Bionic จอ 10.9 นิ้ว Liquid Retina รองรับ Apple Pencil เหมาะสำหรับเรียนและทำงาน",
-    rating: 4.5,
-    reviewCount: 95,
     colors: [
       { name: "Silver", hex: "#E3E4E5", image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop&q=1" },
       { name: "Blue", hex: "#A1C6EA", image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop&q=1" },
@@ -769,8 +755,6 @@ export const iPads: Product[] = [
     },
     description:
       "iPad Air ชิป M3 จอ 11 นิ้ว Liquid Retina ประสิทธิภาพระดับ Pro น้ำหนักเบา รองรับ Apple Pencil Pro และ Magic Keyboard",
-    rating: 4.8,
-    reviewCount: 112,
     colors: [
       { name: "Space Gray", hex: "#6E6E73", image: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=300&fit=crop&q=1" },
       { name: "Starlight", hex: "#F5F0E8", image: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=300&fit=crop&q=1" },
@@ -803,8 +787,6 @@ export const iPads: Product[] = [
     },
     description:
       "iPad Mini จอ 8.3 นิ้ว ชิป A17 Pro พกพาง่ายที่สุด รองรับ Apple Pencil Pro เหมาะสำหรับจดบันทึกและอ่านหนังสือ",
-    rating: 4.6,
-    reviewCount: 78,
     colors: [
       { name: "Space Gray", hex: "#6E6E73", image: "https://images.unsplash.com/photo-1609902726285-00668009f004?w=400&h=300&fit=crop&q=1" },
       { name: "Blue", hex: "#A1C6EA", image: "https://images.unsplash.com/photo-1609902726285-00668009f004?w=400&h=300&fit=crop&q=1" },

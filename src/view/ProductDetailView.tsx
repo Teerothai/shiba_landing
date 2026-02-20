@@ -3,14 +3,10 @@
 import Image from "next/image";
 import {
   X,
-  Star,
-  Heart,
-  Share2,
   Package,
   ArrowRight,
   Check,
   Camera,
-  Battery,
   Cpu,
   Monitor,
   HardDrive,
