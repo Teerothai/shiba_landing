@@ -209,10 +209,10 @@ export function ProductDetailView({
                       ฿{formatPriceCompact(product.price)}
                     </div>
                     <div className="text-base text-(--kawaii-brown)/70">
-                      หรือผ่อน ฿{formatPriceCompact(monthlyPrice)}/เดือน
+                      ออมดาวน์ ฿{formatPriceCompact(product.down)}
                     </div>
                     <div className="text-sm text-(--kawaii-brown)/60 mt-1">
-                      วางดาวน์ ฿{formatPriceCompact(product.down)}
+                      ผ่อน ฿{formatPriceCompact(monthlyPrice)}/เดือน
                     </div>
                   </div>
 

@@ -51,7 +51,7 @@ export function ProductCardView({ product, onClick }: ProductCardViewProps) {
         </h3>
 
         <p className="text-xs text-(--kawaii-brown)/60 mb-3">
-          {product.specs.processor} • {product.specs.display}
+          {product.specs.storage.join(" • ")}
         </p>
 
         <div className="flex items-end justify-between">
