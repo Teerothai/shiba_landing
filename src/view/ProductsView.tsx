@@ -9,6 +9,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowUpDown,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/lib/ui/button";
 import type { Product } from "@/data/products";
@@ -92,47 +93,86 @@ export function ProductsView({
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map((cat) => (
-            <Button
-              key={cat.id}
-              variant={selectedCategory === cat.id ? "default" : "ghost"}
-              size="lg"
-              rounded="full"
-              onClick={() => onCategoryChange(cat.id)}
-              className={`gsap-filter-btn ${
-                selectedCategory === cat.id
-                  ? ""
-                  : "bg-white/60 hover:bg-white/80"
-              }`}
+        {/* Category Filter - Dropdown on mobile, buttons on desktop */}
+        <div className="mb-3">
+          {/* Mobile dropdown */}
+          <div className="md:hidden relative">
+            <select
+              value={selectedCategory}
+              onChange={(e) => onCategoryChange(e.target.value)}
+              className="w-full appearance-none rounded-full bg-white/80 backdrop-blur-sm border-2 border-(--kawaii-pink)/20 px-5 py-3 pr-12 text-kawaii-brown font-medium text-base focus:outline-none focus:border-kawaii-pink transition-colors"
             >
-              <cat.icon className="w-5 h-5" />
-              {cat.name}
-            </Button>
-          ))}
+              {categories.map((cat) => (
+                <option key={cat.id} value={cat.id}>
+                  {cat.name}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-kawaii-pink pointer-events-none" />
+          </div>
+
+          {/* Desktop buttons */}
+          <div className="hidden md:flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <Button
+                key={cat.id}
+                variant={selectedCategory === cat.id ? "default" : "ghost"}
+                size="lg"
+                rounded="full"
+                onClick={() => onCategoryChange(cat.id)}
+                className={`gsap-filter-btn ${
+                  selectedCategory === cat.id
+                    ? ""
+                    : "bg-white/60 hover:bg-white/80"
+                }`}
+              >
+                <cat.icon className="w-5 h-5" />
+                {cat.name}
+              </Button>
+            ))}
+          </div>
         </div>
 
         {/* Sort Bar */}
-        <div className="flex items-center justify-end gap-2 mb-6">
+        <div className="flex items-center justify-end gap-2 mb-6 mt-5">
           <ArrowUpDown className="w-4 h-4 text-(--kawaii-brown)/60" />
           <span className="text-sm text-(--kawaii-brown)/60 mr-1">เรียงตาม:</span>
-          {sortOptions.map((opt) => (
-            <Button
-              key={opt.id}
-              variant={sortBy === opt.id ? "default" : "ghost"}
-              size="sm"
-              rounded="full"
-              onClick={() => onSortChange(opt.id)}
-              className={`text-xs ${
-                sortBy === opt.id
-                  ? ""
-                  : "bg-white/60 hover:bg-white/80"
-              }`}
+
+          {/* Mobile dropdown */}
+          <div className="md:hidden relative">
+            <select
+              value={sortBy}
+              onChange={(e) => onSortChange(e.target.value as SortOption)}
+              className="appearance-none rounded-full bg-white/80 border border-(--kawaii-brown)/20 px-4 py-1.5 pr-8 text-xs font-medium text-kawaii-brown focus:outline-none focus:border-kawaii-pink transition-colors"
             >
-              {opt.label}
-            </Button>
-          ))}
+              {sortOptions.map((opt) => (
+                <option key={opt.id} value={opt.id}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-(--kawaii-brown)/60 pointer-events-none" />
+          </div>
+
+          {/* Desktop buttons */}
+          <div className="hidden md:flex gap-2">
+            {sortOptions.map((opt) => (
+              <Button
+                key={opt.id}
+                variant={sortBy === opt.id ? "default" : "ghost"}
+                size="sm"
+                rounded="full"
+                onClick={() => onSortChange(opt.id)}
+                className={`text-xs ${
+                  sortBy === opt.id
+                    ? ""
+                    : "bg-white/60 hover:bg-white/80"
+                }`}
+              >
+                {opt.label}
+              </Button>
+            ))}
+          </div>
         </div>
 
         {/* Products Grid */}
