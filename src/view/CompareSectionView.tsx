@@ -7,7 +7,6 @@ import {
   Camera,
   HardDrive,
   Monitor,
-  Star,
   ArrowRight,
   Check,
 } from "lucide-react";
@@ -203,16 +202,6 @@ export function CompareSectionView({
                   <h3 className="font-semibold text-kawaii-brown text-sm md:text-base mb-1">
                     {product.name}
                   </h3>
-
-                  {/* Rating */}
-                  {product.rating && (
-                    <div className="flex items-center justify-center gap-1 mb-2">
-                      <Star className="w-3.5 h-3.5 fill-kawaii-gold text-kawaii-gold" />
-                      <span className="text-xs text-kawaii-brown/70">
-                        {product.rating}
-                      </span>
-                    </div>
-                  )}
 
                   {/* Price */}
                   <p className="text-lg md:text-xl font-bold text-kawaii-pink mb-0.5">

@@ -35,10 +35,10 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
               />
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[var(--kawaii-brown)] mb-3">
+          <h2 className="text-3xl md:text-5xl font-bold text-kawaii-brown mb-3">
             ติดต่อเรา
           </h2>
-          <p className="text-lg text-[var(--kawaii-brown)]/80">
+          <p className="text-lg text-kawaii-brown-80">
             พร้อมให้บริการสมาชิก 24/7
           </p>
         </div>
@@ -57,39 +57,39 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
           <Card className="gsap-contact-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Phone className="w-5 h-5 text-[var(--kawaii-gold)]" />
+                <Phone className="w-5 h-5 text-kawaii-gold" />
                 ข้อมูลการติดต่อ
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[var(--kawaii-gold)] mt-0.5" />
+                <Phone className="w-5 h-5 text-kawaii-gold mt-0.5" />
                 <div>
-                  <p className="font-medium text-[var(--kawaii-brown)]">
+                  <p className="font-medium text-kawaii-brown">
                     064-771-2246
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[var(--kawaii-mint-green)] mt-0.5" />
+                <Clock className="w-5 h-5 text-kawaii-mint-green mt-0.5" />
                 <div>
-                  <p className="font-medium text-[var(--kawaii-brown)]">
+                  <p className="font-medium text-kawaii-brown">
                     เปิดบริการ
                   </p>
-                  <p className="text-sm text-[var(--kawaii-brown)]/70">
+                  <p className="text-sm text-kawaii-brown-70">
                     09:00 - 18:00 น. (ทุกวัน)
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[var(--kawaii-pink)] mt-0.5" />
+                <MapPin className="w-5 h-5 text-kawaii-pink mt-0.5" />
                 <div>
-                  <p className="font-medium text-[var(--kawaii-brown)]">
+                  <p className="font-medium text-kawaii-brown">
                     บริษัท ชิบะ โฟน จำกัด
                   </p>
-                  <p className="text-sm text-[var(--kawaii-brown)]/70">
+                  <p className="text-sm text-kawaii-brown-70">
                     แขวงคลองต้นไทร คลองสาน กรุงเทพมหานคร 10600
                   </p>
                 </div>
@@ -115,19 +115,19 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
                   title="แผนที่ บริษัท ชิบะ โฟน จำกัด"
                 />
                 {/* Overlay to make the whole card clickable */}
-                <div className="absolute inset-0 bg-transparent group-hover:bg-[var(--kawaii-pink)]/10 transition-colors" />
+                <div className="absolute inset-0 bg-transparent group-hover:bg-kawaii-pink-10 transition-colors" />
               </div>
               <CardContent className="p-4 flex items-center justify-between">
                 <div>
-                  <p className="font-semibold text-[var(--kawaii-brown)]">
+                  <p className="font-semibold text-kawaii-brown">
                     หาเราได้ที่นี่
                   </p>
-                  <p className="text-sm text-[var(--kawaii-brown)]/70">
+                  <p className="text-sm text-kawaii-brown-70">
                     คลิกดูแผนที่และเส้นทาง
                   </p>
                 </div>
-                <div className="bg-[var(--kawaii-pink)]/10 rounded-full p-2 group-hover:bg-[var(--kawaii-pink)]/20 transition-colors">
-                  <MapPin className="w-5 h-5 text-[var(--kawaii-pink)]" />
+                <div className="bg-kawaii-pink-10 rounded-full p-2 group-hover:bg-kawaii-pink-20 transition-colors">
+                  <MapPin className="w-5 h-5 text-kawaii-pink" />
                 </div>
               </CardContent>
             </Card>
@@ -146,18 +146,18 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
             />
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-[var(--kawaii-brown)] mb-4">
+          <h3 className="text-2xl sm:text-3xl font-bold text-kawaii-brown mb-4">
             พร้อมเริ่มต้นแล้วใช่มั้ย?
           </h3>
 
-          <p className="text-[var(--kawaii-brown)]/80 mb-6 max-w-xl mx-auto leading-relaxed">
+          <p className="text-kawaii-brown-80 mb-6 max-w-xl mx-auto leading-relaxed">
             ทำให้ทุกคนเข้าถึงมือถือและเทคโนโลยีได้ง่ายขึ้น
             ผ่านระบบผ่อนที่โปร่งใส เข้าใจง่าย และบริการอบอุ่นเป็นกันเองเหมือนมี
             &quot;ผู้ช่วยชิบะ&quot; คอยดูแล
           </p>
 
-          <div className="bg-[var(--kawaii-light-pink)]/30 rounded-2xl p-4 mb-6 inline-block">
-            <p className="text-[var(--kawaii-brown)] font-medium">
+          <div className="bg-kawaii-light-pink-30 rounded-2xl p-4 mb-6 inline-block">
+            <p className="text-kawaii-brown font-medium">
               <strong>&quot;ผ่อนง่าย สบายใจ มีชิบะคอยดูแล&quot;</strong>
             </p>
           </div>

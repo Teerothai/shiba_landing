@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Package } from "@/data/products";
 import { roadmapSteps } from "@/data/roadmap";

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Star } from "lucide-react";
 import { Card, CardContent } from "@/lib/ui/card";
 import { timelinePosts, type TimelinePost } from "@/data/community";
 import { MASCOT } from "@/data/images";
@@ -44,21 +43,6 @@ function TimelinePostCard({ post }: { post: TimelinePost; index: number }) {
                 </span>
               )}
             </div>
-            {/* Rating (if exists) */}
-            {post.rating && (
-              <div className="flex items-center gap-1 mb-3">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 h-4 ${
-                      i < (post.rating ?? 0)
-                        ? "text-kawaii-gold fill-current"
-                        : "text-gray-200"
-                    }`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
 

@@ -8,7 +8,6 @@ import {
   Camera,
   HardDrive,
   Monitor,
-  Star,
   ArrowRight,
   Check,
 } from "lucide-react";
@@ -165,16 +164,6 @@ export function CompareView({
                       {product.name}
                     </h3>
 
-                    {/* Rating */}
-                    {product.rating && (
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Star className="w-3.5 h-3.5 fill-kawaii-gold text-kawaii-gold" />
-                        <span className="text-xs text-(--kawaii-brown)/70">
-                          {product.rating}
-                        </span>
-                      </div>
-                    )}
-
                     {/* Price */}
                     <p className="text-xl font-bold text-kawaii-pink mb-0.5">
                       ฿{formatPriceCompact(product.price)}
@@ -238,7 +227,7 @@ export function CompareView({
                         </p>
                       </>
                     ) : (
-                      <span className="text-(--kawaii-brown)/30">—</span>
+                      <span className="text-kawaii-brown-30">—</span>
                     )}
                   </div>
                 ))}
@@ -262,7 +251,7 @@ export function CompareView({
                         {product.specs.storage.join(", ")}
                       </span>
                     ) : (
-                      <span className="text-(--kawaii-brown)/30">—</span>
+                      <span className="text-kawaii-brown-30">—</span>
                     )}
                   </div>
                 ))}
@@ -286,7 +275,7 @@ export function CompareView({
                       className="p-3 text-center text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
                     >
                       {product?.specs[spec.key] ?? (
-                        <span className="text-(--kawaii-brown)/30">—</span>
+                        <span className="text-kawaii-brown-30">—</span>
                       )}
                     </div>
                   ))}
@@ -306,7 +295,7 @@ export function CompareView({
                       className="p-3 text-center text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
                     >
                       {product?.specs.connectivity ?? (
-                        <span className="text-(--kawaii-brown)/30">—</span>
+                        <span className="text-kawaii-brown-30">—</span>
                       )}
                     </div>
                   ))}
@@ -343,7 +332,7 @@ export function CompareView({
                           ))}
                         </ul>
                       ) : (
-                        <p className="text-xs text-(--kawaii-brown)/40">
+                        <p className="text-xs text-kawaii-brown-40">
                           ไม่มีข้อมูล
                         </p>
                       )}
