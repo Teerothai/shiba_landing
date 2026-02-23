@@ -6,6 +6,7 @@ import {
   Tablet,
   ShoppingCart,
   Monitor,
+  Gift,
   ChevronLeft,
   ChevronRight,
   ArrowUpDown,
@@ -38,6 +39,7 @@ const categories = [
   { id: "iPhone", name: "iPhone", icon: Smartphone },
   { id: "iPad", name: "iPad", icon: Tablet },
   { id: "android", name: "Android", icon: Monitor },
+  { id: "Combo set Apple Pencil", name: "Combo set", icon: Gift },
 ];
 
 // Sort options

@@ -104,7 +104,7 @@ export function LandingContainer() {
           currentPage={currentPage}
           totalPages={totalPages}
           totalProducts={filteredCount}
-          onCategoryChange={(cat) => setCategory(cat as "all" | "iPhone" | "iPad" | "android")}
+          onCategoryChange={(cat) => setCategory(cat as "all" | "iPhone" | "iPad" | "android" | "Combo set Apple Pencil")}
           onSortChange={setSortBy}
           onPageChange={setPage}
           onProductClick={handleProductClick}

@@ -4,7 +4,7 @@ import { useState, useMemo, useCallback } from "react";
 import { allProducts, packages } from "@/data/products";
 import type { Product, Package } from "@/data/products";
 
-type CategoryFilter = "all" | "iPhone" | "iPad" | "android";
+type CategoryFilter = "all" | "iPhone" | "iPad" | "android" | "Combo set Apple Pencil";
 type SortOption = "popular" | "price-low" | "price-high" | "newest";
 
 const ITEMS_PER_PAGE = 6;

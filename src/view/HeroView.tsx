@@ -42,7 +42,7 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
         </h1>
 
         {/* Subheadline */}
-        <p className="hero-subtitle text-lg md:text-xl text-center text-(--kawaii-brown)/80 mb-10 max-w-2xl mx-auto">
+        <p className="hero-subtitle text-[15px] md:text-lg text-center text-(--kawaii-brown)/80 mb-10 max-w-2xl mx-auto">
           ไม่ต้องมีเครดิต ชิบะโฟนพร้อมอยู่ข้างคุณ
           <br />
           ช่วยให้เข้าถึงเทคโนโลยีที่จำเป็น
