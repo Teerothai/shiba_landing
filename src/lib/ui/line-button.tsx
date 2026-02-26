@@ -16,10 +16,7 @@ type LineButtonSize = keyof typeof sizeMap;
 
 interface LineButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
-  /** kept for backward compat – unused now (image contains label) */
-  label?: string;
   size?: LineButtonSize;
-  rounded?: string;
 }
 
 /**
@@ -29,10 +26,6 @@ interface LineButtonProps
 export function LineButton({
   size = "default",
   className,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  label,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  rounded,
   ...props
 }: LineButtonProps) {
   return (

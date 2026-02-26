@@ -26,6 +26,9 @@ function PackageCard({
   pkg,
 }: {
   pkg: Package;
+  onSelect: () => void;
+  onOpenLINE: () => void;
+  index: number;
 }) {
   const packageImage = packageImageMap[pkg.id];
   const promotionImage = promotionImageMap[pkg.id];
