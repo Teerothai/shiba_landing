@@ -26,9 +26,6 @@ function PackageCard({
   pkg,
 }: {
   pkg: Package;
-  onSelect: () => void;
-  onOpenLINE: () => void;
-  index: number;
 }) {
   const packageImage = packageImageMap[pkg.id];
   const promotionImage = promotionImageMap[pkg.id];
@@ -206,7 +203,7 @@ export function PackagesView({
           <div className="max-w-sm mx-auto mb-16 gsap-video">
             <div className="rounded-2xl overflow-hidden shadow-kawaii-md aspect-9/16">
               <iframe
-                src="https://www.youtube.com/embed/UtV_nRfMXgg"
+                src="https://www.youtube.com/embed/pV3ih8tzQcc"
                 className="w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const LINE_BUTTON_IMG =
-  "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low,w_800/v1771325205/Add_Line_t9rlwi.png";
+  "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low,w_800/v1772093779/icon-Add_Line_bgukin.png";
 
 const sizeMap = {
   default: "h-12",
@@ -39,7 +39,10 @@ export function LineButton({
     <button
       type="button"
       className={cn(
-        "inline-flex items-center cursor-pointer transition-opacity hover:opacity-80 active:opacity-70",
+        "group relative inline-flex items-center cursor-pointer",
+        "animate-[line-bounce_1.8s_ease-in-out_infinite]",
+        "hover:scale-105 hover:brightness-110 active:scale-95",
+        "transition-transform duration-200",
         className,
       )}
       {...props}
@@ -49,7 +52,10 @@ export function LineButton({
         alt="Add LINE"
         width={400}
         height={100}
-        className={cn("w-auto object-contain", sizeMap[size])}
+        className={cn(
+          "relative w-auto object-contain drop-shadow-lg",
+          sizeMap[size],
+        )}
       />
     </button>
   );

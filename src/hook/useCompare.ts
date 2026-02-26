@@ -23,18 +23,23 @@ interface UseCompareReturn {
  * Manages modal state and product selection for comparison
  */
 export function useCompare(): UseCompareReturn {
+  const comparableProducts = useMemo(
+    () => allProducts.filter((p) => p.category !== "Combo set Apple Pencil"),
+    []
+  );
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIds, setSelectedIds] = useState<[string, string]>([
-    allProducts[0]?.id ?? "",
-    allProducts[1]?.id ?? "",
+    comparableProducts[0]?.id ?? "",
+    comparableProducts[1]?.id ?? "",
   ]);
 
   const selectedProducts = useMemo<[Product | undefined, Product | undefined]>(
     () => [
-      allProducts.find((p) => p.id === selectedIds[0]),
-      allProducts.find((p) => p.id === selectedIds[1]),
+      comparableProducts.find((p) => p.id === selectedIds[0]),
+      comparableProducts.find((p) => p.id === selectedIds[1]),
     ],
-    [selectedIds]
+    [comparableProducts, selectedIds]
   );
 
   const selectProduct = useCallback((index: 0 | 1, productId: string) => {
@@ -45,7 +50,10 @@ export function useCompare(): UseCompareReturn {
     });
   }, []);
 
-  const groupedProducts = useMemo(() => getGroupedProducts(), []);
+  const groupedProducts = useMemo(
+    () => getGroupedProducts().filter((g) => g.label !== "Combo set Apple Pencil"),
+    []
+  );
 
   const open = useCallback(() => setIsOpen(true), []);
   const close = useCallback(() => setIsOpen(false), []);
@@ -54,7 +62,7 @@ export function useCompare(): UseCompareReturn {
     isOpen,
     selectedIds,
     selectedProducts,
-    availableProducts: allProducts,
+    availableProducts: comparableProducts,
     groupedProducts,
     open,
     close,

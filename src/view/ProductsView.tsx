@@ -5,7 +5,6 @@ import {
   Smartphone,
   Tablet,
   ShoppingCart,
-  Monitor,
   Gift,
   ChevronLeft,
   ChevronRight,
@@ -38,7 +37,7 @@ const categories = [
   { id: "all", name: "ทั้งหมด", icon: ShoppingCart },
   { id: "iPhone", name: "iPhone", icon: Smartphone },
   { id: "iPad", name: "iPad", icon: Tablet },
-  { id: "android", name: "Android", icon: Monitor },
+  { id: "android", name: "Android", icon: Smartphone },
   { id: "Combo set Apple Pencil", name: "Combo set", icon: Gift },
 ];
 
