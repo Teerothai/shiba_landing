@@ -16,6 +16,7 @@ type LineButtonSize = keyof typeof sizeMap;
 
 interface LineButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+  label?: string;
   size?: LineButtonSize;
 }
 
