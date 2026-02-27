@@ -45,10 +45,7 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
 
         {/* Main CTA */}
         <div className="text-center mb-12 gsap-contact-cta">
-          <LineButton
-            onClick={onOpenLINE}
-            size="xl"
-          />
+          <LineButton onClick={onOpenLINE} size="xl" />
         </div>
 
         {/* Contact Cards Grid */}
@@ -65,18 +62,14 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-kawaii-gold mt-0.5" />
                 <div>
-                  <p className="font-medium text-kawaii-brown">
-                    064-771-2246
-                  </p>
+                  <p className="font-medium text-kawaii-brown">064-771-2246</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-kawaii-mint-green mt-0.5" />
                 <div>
-                  <p className="font-medium text-kawaii-brown">
-                    เปิดบริการ
-                  </p>
+                  <p className="font-medium text-kawaii-brown">เปิดบริการ</p>
                   <p className="text-sm text-kawaii-brown-70">
                     09:00 - 18:00 น. (ทุกวัน)
                   </p>
@@ -156,17 +149,14 @@ export function ContactView({ onOpenLINE }: ContactViewProps) {
             &quot;ผู้ช่วยชิบะ&quot; คอยดูแล
           </p>
 
-          <div className="bg-kawaii-light-pink-30 rounded-2xl p-4 mb-6 inline-block">
+          <div className="bg-kawaii-light-pink-30 rounded-3xl p-4 mb-6 inline-block">
             <p className="text-kawaii-brown font-medium">
               <strong>&quot;ผ่อนง่าย สบายใจ มีชิบะคอยดูแล&quot;</strong>
             </p>
           </div>
 
           <div>
-            <LineButton
-              onClick={onOpenLINE}
-              size="xl"
-            />
+            <LineButton onClick={onOpenLINE} size="xl" />
           </div>
         </Card>
       </div>

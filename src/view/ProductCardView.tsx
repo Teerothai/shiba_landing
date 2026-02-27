@@ -17,7 +17,7 @@ export function ProductCardView({ product, onClick }: ProductCardViewProps) {
       className="group cursor-pointer gsap-product-card gsap-hover-lift"
       onClick={() => onClick(product.id)}
     >
-      <div className="relative aspect-4/3 overflow-hidden rounded-t-2xl bg-linear-to-br from-gray-50 to-gray-100">
+      <div className="relative aspect-4/3 overflow-hidden rounded-t-3xl bg-linear-to-br from-gray-50 to-gray-100">
         <Image
           src={product.image}
           alt={product.name}

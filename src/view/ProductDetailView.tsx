@@ -137,7 +137,7 @@ export function ProductDetailView({
               <div className="grid lg:grid-cols-2 gap-8 mb-8">
                 {/* Product Image */}
                 <div>
-                  <div className="relative aspect-4/3 rounded-2xl overflow-hidden bg-linear-to-br from-gray-50 to-gray-100 mb-4">
+                  <div className="relative aspect-4/3 rounded-3xl overflow-hidden bg-linear-to-br from-gray-50 to-gray-100 mb-4">
                     <Image
                       src={displayImage}
                       alt={
@@ -275,7 +275,7 @@ export function ProductDetailView({
                   {product.specs.storage.map((size) => (
                     <span
                       key={size}
-                      className="px-4 py-2 rounded-xl border-2 border-(--kawaii-gold)/30 bg-(--kawaii-gold)/5 text-sm font-medium text-kawaii-brown"
+                      className="px-4 py-2 rounded-full border-2 border-(--kawaii-gold)/30 bg-(--kawaii-gold)/5 text-sm font-medium text-kawaii-brown"
                     >
                       {size}
                     </span>
@@ -296,7 +296,7 @@ export function ProductDetailView({
                     return (
                       <div
                         key={key}
-                        className="flex items-center gap-3 p-3 bg-(--kawaii-light-pink)/5 rounded-xl"
+                        className="flex items-center gap-3 p-3 bg-(--kawaii-light-pink)/5 rounded-2xl"
                       >
                         <div
                           className="w-9 h-9 rounded-full flex items-center justify-center"

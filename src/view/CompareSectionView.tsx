@@ -34,9 +34,24 @@ const specRows: {
   icon: React.ComponentType<{ className?: string }>;
   color: string;
 }[] = [
-  { label: "ชิประมวลผล", key: "processor", icon: Cpu, color: "var(--kawaii-pink)" },
-  { label: "หน้าจอ", key: "display", icon: Monitor, color: "var(--kawaii-soft-purple)" },
-  { label: "กล้อง", key: "camera", icon: Camera, color: "var(--kawaii-mint-green)" },
+  {
+    label: "ชิประมวลผล",
+    key: "processor",
+    icon: Cpu,
+    color: "var(--kawaii-pink)",
+  },
+  {
+    label: "หน้าจอ",
+    key: "display",
+    icon: Monitor,
+    color: "var(--kawaii-soft-purple)",
+  },
+  {
+    label: "กล้อง",
+    key: "camera",
+    icon: Camera,
+    color: "var(--kawaii-mint-green)",
+  },
 ];
 
 // Custom select dropdown styling
@@ -66,7 +81,7 @@ export function CompareSectionView({
       id="compare"
       className="py-20"
       style={{
-        background: "linear-gradient(135deg, #b2a5f2, #fcb0ce)",
+        background: "#b2a5f2",
       }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +123,7 @@ export function CompareSectionView({
                 <select
                   value={selectedIds[0]}
                   onChange={(e) => onSelectProduct(0, e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
+                  className="w-full px-3 py-2.5 rounded-2xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
                   style={selectStyle}
                 >
                   {groupedProducts.map((group) => (
@@ -125,14 +140,10 @@ export function CompareSectionView({
 
               {/* VS Divider */}
               <div className="hidden sm:flex items-center justify-center pb-1">
-                <span className="text-xl font-bold text-kawaii-pink">
-                  VS
-                </span>
+                <span className="text-xl font-bold text-kawaii-pink">VS</span>
               </div>
               <div className="flex sm:hidden items-center justify-center">
-                <span className="text-lg font-bold text-kawaii-pink">
-                  VS
-                </span>
+                <span className="text-lg font-bold text-kawaii-pink">VS</span>
               </div>
 
               {/* Slot 2 */}
@@ -143,7 +154,7 @@ export function CompareSectionView({
                 <select
                   value={selectedIds[1]}
                   onChange={(e) => onSelectProduct(1, e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
+                  className="w-full px-3 py-2.5 rounded-2xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
                   style={selectStyle}
                 >
                   {groupedProducts.map((group) => (
@@ -179,7 +190,7 @@ export function CompareSectionView({
                         src={product.image}
                         alt={product.name}
                         fill
-                        className="object-cover rounded-2xl"
+                        className="object-cover rounded-3xl"
                         sizes="(max-width: 768px) 96px, 128px"
                       />
                     </div>
@@ -240,9 +251,7 @@ export function CompareSectionView({
         {/* Comparison Table */}
         <Card className="mb-8 gsap-compare-table">
           <CardHeader className="pb-2">
-            <CardTitle className="text-lg">
-              เปรียบเทียบคุณสมบัติ
-            </CardTitle>
+            <CardTitle className="text-lg">เปรียบเทียบคุณสมบัติ</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             {/* Price Row */}
@@ -348,9 +357,7 @@ export function CompareSectionView({
         {(product1?.features || product2?.features) && (
           <Card className="mb-8 gsap-fade-up">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">
-                ฟีเจอร์พิเศษ
-              </CardTitle>
+              <CardTitle className="text-lg">ฟีเจอร์พิเศษ</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4 md:gap-6">
@@ -385,7 +392,7 @@ export function CompareSectionView({
 
         {/* CTA */}
         <div className="text-center gsap-compare-cta">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 inline-block shadow-kawaii-md">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 inline-block shadow-kawaii-md">
             <Image
               src={MASCOT.toroHandlePhone}
               alt="Toro"
@@ -399,11 +406,7 @@ export function CompareSectionView({
             <p className="text-sm text-kawaii-brown/70 mb-4 max-w-sm">
               ทีม SHiBA พร้อมให้คำปรึกษาและช่วยเลือกแพ็กเกจที่เหมาะกับคุณ
             </p>
-            <LineButton
-              onClick={onOpenLINE}
-              size="lg"
-              label="ปรึกษาใน LINE"
-            />
+            <LineButton onClick={onOpenLINE} size="lg" label="ปรึกษาใน LINE" />
           </div>
         </div>
       </div>

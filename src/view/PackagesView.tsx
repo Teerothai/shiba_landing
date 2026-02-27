@@ -63,9 +63,7 @@ function PackageCard({
       />
 
       {/* Content overlaid on the white area of the image */}
-      <div
-        className="absolute inset-x-0 bottom-0 flex flex-col px-3 pb-3 md:px-5 md:pb-5 top-[36%]"
-      >
+      <div className="absolute inset-x-0 bottom-0 flex flex-col px-3 pb-3 md:px-5 md:pb-5 top-[36%]">
         {/* Benefits */}
         <ul className="mb-2">
           {pkg.benefits.map((benefit, i) => {
@@ -88,7 +86,9 @@ function PackageCard({
                   className={cn(
                     "font-semibold leading-tight",
                     !included && "text-(--kawaii-brown)/50",
-                    benefit.highlight ? "text-[#f95a9a]" : included && "text-kawaii-brown",
+                    benefit.highlight
+                      ? "text-[#f95a9a]"
+                      : included && "text-kawaii-brown",
                   )}
                 >
                   {benefit.text}
@@ -204,7 +204,7 @@ export function PackagesView({
           </h3>
           {/* Video */}
           <div className="max-w-sm mx-auto mb-16 gsap-video">
-            <div className="rounded-2xl overflow-hidden shadow-kawaii-md aspect-9/16">
+            <div className="rounded-3xl overflow-hidden shadow-kawaii-md aspect-9/16">
               <iframe
                 src="https://www.youtube.com/embed/pV3ih8tzQcc"
                 className="w-full h-full border-0"
@@ -239,7 +239,7 @@ export function PackagesView({
                     {/* Step content */}
                     <div
                       className={cn(
-                        "gsap-step-content flex-1 rounded-xl p-4 bg-white/80 backdrop-blur-sm",
+                        "gsap-step-content flex-1 rounded-2xl p-4 bg-white/80 backdrop-blur-sm",
                       )}
                     >
                       <p className="text-sm font-semibold text-[var(--kawaii-brown)">

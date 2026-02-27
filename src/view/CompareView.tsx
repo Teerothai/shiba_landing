@@ -36,9 +36,24 @@ const specRows: {
   icon: React.ComponentType<{ className?: string }>;
   color: string;
 }[] = [
-  { label: "ชิประมวลผล", key: "processor", icon: Cpu, color: "var(--kawaii-pink)" },
-  { label: "หน้าจอ", key: "display", icon: Monitor, color: "var(--kawaii-soft-purple)" },
-  { label: "กล้อง", key: "camera", icon: Camera, color: "var(--kawaii-mint-green)" },
+  {
+    label: "ชิประมวลผล",
+    key: "processor",
+    icon: Cpu,
+    color: "var(--kawaii-pink)",
+  },
+  {
+    label: "หน้าจอ",
+    key: "display",
+    icon: Monitor,
+    color: "var(--kawaii-soft-purple)",
+  },
+  {
+    label: "กล้อง",
+    key: "camera",
+    icon: Camera,
+    color: "var(--kawaii-mint-green)",
+  },
 ];
 
 /**
@@ -101,7 +116,7 @@ export function CompareView({
                     <select
                       value={selectedIds[index]}
                       onChange={(e) => onSelectProduct(index, e.target.value)}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
+                      className="w-full px-3 py-2.5 rounded-2xl border-2 border-(--kawaii-light-pink)/30 bg-white text-kawaii-brown text-sm focus:border-kawaii-pink focus:outline-none transition-colors appearance-none cursor-pointer"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236c4200' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
                         backgroundRepeat: "no-repeat",
@@ -140,7 +155,7 @@ export function CompareView({
                           src={product.image}
                           alt={product.name}
                           fill
-                          className="object-cover rounded-2xl"
+                          className="object-cover rounded-3xl"
                           sizes="112px"
                         />
                       </div>
@@ -201,9 +216,7 @@ export function CompareView({
           {/* Comparison Table */}
           <Card className="mb-6">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">
-                เปรียบเทียบคุณสมบัติ
-              </CardTitle>
+              <CardTitle className="text-lg">เปรียบเทียบคุณสมบัติ</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
               {/* Price Row */}
@@ -283,7 +296,8 @@ export function CompareView({
               ))}
 
               {/* Connectivity (for iPads) */}
-              {(product1?.specs.connectivity || product2?.specs.connectivity) && (
+              {(product1?.specs.connectivity ||
+                product2?.specs.connectivity) && (
                 <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20">
                   <div className="p-3 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
                     <Smartphone className="w-4 h-4 text-kawaii-soft-purple" />
@@ -308,9 +322,7 @@ export function CompareView({
           {(product1?.features || product2?.features) && (
             <Card className="mb-6">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg">
-                  ฟีเจอร์พิเศษ
-                </CardTitle>
+                <CardTitle className="text-lg">ฟีเจอร์พิเศษ</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-4">

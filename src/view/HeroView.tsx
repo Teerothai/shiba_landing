@@ -97,19 +97,19 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
               linear-gradient(to bottom, transparent clamp(20px,4vw,40px), #FFF32B clamp(20px,4vw,40px))
             `,
           }}
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto px-4">
-            {features.map((feature) => (
-              <div key={feature.src} className="hero-feature gsap-hover-lift">
-                <Image
-                  src={feature.src}
-                  alt={feature.alt}
-                  width={500}
-                  height={500}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            ))}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto px-4">
+              {features.map((feature) => (
+                <div key={feature.src} className="hero-feature gsap-hover-lift">
+                  <Image
+                    src={feature.src}
+                    alt={feature.alt}
+                    width={500}
+                    height={500}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>

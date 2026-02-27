@@ -7,7 +7,13 @@ import { Button } from "@/lib/ui/button";
 import { LineButton } from "@/lib/ui/line-button";
 import { LOGO } from "@/data/images";
 
-type SectionId = "home" | "products" | "compare" | "packages" | "community" | "contact";
+type SectionId =
+  | "home"
+  | "products"
+  | "compare"
+  | "packages"
+  | "community"
+  | "contact";
 
 interface HeaderContainerProps {
   activeSection: SectionId;
@@ -41,7 +47,7 @@ export function HeaderContainer({
       onNavigate(sectionId);
       setMobileMenuOpen(false);
     },
-    [onNavigate]
+    [onNavigate],
   );
 
   return (
@@ -68,7 +74,7 @@ export function HeaderContainer({
               <button
                 key={item.key}
                 onClick={() => handleNavigate(item.key)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all hover:bg-kawaii-light-pink/20 ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-sm font-medium transition-all hover:bg-kawaii-light-pink/20 ${
                   activeSection === item.key
                     ? "text-kawaii-pink bg-kawaii-light-pink/10"
                     : "text-kawaii-brown"
@@ -112,7 +118,7 @@ export function HeaderContainer({
                 <button
                   key={item.key}
                   onClick={() => handleNavigate(item.key)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left font-medium transition-all ${
+                  className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-left font-medium transition-all ${
                     activeSection === item.key
                       ? "text-kawaii-pink bg-kawaii-light-pink/10"
                       : "text-kawaii-brown hover:bg-kawaii-light-pink/10"
@@ -124,11 +130,7 @@ export function HeaderContainer({
             </nav>
 
             <div className="mt-4 px-4">
-              <LineButton
-                onClick={onOpenLINE}
-                size="lg"
-                className="w-full"
-              />
+              <LineButton onClick={onOpenLINE} size="lg" className="w-full" />
             </div>
           </div>
         )}

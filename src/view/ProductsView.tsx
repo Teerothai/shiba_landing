@@ -137,7 +137,9 @@ export function ProductsView({
         {/* Sort Bar */}
         <div className="flex items-center justify-end gap-2 mb-6 mt-5">
           <ArrowUpDown className="w-4 h-4 text-(--kawaii-brown)/60" />
-          <span className="text-sm text-(--kawaii-brown)/60 mr-1">เรียงตาม:</span>
+          <span className="text-sm text-(--kawaii-brown)/60 mr-1">
+            เรียงตาม:
+          </span>
 
           {/* Mobile dropdown */}
           <div className="md:hidden relative">
@@ -165,9 +167,7 @@ export function ProductsView({
                 rounded="full"
                 onClick={() => onSortChange(opt.id)}
                 className={`text-xs ${
-                  sortBy === opt.id
-                    ? ""
-                    : "bg-white/60 hover:bg-white/80"
+                  sortBy === opt.id ? "" : "bg-white/60 hover:bg-white/80"
                 }`}
               >
                 {opt.label}
@@ -228,7 +228,7 @@ export function ProductsView({
                   >
                     {page}
                   </Button>
-                )
+                ),
               )}
 
               {/* Next */}
@@ -248,7 +248,7 @@ export function ProductsView({
 
         {/* CTA */}
         <div className="text-center">
-          <div className="gsap-product-cta bg-white/70 backdrop-blur-sm rounded-2xl p-6 inline-block shadow-kawaii-sm">
+          <div className="gsap-product-cta bg-white/70 backdrop-blur-sm rounded-3xl p-6 inline-block shadow-kawaii-sm">
             <p className="text-kawaii-brown mb-4">
               สนใจสินค้า? สอบถามราคาพิเศษได้เลย
             </p>

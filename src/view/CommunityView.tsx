@@ -63,7 +63,7 @@ function TimelinePostCard({ post }: { post: TimelinePost; index: number }) {
             {post.images.map((img, i) => (
               <div
                 key={i}
-                className={`relative rounded-xl overflow-hidden ${
+                className={`relative rounded-2xl overflow-hidden ${
                   post.images!.length === 3 && i === 0
                     ? "col-span-2 aspect-video"
                     : "aspect-square"
