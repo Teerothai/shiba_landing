@@ -45,16 +45,16 @@ export function BannerSliderView({
                 className="w-full h-auto block md:hidden"
                 sizes="100vw"
               />
-              {/* Desktop banner — scaled down, full content visible */}
-              <div className="hidden md:flex items-center justify-center bg-[#bc6187]">
+              {/* Desktop banner — full width, full content visible */}
+              <div className="hidden md:block w-full bg-[#bc6187]">
                 <Image
                   src={slide.src}
                   alt={slide.alt}
                   width={1440}
                   height={480}
                   priority={slide.id === 1}
-                  className="w-auto h-auto max-w-[75%] max-h-[400px] object-contain"
-                  sizes="75vw"
+                  className="w-full h-auto object-contain object-center"
+                  sizes="100vw"
                 />
               </div>
             </div>

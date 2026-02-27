@@ -15,7 +15,10 @@ interface HeroViewProps {
 const features = [
   { src: FEATURE.startWith50Thb, alt: "ผ่อนเริ่มต้นวันละ 50 บาท" },
   { src: FEATURE.idCard, alt: "ใช้บัตรประชาชนใบเดียว ไม่มีเครดิตก็ผ่อนได้" },
-  { src: FEATURE.checkStatus, alt: "มีระบบตรวจสอบสถานะ และทีมช่วยแนะนำ 24 ชม." },
+  {
+    src: FEATURE.checkStatus,
+    alt: "มีระบบตรวจสอบสถานะ และทีมช่วยแนะนำ 24 ชม.",
+  },
   { src: FEATURE.authentic, alt: "สินค้าแท้ ประกันศูนย์ มีบริการหลังการขาย" },
 ];
 
@@ -36,13 +39,13 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
           <span className="hero-title inline-block">
             ผ่อนไปใช้ไป ไว้ใจชิบะโฟน
           </span>
-          <span className="block text-white mt-2 hero-title-accent text-3xl">
+          <span className="block text-white mt-2 hero-title-accent text-3xl md:text-5xl">
             เริ่มต้นผ่อน เพียงวันละ 50บาท
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="hero-subtitle text-[15px] md:text-lg text-center text-(--kawaii-brown)/80 mb-10 max-w-2xl mx-auto">
+        <p className="hero-subtitle text-[15px] md:text-3xl text-center text-(--kawaii-brown)/80 mb-10 max-w-2xl mx-auto">
           ไม่ต้องมีเครดิต ชิบะโฟนพร้อมอยู่ข้างคุณ
           <br />
           ช่วยให้เข้าถึงเทคโนโลยีที่จำเป็น
@@ -51,24 +54,21 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <div className="hero-cta-btn">
-            <LineButton
-              onClick={onOpenLINE}
-              size="xl"
-            />
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-4">
+          <div className="hero-cta-btn w-full sm:w-auto flex justify-center">
+            <LineButton onClick={onOpenLINE} size="2xl" />
           </div>
 
-          <div className="hero-cta-btn">
+          <div className="hero-cta-btn w-full sm:w-auto flex justify-center">
             <Button
               onClick={onScrollToPackages}
               variant="secondary"
-              size="xl"
+              size="2xl"
               rounded="full"
             >
-              <Package className="w-6 h-6" />
+              <Package className="w-8 h-8 mr-1 md:w-10 md:h-10" />
               ดูแพ็กเกจ
-              <ArrowDown className="w-5 h-5 animate-bounce" />
+              <ArrowDown className="w-6 h-6 ml-2 animate-bounce md:w-8 md:h-8" />
             </Button>
           </div>
         </div>
@@ -100,10 +100,7 @@ export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto px-4">
             {features.map((feature) => (
-              <div
-                key={feature.src}
-                className="hero-feature gsap-hover-lift"
-              >
+              <div key={feature.src} className="hero-feature gsap-hover-lift">
                 <Image
                   src={feature.src}
                   alt={feature.alt}

@@ -5,126 +5,144 @@
    ======================================== */
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Thin.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Thin.ttf")
+    format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ThinItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ThinItalic.ttf")
+    format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraLight.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraLight.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraLightItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraLightItalic.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Light.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Light.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-LightItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-LightItalic.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Regular.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Italic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Italic.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Medium.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Medium.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-MediumItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-MediumItalic.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-SemiBold.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-SemiBold.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-SemiBoldItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-SemiBoldItalic.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Bold.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Bold.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-BoldItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-BoldItalic.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraBold.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraBold.ttf")
+    format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraBoldItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-ExtraBoldItalic.ttf")
+    format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Black.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-Black.ttf")
+    format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "FC Subject Rounded";
-  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-BlackItalic.ttf") format("truetype");
+  src: url("/assets/font/fc-subject-rounded/FCSubjectRounded-BlackItalic.ttf")
+    format("truetype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -180,7 +198,8 @@
   --kawaii-shadow-xl: 0 16px 64px rgba(255, 138, 183, 0.3);
 
   /* Fonts */
-  --font-thai: "FC Subject Rounded", "TCS 4Koya", "Kanit", "Noto Sans Thai", sans-serif;
+  --font-thai:
+    "FC Subject Rounded", "TCS 4Koya", "Kanit", "Noto Sans Thai", sans-serif;
 }
 
 @theme inline {
@@ -206,6 +225,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Increase responsive scaling on desktop to make fonts larger */
+@media (min-width: 1024px) {
+  html {
+    font-size: 112.5%; /* 18px base */
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 125%; /* 20px base */
+  }
+}
+
 body {
   font-family: var(--font-thai);
   background-color: var(--background);
@@ -215,7 +247,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-thai);
   font-weight: 600;
   line-height: 1.2;
@@ -251,24 +288,45 @@ h1, h2, h3, h4, h5, h6 {
    Animations
    ======================================== */
 @keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes bounce-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes slide-in-up {
@@ -283,20 +341,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes line-bounce {
-  0%, 100% { transform: translateY(0) scale(1); }
-  30% { transform: translateY(-6px) scale(1.03); }
-  50% { transform: translateY(0) scale(1); }
-  70% { transform: translateY(-3px) scale(1.01); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-6px) scale(1.03);
+  }
+  50% {
+    transform: translateY(0) scale(1);
+  }
+  70% {
+    transform: translateY(-3px) scale(1.01);
+  }
 }
 
 @keyframes line-ping {
-  0% { opacity: 0.5; transform: scale(1); }
-  75%, 100% { opacity: 0; transform: scale(1.35); }
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
 }
 
 /* Animation Classes */
@@ -336,22 +414,50 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================================
    Utility Classes
    ======================================== */
-.text-kawaii-pink { color: var(--kawaii-pink); }
-.text-kawaii-brown { color: var(--kawaii-brown); }
-.text-kawaii-gold { color: var(--kawaii-gold); }
-.text-kawaii-mint { color: var(--kawaii-mint-green); }
-.text-kawaii-purple { color: var(--kawaii-soft-purple); }
+.text-kawaii-pink {
+  color: var(--kawaii-pink);
+}
+.text-kawaii-brown {
+  color: var(--kawaii-brown);
+}
+.text-kawaii-gold {
+  color: var(--kawaii-gold);
+}
+.text-kawaii-mint {
+  color: var(--kawaii-mint-green);
+}
+.text-kawaii-purple {
+  color: var(--kawaii-soft-purple);
+}
 
-.bg-kawaii-pink { background-color: var(--kawaii-pink); }
-.bg-kawaii-light-pink { background-color: var(--kawaii-light-pink); }
-.bg-kawaii-gold { background-color: var(--kawaii-gold); }
-.bg-kawaii-mint { background-color: var(--kawaii-mint-green); }
-.bg-kawaii-purple { background-color: var(--kawaii-soft-purple); }
+.bg-kawaii-pink {
+  background-color: var(--kawaii-pink);
+}
+.bg-kawaii-light-pink {
+  background-color: var(--kawaii-light-pink);
+}
+.bg-kawaii-gold {
+  background-color: var(--kawaii-gold);
+}
+.bg-kawaii-mint {
+  background-color: var(--kawaii-mint-green);
+}
+.bg-kawaii-purple {
+  background-color: var(--kawaii-soft-purple);
+}
 
-.shadow-kawaii-sm { box-shadow: var(--kawaii-shadow-sm); }
-.shadow-kawaii-md { box-shadow: var(--kawaii-shadow-md); }
-.shadow-kawaii-lg { box-shadow: var(--kawaii-shadow-lg); }
-.shadow-kawaii-xl { box-shadow: var(--kawaii-shadow-xl); }
+.shadow-kawaii-sm {
+  box-shadow: var(--kawaii-shadow-sm);
+}
+.shadow-kawaii-md {
+  box-shadow: var(--kawaii-shadow-md);
+}
+.shadow-kawaii-lg {
+  box-shadow: var(--kawaii-shadow-lg);
+}
+.shadow-kawaii-xl {
+  box-shadow: var(--kawaii-shadow-xl);
+}
 
 /* Hide scrollbar but keep scrolling */
 .scrollbar-hide {

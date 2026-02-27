@@ -9,13 +9,16 @@ const sizeMap = {
   sm: "h-10",
   lg: "h-16",
   xl: "h-20",
+  "2xl": "h-24 md:h-28",
   icon: "h-12",
 } as const;
 
 type LineButtonSize = keyof typeof sizeMap;
 
-interface LineButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+interface LineButtonProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "children"
+> {
   label?: string;
   size?: LineButtonSize;
 }

@@ -209,7 +209,7 @@ export function ProductDetailView({
                       ฿{formatPriceCompact(product.price)}
                     </div>
                     <div className="text-base text-(--kawaii-brown)/70">
-                      ออมดาวน์ ฿{formatPriceCompact(product.down)}
+                      ออมดาวน์ เริ่มต้น ฿{formatPriceCompact(product.down)}
                     </div>
                     <div className="text-sm text-(--kawaii-brown)/60 mt-1">
                       ผ่อน ฿{formatPriceCompact(monthlyPrice)}/เดือน
@@ -244,7 +244,7 @@ export function ProductDetailView({
                   )}
 
                   {/* Action Buttons */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 md:flex gap-2">
                     <Button
                       onClick={onOpenLINE}
                       variant="default"
@@ -252,25 +252,17 @@ export function ProductDetailView({
                       className="w-full"
                     >
                       <Package className="w-5 h-5" />
-                      เลือกแพ็กเกจผ่อน
+                      เลือกแผนผ่อน
                       <ArrowRight className="w-5 h-5" />
                     </Button>
-                    <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        onClick={onCompare}
-                        variant="secondary"
-                        size="default"
-                        className="w-full text-sm"
-                      >
-                        เปรียบเทียบ
-                      </Button>
-                      <LineButton
-                        onClick={onOpenLINE}
-                        size="default"
-                        label="ปรึกษา"
-                        className="w-full text-sm"
-                      />
-                    </div>
+                    <Button
+                      onClick={onCompare}
+                      variant="secondary"
+                      size="default"
+                      className="w-full text-sm py-5.5"
+                    >
+                      เปรียบเทียบ
+                    </Button>
                   </div>
                 </div>
               </div>
