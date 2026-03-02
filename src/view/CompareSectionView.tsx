@@ -20,7 +20,6 @@ import { MASCOT } from "@/data/images";
 interface CompareSectionViewProps {
   selectedProducts: [Product | undefined, Product | undefined];
   selectedIds: [string, string];
-  availableProducts: Product[];
   groupedProducts: ProductGroup[];
   onSelectProduct: (index: 0 | 1, productId: string) => void;
   onOpenLINE: () => void;
@@ -255,15 +254,15 @@ export function CompareSectionView({
           </CardHeader>
           <CardContent className="p-0">
             {/* Price Row */}
-            <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 gsap-compare-row">
-              <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+            <div className="grid grid-cols-3 border-b border-kawaii-light-pink/20 gsap-compare-row">
+              <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                 <Smartphone className="w-4 h-4 text-kawaii-pink" />
                 ราคา
               </div>
               {([product1, product2] as const).map((product, i) => (
                 <div
                   key={i}
-                  className="p-3 md:p-4 text-center border-l border-(--kawaii-light-pink)/20"
+                  className="p-3 md:p-4 text-center border-l border-kawaii-light-pink/20"
                 >
                   {product ? (
                     <>
@@ -282,8 +281,8 @@ export function CompareSectionView({
             </div>
 
             {/* Storage Row */}
-            <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 gsap-compare-row">
-              <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+            <div className="grid grid-cols-3 border-b border-kawaii-light-pink/20 gsap-compare-row">
+              <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                 <span style={{ color: "var(--kawaii-gold)" }}>
                   <HardDrive className="w-4 h-4" />
                 </span>
@@ -293,7 +292,7 @@ export function CompareSectionView({
               {([product1, product2] as const).map((product, i) => (
                 <div
                   key={i}
-                  className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
+                  className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-kawaii-light-pink/20"
                 >
                   {product ? (
                     product.specs.storage.join(", ")
@@ -308,9 +307,9 @@ export function CompareSectionView({
             {specRows.map((spec) => (
               <div
                 key={spec.key}
-                className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 last:border-b-0 gsap-compare-row"
+                className="grid grid-cols-3 border-b border-kawaii-light-pink/20 last:border-b-0 gsap-compare-row"
               >
-                <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+                <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                   <span style={{ color: spec.color }}>
                     <spec.icon className="w-4 h-4" />
                   </span>
@@ -320,7 +319,7 @@ export function CompareSectionView({
                 {([product1, product2] as const).map((product, i) => (
                   <div
                     key={i}
-                    className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
+                    className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-kawaii-light-pink/20"
                   >
                     {product?.specs[spec.key] ?? (
                       <span className="text-kawaii-brown/30">—</span>
@@ -332,8 +331,8 @@ export function CompareSectionView({
 
             {/* Connectivity (for iPads) */}
             {(product1?.specs.connectivity || product2?.specs.connectivity) && (
-              <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 gsap-compare-row">
-                <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+              <div className="grid grid-cols-3 border-b border-kawaii-light-pink/20 gsap-compare-row">
+                <div className="p-3 md:p-4 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                   <Smartphone className="w-4 h-4 text-kawaii-soft-purple" />
                   <span className="hidden sm:inline">การเชื่อมต่อ</span>
                   <span className="sm:hidden text-xs">เชื่อมต่อ</span>
@@ -341,7 +340,7 @@ export function CompareSectionView({
                 {([product1, product2] as const).map((product, i) => (
                   <div
                     key={i}
-                    className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
+                    className="p-3 md:p-4 text-center text-xs md:text-sm text-kawaii-brown border-l border-kawaii-light-pink/20"
                   >
                     {product?.specs.connectivity ?? (
                       <span className="text-kawaii-brown/30">—</span>

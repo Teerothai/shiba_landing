@@ -14,7 +14,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/lib/ui/button";
-import { LineButton } from "@/lib/ui/line-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/lib/ui/card";
 import { formatPriceCompact } from "@/lib/utils";
 import type { Product } from "@/data/products";
@@ -77,7 +76,7 @@ export function ProductDetailView({
   onOpenLINE,
   onCompare,
   onColorSelect,
-}: ProductDetailViewProps) {
+}: Readonly<ProductDetailViewProps>) {
   const monthlyPrice = Math.floor(product.price / 24);
   const selectedColor = product.colors?.[selectedColorIndex];
   const displayImage = selectedColor?.image ?? product.image;
@@ -266,20 +265,40 @@ export function ProductDetailView({
                   </div>
                 </div>
               </div>
-              {/* Storage Options */}
-              <div className="mb-8">
-                <h3 className="text-lg font-bold text-kawaii-brown mb-4">
-                  ความจุให้เลือก
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {product.specs.storage.map((size) => (
-                    <span
-                      key={size}
-                      className="px-4 py-2 rounded-full border-2 border-(--kawaii-gold)/30 bg-(--kawaii-gold)/5 text-sm font-medium text-kawaii-brown"
-                    >
-                      {size}
-                    </span>
-                  ))}
+              {/* Options Row: Storage & Leasing */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                {/* Storage Options */}
+                <div>
+                  <h3 className="text-lg font-bold text-kawaii-brown mb-4">
+                    ความจุให้เลือก
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {product.specs.storage.map((size) => (
+                      <span
+                        key={size}
+                        className="px-4 py-2 rounded-full border-2 border-(--kawaii-gold)/30 bg-(--kawaii-gold)/5 text-sm font-medium text-kawaii-brown"
+                      >
+                        {size}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Leasing Options */}
+                <div>
+                  <h3 className="text-lg font-bold text-kawaii-brown mb-4">
+                    ระยะเวลาผ่อนชำระ
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {["6 เดือน", "10 เดือน", "12 เดือน"].map((term) => (
+                      <span
+                        key={term}
+                        className="px-4 py-2 rounded-full border-2 border-(--kawaii-soft-purple)/30 bg-(--kawaii-soft-purple)/5 text-sm font-medium text-kawaii-brown"
+                      >
+                        {term}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 

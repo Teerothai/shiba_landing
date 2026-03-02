@@ -134,7 +134,6 @@ export function LandingContainer() {
         <CompareSectionView
           selectedProducts={compare.selectedProducts}
           selectedIds={compare.selectedIds}
-          availableProducts={compare.availableProducts}
           groupedProducts={compare.groupedProducts}
           onSelectProduct={compare.selectProduct}
           onOpenLINE={openLINEChat}
