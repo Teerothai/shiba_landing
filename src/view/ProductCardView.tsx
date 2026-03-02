@@ -9,7 +9,7 @@ interface ProductCardViewProps {
   onClick: (productId: string) => void;
 }
 
-export function ProductCardView({ product, onClick }: ProductCardViewProps) {
+export function ProductCardView({ product, onClick }: Readonly<ProductCardViewProps>) {
   const monthlyPrice = Math.floor(product.price / 24);
 
   return (

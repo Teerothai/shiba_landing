@@ -26,7 +26,7 @@ const features = [
  * HeroView - Main landing section with CTA
  * Stateless presentation component
  */
-export function HeroView({ onOpenLINE, onScrollToPackages }: HeroViewProps) {
+export function HeroView({ onOpenLINE, onScrollToPackages }: Readonly<HeroViewProps>) {
   return (
     <section
       id="home"

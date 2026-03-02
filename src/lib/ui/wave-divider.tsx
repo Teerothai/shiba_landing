@@ -31,7 +31,7 @@ export function WaveDivider({
   flip = false,
   variant = 1,
   className = "",
-}: WaveDividerProps) {
+}: Readonly<WaveDividerProps>) {
   const path = wavePaths[variant];
 
   return (

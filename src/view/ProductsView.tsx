@@ -65,7 +65,7 @@ export function ProductsView({
   onPageChange,
   onProductClick,
   onOpenLINE,
-}: ProductsViewProps) {
+}: Readonly<ProductsViewProps>) {
   return (
     <section
       id="products"

@@ -72,7 +72,7 @@ export function CompareSectionView({
   onSelectProduct,
   onOpenLINE,
   onViewDetail,
-}: CompareSectionViewProps) {
+}: Readonly<CompareSectionViewProps>) {
   const [product1, product2] = selectedProducts;
 
   return (
@@ -116,9 +116,9 @@ export function CompareSectionView({
             <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-end">
               {/* Slot 1 */}
               <div>
-                <label className="text-xs font-medium text-kawaii-brown/70 mb-1 block">
+                <span className="text-xs font-medium text-kawaii-brown/70 mb-1 block">
                   สินค้า 1
-                </label>
+                </span>
                 <select
                   value={selectedIds[0]}
                   onChange={(e) => onSelectProduct(0, e.target.value)}
@@ -147,9 +147,9 @@ export function CompareSectionView({
 
               {/* Slot 2 */}
               <div>
-                <label className="text-xs font-medium text-kawaii-brown/70 mb-1 block">
+                <span className="text-xs font-medium text-kawaii-brown/70 mb-1 block">
                   สินค้า 2
-                </label>
+                </span>
                 <select
                   value={selectedIds[1]}
                   onChange={(e) => onSelectProduct(1, e.target.value)}

@@ -68,7 +68,7 @@ export function CompareView({
   onClose,
   onOpenLINE,
   onViewDetail,
-}: CompareViewProps) {
+}: Readonly<CompareViewProps>) {
   const [product1, product2] = selectedProducts;
 
   return (
@@ -228,7 +228,7 @@ export function CompareView({
                 {([product1, product2] as const).map((product, i) => (
                   <div
                     key={i}
-                    className="p-3 text-center border-l border-(--kawaii-light-pink)/20"
+                    className="p-3 text-center border-l border-kawaii-light-pink/20"
                   >
                     {product ? (
                       <>
@@ -247,8 +247,8 @@ export function CompareView({
               </div>
 
               {/* Storage Row */}
-              <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20">
-                <div className="p-3 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+              <div className="grid grid-cols-3 border-b border-kawaii-light-pink/20">
+                <div className="p-3 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                   <span style={{ color: "var(--kawaii-gold)" }}>
                     <HardDrive className="w-4 h-4" />
                   </span>
@@ -257,7 +257,7 @@ export function CompareView({
                 {([product1, product2] as const).map((product, i) => (
                   <div
                     key={i}
-                    className="p-3 text-center border-l border-(--kawaii-light-pink)/20"
+                    className="p-3 text-center border-l border-kawaii-light-pink/20"
                   >
                     {product ? (
                       <span className="text-sm text-kawaii-brown">
@@ -274,9 +274,9 @@ export function CompareView({
               {specRows.map((spec) => (
                 <div
                   key={spec.key}
-                  className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20 last:border-b-0"
+                  className="grid grid-cols-3 border-b border-kawaii-light-pink/20 last:border-b-0"
                 >
-                  <div className="p-3 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+                  <div className="p-3 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                     <span style={{ color: spec.color }}>
                       <spec.icon className="w-4 h-4" />
                     </span>
@@ -285,7 +285,7 @@ export function CompareView({
                   {([product1, product2] as const).map((product, i) => (
                     <div
                       key={i}
-                      className="p-3 text-center text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
+                      className="p-3 text-center text-sm text-kawaii-brown border-l border-kawaii-light-pink/20"
                     >
                       {product?.specs[spec.key] ?? (
                         <span className="text-kawaii-brown-30">—</span>
@@ -298,15 +298,15 @@ export function CompareView({
               {/* Connectivity (for iPads) */}
               {(product1?.specs.connectivity ||
                 product2?.specs.connectivity) && (
-                <div className="grid grid-cols-3 border-b border-(--kawaii-light-pink)/20">
-                  <div className="p-3 font-medium text-sm text-kawaii-brown bg-(--kawaii-light-pink)/10 flex items-center gap-2">
+                <div className="grid grid-cols-3 border-b border-kawaii-light-pink/20">
+                  <div className="p-3 font-medium text-sm text-kawaii-brown bg-kawaii-light-pink/10 flex items-center gap-2">
                     <Smartphone className="w-4 h-4 text-kawaii-soft-purple" />
                     การเชื่อมต่อ
                   </div>
                   {([product1, product2] as const).map((product, i) => (
                     <div
                       key={i}
-                      className="p-3 text-center text-sm text-kawaii-brown border-l border-(--kawaii-light-pink)/20"
+                      className="p-3 text-center text-sm text-kawaii-brown border-l border-kawaii-light-pink/20"
                     >
                       {product?.specs.connectivity ?? (
                         <span className="text-kawaii-brown-30">—</span>

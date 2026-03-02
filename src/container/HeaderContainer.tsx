@@ -39,7 +39,7 @@ export function HeaderContainer({
   activeSection,
   onNavigate,
   onOpenLINE,
-}: HeaderContainerProps) {
+}: Readonly<HeaderContainerProps>) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavigate = useCallback(

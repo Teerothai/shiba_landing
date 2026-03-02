@@ -12,7 +12,9 @@ interface CommunityViewProps {
 /**
  * TimelinePost - Individual community post
  */
-function TimelinePostCard({ post }: { post: TimelinePost; index: number }) {
+function TimelinePostCard({
+  post,
+}: Readonly<{ post: TimelinePost; index: number }>) {
   return (
     <Card className="gsap-community-post">
       <CardContent className="p-4 sm:p-6">

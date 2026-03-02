@@ -24,12 +24,12 @@ interface PackagesViewProps {
  */
 function PackageCard({
   pkg,
-}: {
+}: Readonly<{
   pkg: Package;
   onSelect: () => void;
   onOpenLINE: () => void;
   index: number;
-}) {
+}>) {
   const packageImage = packageImageMap[pkg.id];
   const promotionImage = promotionImageMap[pkg.id];
 
@@ -128,7 +128,7 @@ export function PackagesView({
   packages,
   onSelectPackage,
   onOpenLINE,
-}: PackagesViewProps) {
+}: Readonly<PackagesViewProps>) {
   return (
     <section
       id="packages"
