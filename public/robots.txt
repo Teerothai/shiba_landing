@@ -1,8 +1,0 @@
-# SHiBA Phone - Robots.txt
-# https://www.shibaphone.com
-
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://www.shibaphone.com/sitemap.xml
