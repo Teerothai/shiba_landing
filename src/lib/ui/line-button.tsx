@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const LINE_BUTTON_IMG =
-  "https://res.cloudinary.com/db7aaytcs/image/upload/f_auto,q_auto:low,w_800/v1772093779/icon-Add_Line_bgukin.png";
+const LINE_BUTTON_IMG = "/assets/images/add_line.png";
 
 const sizeMap = {
   default: "h-12",
