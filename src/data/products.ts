@@ -21,7 +21,7 @@ export interface Product {
   hot?: boolean;
   new?: boolean;
   image: string;
-  category: "iPhone" | "iPad" | "android" | "Combo set Apple Pencil";
+  category: "iPhone" | "iPad" | "android" | "MacBook" | "Combo set Apple Pencil";
   brand: string;
   specs: ProductSpecs;
   description?: string;
@@ -54,50 +54,126 @@ export interface Package {
 }
 
 // ============================================================
-// iPhone Products — iPhone 13 to iPhone 17 (all models)
+// iPhone Products — iPhone 17 Series Only
 // ============================================================
 
 export const iPhones: Product[] = [
   // ────────────────────────────────────────────
-  // Hot: iPhone 13
+  // iPhone 17
   // ────────────────────────────────────────────
   {
-    id: "iphone-13",
-    name: "iPhone 13",
-    price: 22900,
-    down: 2000,
+    id: "iphone-17",
+    name: "iPhone 17",
+    price: 40900,
+    down: 9900,
+    new: true,
     hot: true,
-    image:
-      "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1",
+    image: "/assets/product/iPhone/iPhone17/17/ปก-iPhone17.jpg",
     category: "iPhone",
     brand: "Apple",
     specs: {
-      storage: ["128GB"],
-      processor: "A15 Bionic",
-      display: '6.1"',
-      camera: "12MP Dual",
+      storage: ["256GB", "512GB"],
+      processor: "A19",
+      display: '6.3"',
+      camera: "48MP Dual Fusion",
     },
     description:
-      "iPhone 13 ชิป A15 Bionic กล้องคู่ 12MP Cinematic Mode เริ่มต้นเพียง 22,900 บาท คุ้มค่าที่สุดในตระกูล iPhone",
+      "iPhone 17 ชิป A19 ดีไซน์ใหม่หมด กล้อง 48MP Dual Fusion พร้อม Ultra Wide 48MP Ceramic Shield 2 ทนทานขึ้น 3 เท่า กล้องหน้า 18MP",
     colors: [
-      { name: "Midnight", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1" },
-      { name: "Starlight", hex: "#F5F0E8", image: "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1" },
-      { name: "Blue", hex: "#3C6997", image: "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1" },
-      { name: "Pink", hex: "#FADDD1", image: "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1" },
-      { name: "Green", hex: "#394C38", image: "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1" },
-      { name: "(PRODUCT)RED", hex: "#E42535", image: "https://images.unsplash.com/photo-1632661674596-df8be59a8670?w=400&h=300&fit=crop&q=1" },
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPhone/iPhone17/17/iPhone17-Black.jpg" },
+      { name: "Lavender", hex: "#CFC4E8", image: "/assets/product/iPhone/iPhone17/17/iPhone17-Lavender.jpg" },
+      { name: "Mist Blue", hex: "#B5CAD7", image: "/assets/product/iPhone/iPhone17/17/iPhone17-Mist Blue.jpg" },
+      { name: "Sage", hex: "#C4CEB0", image: "/assets/product/iPhone/iPhone17/17/iPhone17-Sage.jpg" },
+      { name: "White", hex: "#F5F5F7", image: "/assets/product/iPhone/iPhone17/17/iPhone17-White.jpg" },
     ],
     features: [
       "5G",
       "Face ID",
-      "Cinematic Mode",
-      "Ceramic Shield",
+      "USB-C",
+      "A19 Chip",
+      "Dynamic Island",
+      "48MP Dual Fusion",
+      "Ceramic Shield 2",
       "Wireless Charging",
-      "Water Resistant IP68",
     ],
   },
   // ────────────────────────────────────────────
-  // Hot + New: iPhone 17 Pro Max
+  // iPhone 17 Air
+  // ────────────────────────────────────────────
+  {
+    id: "iphone-17-air",
+    name: "iPhone 17 Air",
+    price: 47000,
+    down: 18900,
+    new: true,
+    image: "/assets/product/iPhone/iPhone17/Air/ปก-iPhone-Air.jpg",
+    category: "iPhone",
+    brand: "Apple",
+    specs: {
+      storage: ["256GB", "512GB"],
+      processor: "A19",
+      display: '6.6"',
+      camera: "48MP",
+    },
+    description:
+      "iPhone 17 Air บางที่สุดเพียง 5.5mm! ชิป A19 จอ 6.6 นิ้ว ProMotion 120Hz ตัวเครื่อง Titanium เกรด 5 น้ำหนักเบาสุดเพียง 165 กรัม",
+    colors: [
+      { name: "Space Black", hex: "#3A3A3C", image: "/assets/product/iPhone/iPhone17/Air/iPhone air-Space Black.jpg" },
+      { name: "Cloud White", hex: "#EDEDEA", image: "/assets/product/iPhone/iPhone17/Air/iPhone air-Cloud White.jpg" },
+      { name: "Light Gold", hex: "#E6D5B8", image: "/assets/product/iPhone/iPhone17/Air/iPhone air-Light Gold.jpg" },
+      { name: "Sky Blue", hex: "#A3C4E0", image: "/assets/product/iPhone/iPhone17/Air/iPhone air-Sky Blue.jpg" },
+    ],
+    features: [
+      "5G",
+      "Face ID",
+      "USB-C",
+      "A19 Chip",
+      "ProMotion 120Hz",
+      "บางเพียง 5.5mm",
+      "Titanium Grade 5",
+      "Ceramic Shield 2",
+      "น้ำหนักเบา 165g",
+    ],
+  },
+  // ────────────────────────────────────────────
+  // iPhone 17 Pro
+  // ────────────────────────────────────────────
+  {
+    id: "iphone-17-pro",
+    name: "iPhone 17 Pro",
+    price: 52900,
+    down: 17900,
+    new: true,
+    image: "/assets/product/iPhone/iPhone17/Pro/ปก-iPhone17-Pro.jpg",
+    category: "iPhone",
+    brand: "Apple",
+    specs: {
+      storage: ["256GB", "512GB"],
+      processor: "A19 Pro",
+      display: '6.3"',
+      camera: "48MP Pro Fusion",
+    },
+    description:
+      "iPhone 17 Pro ชิป A19 Pro กล้อง 48MP Pro Fusion 3 ตัว ซูม 8x Optical จอ 6.3 นิ้ว Ceramic Shield 2 หน้า-หลัง ProRes RAW",
+    colors: [
+      { name: "Cosmic Orange", hex: "#D47A3E", image: "/assets/product/iPhone/iPhone17/Pro/iPhone17 pro-Cosmic Orange.jpg" },
+      { name: "Deep Blue", hex: "#1E3A5F", image: "/assets/product/iPhone/iPhone17/Pro/iPhone17 pro-Deep Blue.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/iPhone/iPhone17/Pro/iPhone17 pro-Silver.jpg" },
+    ],
+    features: [
+      "5G",
+      "Face ID",
+      "USB-C",
+      "A19 Pro",
+      "ProMotion 120Hz",
+      "Titanium Design",
+      "8x Optical Zoom",
+      "Ceramic Shield 2",
+      "ProRes RAW",
+    ],
+  },
+  // ────────────────────────────────────────────
+  // iPhone 17 Pro Max
   // ────────────────────────────────────────────
   {
     id: "iphone-17-pro-max",
@@ -106,8 +182,7 @@ export const iPhones: Product[] = [
     down: 20900,
     new: true,
     hot: true,
-    image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
+    image: "/assets/product/iPhone/iPhone17/Pro Max/ปก-iPhone17-Pro Max.jpg",
     category: "iPhone",
     brand: "Apple",
     specs: {
@@ -119,9 +194,9 @@ export const iPhones: Product[] = [
     description:
       "iPhone 17 Pro Max เรือธงสุดท้อปของ Apple ชิป A19 Pro จอ 6.9 นิ้ว กล้อง 8x Zoom Ceramic Shield 2 หน้า-หลัง",
     colors: [
-      { name: "Deep Blue", hex: "#1E3A5F", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "Cosmic Orange", hex: "#D47A3E", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "Silver", hex: "#E3E4E5", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
+      { name: "Cosmic Orange", hex: "#D47A3E", image: "/assets/product/iPhone/iPhone17/Pro Max/iPhone17 pro max-Cosmic Orange.jpg" },
+      { name: "Deep Blue", hex: "#1E3A5F", image: "/assets/product/iPhone/iPhone17/Pro Max/iPhone17 pro max-Deep Blue.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/iPhone/iPhone17/Pro Max/iPhone17 pro max-Silver.jpg" },
     ],
     features: [
       "5G",
@@ -136,342 +211,22 @@ export const iPhones: Product[] = [
       "แบตอึดที่สุด",
     ],
   },
-  // ────────────────────────────────────────────
-  // Hot + New: iPhone 17
-  // ────────────────────────────────────────────
-  {
-    id: "iphone-17",
-    name: "iPhone 17",
-    price: 40900,
-    down: 9900,
-    new: true,
-    hot: true,
-    image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["256GB", "512GB"],
-      processor: "A19",
-      display: '6.3"',
-      camera: "48MP Dual Fusion",
-    },
-    description:
-      "iPhone 17 ชิป A19 ดีไซน์ใหม่หมด กล้อง 48MP Dual Fusion พร้อม Ultra Wide 48MP Ceramic Shield 2 ทนทานขึ้น 3 เท่า กล้องหน้า 18MP",
-    colors: [
-      { name: "Black", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Lavender", hex: "#CFC4E8", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Mist Blue", hex: "#B5CAD7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Sage", hex: "#C4CEB0", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "White", hex: "#F5F5F7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "A19 Chip",
-      "Dynamic Island",
-      "48MP Dual Fusion",
-      "Ceramic Shield 2",
-      "Wireless Charging",
-    ],
-  },
-  // ────────────────────────────────────────────
-  // iPhone 14 Series
-  // ────────────────────────────────────────────
-  {
-    id: "iphone-14",
-    name: "iPhone 14",
-    price: 25900,
-    down: 3500,
-    image:
-      "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["128GB"],
-      processor: "A15 Bionic",
-      display: '6.1"',
-      camera: "12MP Dual",
-    },
-    description:
-      "iPhone 14 ชิป A15 Bionic กล้องคู่ 12MP พร้อม Cinematic Mode ถ่ายวิดีโอเหมือนมืออาชีพ Crash Detection ฟีเจอร์ใหม่เพื่อความปลอดภัย",
-    colors: [
-      { name: "Midnight", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1" },
-      { name: "Starlight", hex: "#F5F0E8", image: "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1" },
-      { name: "Blue", hex: "#A1C6EA", image: "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1" },
-      { name: "Purple", hex: "#C5B9DB", image: "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1" },
-      { name: "Yellow", hex: "#F9E472", image: "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1" },
-      { name: "(PRODUCT)RED", hex: "#E42535", image: "https://images.unsplash.com/photo-1634320498239-497d37b8f1fd?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "Cinematic Mode",
-      "Crash Detection",
-      "Wireless Charging",
-      "Water Resistant IP68",
-    ],
-  },
-  {
-    id: "iphone-15",
-    name: "iPhone 15",
-    price: 29000,
-    down: 4800,
-    image:
-      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["128GB"],
-      processor: "A16 Bionic",
-      display: '6.1"',
-      camera: "48MP Main",
-    },
-    description:
-      "iPhone 15 กล้องหลัก 48MP Dynamic Island สุดล้ำ USB-C ชาร์จเร็ว ดีไซน์ขอบโค้ง มีหลากสีสันให้เลือก",
-    colors: [
-      { name: "Black", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1" },
-      { name: "Blue", hex: "#A1C6EA", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1" },
-      { name: "Green", hex: "#D1E8D0", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1" },
-      { name: "Yellow", hex: "#F9E472", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1" },
-      { name: "Pink", hex: "#F9C5D1", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "Dynamic Island",
-      "48MP Camera",
-      "Wireless Charging",
-    ],
-  },
-  // ────────────────────────────────────────────
-  // iPhone 16 Series
-  // ────────────────────────────────────────────
-  {
-    id: "iphone-16",
-    name: "iPhone 16",
-    price: 34500,
-    down: 7500,
-    image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["128GB", "256GB"],
-      processor: "A18",
-      display: '6.1"',
-      camera: "48MP Fusion",
-    },
-    description:
-      "iPhone 16 ชิป A18 รุ่นใหม่ กล้อง Fusion 48MP Camera Control ถ่ายภาพมือโปร Action Button ปรับแต่งได้ สีสันสดใสสุดๆ",
-    colors: [
-      { name: "Black", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "White", hex: "#F5F5F7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Pink", hex: "#F9C5D1", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Teal", hex: "#5DBFB0", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Ultramarine", hex: "#5663F7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "Camera Control",
-      "Action Button",
-      "A18 Chip",
-      "Wireless Charging",
-    ],
-  },
-  {
-    id: "iphone-16-plus",
-    name: "iPhone 16 Plus",
-    price: 42500,
-    down: 12900,
-    image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["128GB", "256GB"],
-      processor: "A18",
-      display: '6.7"',
-      camera: "48MP Fusion",
-    },
-    description:
-      "iPhone 16 Plus จอใหญ่ 6.7 นิ้ว ชิป A18 กล้อง Fusion 48MP Camera Control แบตอึดพิเศษ Action Button สีสันจัดจ้าน",
-    colors: [
-      { name: "Black", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "White", hex: "#F5F5F7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Pink", hex: "#F9C5D1", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Teal", hex: "#5DBFB0", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Ultramarine", hex: "#5663F7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "Camera Control",
-      "Action Button",
-      "A18 Chip",
-      "Wireless Charging",
-      "แบตอึดพิเศษ",
-    ],
-  },
-  {
-    id: "iphone-16e",
-    name: "iPhone 16e",
-    price: 30900,
-    down: 5900,
-    image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["128GB", "256GB"],
-      processor: "A18",
-      display: '6.1"',
-      camera: "48MP",
-    },
-    description:
-      "iPhone 16e ชิป A18 กล้อง 48MP USB-C ราคาคุ้มค่า ดีไซน์ทันสมัย รองรับ 5G Apple Intelligence",
-    colors: [
-      { name: "Black", hex: "#1C1C1E", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "White", hex: "#F5F5F7", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Pink", hex: "#F9C5D1", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "A18 Chip",
-      "48MP Camera",
-      "Apple Intelligence",
-    ],
-  },
-  {
-    id: "iphone-16-pro-max-512",
-    name: "iPhone 16 Pro Max 512GB",
-    price: 64900,
-    down: 19900,
-    image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["512GB"],
-      processor: "A18 Pro",
-      display: '6.9"',
-      camera: "48MP Pro",
-    },
-    description:
-      "iPhone 16 Pro Max 512GB จอใหญ่ 6.9 นิ้ว ชิป A18 Pro กล้อง Pro 48MP ถ่ายวิดีโอ 4K 120fps Spatial Video Titanium Design",
-    colors: [
-      { name: "Desert Titanium", hex: "#C4A882", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "Natural Titanium", hex: "#C2BCB0", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "White Titanium", hex: "#E3E2DD", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "Black Titanium", hex: "#4A4845", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "ProMotion 120Hz",
-      "Titanium Design",
-      "Spatial Video",
-      "Action Button",
-      "แบตอึดที่สุด",
-    ],
-  },
-
-  // ────────────────────────────────────────────
-  // iPhone 17 Series
-  // ────────────────────────────────────────────
-  {
-    id: "iphone-17-air",
-    name: "iPhone 17 Air",
-    price: 47000,
-    down: 18900,
-    new: true,
-    image:
-      "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["256GB", "512GB"],
-      processor: "A19",
-      display: '6.6"',
-      camera: "48MP",
-    },
-    description:
-      "iPhone 17 Air บางที่สุดเพียง 5.5mm! ชิป A19 จอ 6.6 นิ้ว ProMotion 120Hz ตัวเครื่อง Titanium เกรด 5 น้ำหนักเบาสุดเพียง 165 กรัม",
-    colors: [
-      { name: "Space Black", hex: "#3A3A3C", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Cloud White", hex: "#EDEDEA", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Light Gold", hex: "#E6D5B8", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-      { name: "Sky Blue", hex: "#A3C4E0", image: "https://images.unsplash.com/photo-1727008607959-7b3fce7f7bd8?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "A19 Chip",
-      "ProMotion 120Hz",
-      "บางเพียง 5.5mm",
-      "Titanium Grade 5",
-      "Ceramic Shield 2",
-      "น้ำหนักเบา 165g",
-    ],
-  },
-  {
-    id: "iphone-17-pro",
-    name: "iPhone 17 Pro",
-    price: 52900,
-    down: 17900,
-    new: true,
-    image:
-      "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1",
-    category: "iPhone",
-    brand: "Apple",
-    specs: {
-      storage: ["256GB", "512GB"],
-      processor: "A19 Pro",
-      display: '6.3"',
-      camera: "48MP Pro Fusion",
-    },
-    description:
-      "iPhone 17 Pro ชิป A19 Pro กล้อง 48MP Pro Fusion 3 ตัว ซูม 8x Optical จอ 6.3 นิ้ว Ceramic Shield 2 หน้า-หลัง ProRes RAW",
-    colors: [
-      { name: "Deep Blue", hex: "#1E3A5F", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "Cosmic Orange", hex: "#D47A3E", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-      { name: "Silver", hex: "#E3E4E5", image: "https://images.unsplash.com/photo-1727008729556-8d6ca3e0d154?w=400&h=300&fit=crop&q=1" },
-    ],
-    features: [
-      "5G",
-      "Face ID",
-      "USB-C",
-      "A19 Pro",
-      "ProMotion 120Hz",
-      "Titanium Design",
-      "8x Optical Zoom",
-      "Ceramic Shield 2",
-      "ProRes RAW",
-    ],
-  },
 ];
 
 // ============================================================
-// Android Products — Samsung Galaxy A Series
+// Android Products — Samsung Galaxy A & S Series
 // ============================================================
 
 export const androids: Product[] = [
+  // ────────────────────────────────────────────
+  // Galaxy A Series
+  // ────────────────────────────────────────────
   {
     id: "galaxy-a07-5g",
     name: "Galaxy A07 5G",
-    price: 5900,
-    down: 1300,
-    image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1",
+    price: 7000,
+    down: 1000,
+    image: "/assets/product/Samsung/A07/Samsung-A07.jpg",
     category: "android",
     brand: "Samsung",
     specs: {
@@ -483,8 +238,8 @@ export const androids: Product[] = [
     description:
       "Galaxy A07 5G รุ่นเริ่มต้น 5G ราคาประหยัด จอ 6.7 นิ้ว กล้อง 50MP แบต 5000mAh เหมาะสำหรับการใช้งานทั่วไป",
     colors: [
-      { name: "Black", hex: "#2A2A2A", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Light Blue", hex: "#A1C6EA", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
+      { name: "Black", hex: "#2A2A2A", image: "/assets/product/Samsung/A07/Samsung-A07-balck.jpg" },
+      { name: "Light Violet", hex: "#C5B9DB", image: "/assets/product/Samsung/A07/Samsung-A07-light violet.jpg" },
     ],
     features: [
       "5G",
@@ -497,10 +252,9 @@ export const androids: Product[] = [
   {
     id: "galaxy-a17-5g",
     name: "Galaxy A17 5G",
-    price: 9700,
-    down: 1500,
-    image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1",
+    price: 11400,
+    down: 1800,
+    image: "/assets/product/Samsung/A17/Samsung-A17.jpg",
     category: "android",
     brand: "Samsung",
     specs: {
@@ -512,9 +266,8 @@ export const androids: Product[] = [
     description:
       "Galaxy A17 5G จอ Super AMOLED 90Hz กล้อง 50MP แบต 5000mAh ชาร์จเร็ว 25W คุ้มค่าสำหรับการใช้งานทุกวัน",
     colors: [
-      { name: "Black", hex: "#2A2A2A", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Light Blue", hex: "#A1C6EA", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Gold", hex: "#E6D5B8", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
+      { name: "Black", hex: "#2A2A2A", image: "/assets/product/Samsung/A17/Samsung-A17-black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/Samsung/A17/Samsung-A17-blue.jpg" },
     ],
     features: [
       "5G",
@@ -528,11 +281,10 @@ export const androids: Product[] = [
   {
     id: "galaxy-a36-5g",
     name: "Galaxy A36 5G",
-    price: 16100,
+    price: 16300,
     down: 2500,
     hot: true,
-    image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1",
+    image: "/assets/product/Samsung/A36/A36-Logo.jpg",
     category: "android",
     brand: "Samsung",
     specs: {
@@ -544,10 +296,9 @@ export const androids: Product[] = [
     description:
       "Galaxy A36 5G จอ Super AMOLED 120Hz ชิป Snapdragon 6 Gen 3 กล้อง 50MP OIS กันน้ำ IP67 ชาร์จเร็ว 45W แบต 5000mAh ใช้ได้ทั้งวัน",
     colors: [
-      { name: "Awesome Lavender", hex: "#C9B8D9", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Awesome White", hex: "#F0EFEA", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Awesome Black", hex: "#2A2A2A", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Awesome Lime", hex: "#C3D94E", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
+      { name: "Awesome Black", hex: "#2A2A2A", image: "/assets/product/Samsung/A36/A36-Awesome Black.jpg" },
+      { name: "Awesome Lavender", hex: "#C9B8D9", image: "/assets/product/Samsung/A36/A36-Awesome Lavender.jpg" },
+      { name: "Awesome Lime", hex: "#C3D94E", image: "/assets/product/Samsung/A36/A36-Awesome Lime.jpg" },
     ],
     features: [
       "5G",
@@ -563,12 +314,11 @@ export const androids: Product[] = [
   {
     id: "galaxy-a56-5g",
     name: "Galaxy A56 5G",
-    price: 17900,
+    price: 19900,
     down: 3100,
     hot: true,
     new: true,
-    image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1",
+    image: "/assets/product/Samsung/A56/A56-Logo.jpg",
     category: "android",
     brand: "Samsung",
     specs: {
@@ -580,10 +330,9 @@ export const androids: Product[] = [
     description:
       "Galaxy A56 5G จอ Super AMOLED 120Hz HDR10+ ชิป Exynos 1580 ตัวเครื่องอลูมิเนียม กล้อง 50MP OIS กันน้ำ IP67 อัปเดต Android 6 รุ่น",
     colors: [
-      { name: "Awesome Graphite", hex: "#575757", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Awesome Light Gray", hex: "#D4D4D4", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Awesome Olive", hex: "#808C4A", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
-      { name: "Awesome Pink", hex: "#F2B8C6", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop&q=1" },
+      { name: "Awesome Graphite", hex: "#575757", image: "/assets/product/Samsung/A56/A56-Awesome Graphite.jpg" },
+      { name: "Awesome Olive", hex: "#808C4A", image: "/assets/product/Samsung/A56/A56-Awesome Olive.jpg" },
+      { name: "Awesome Pink", hex: "#F2B8C6", image: "/assets/product/Samsung/A56/A56-Awesome Pink.jpg" },
     ],
     features: [
       "5G",
@@ -597,46 +346,364 @@ export const androids: Product[] = [
       "6 Android Upgrades",
     ],
   },
+  // ────────────────────────────────────────────
+  // Galaxy S26 Series
+  // ────────────────────────────────────────────
+  {
+    id: "galaxy-s26-5g",
+    name: "Galaxy S26 5G",
+    price: 44900,
+    down: 18900,
+    hot: true,
+    new: true,
+    image: "/assets/product/Samsung/S26/Samsung-S26.jpg",
+    category: "android",
+    brand: "Samsung",
+    specs: {
+      storage: ["256GB", "512GB"],
+      processor: "Snapdragon 8 Elite",
+      display: '6.2"',
+      camera: "50MP Triple",
+    },
+    description:
+      "Galaxy S26 5G เรือธงรุ่นใหม่ ชิป Snapdragon 8 Elite จอ Dynamic AMOLED 2X 120Hz กล้อง 50MP กันน้ำ IP68 รองรับ Galaxy AI",
+    colors: [
+      { name: "Black Shadow", hex: "#2A2A2A", image: "/assets/product/Samsung/S26/Samsung-S26-Black Shadow.jpg" },
+      { name: "Cobalt Violet", hex: "#6B5B95", image: "/assets/product/Samsung/S26/Samsung-S26-Cobalt Violet.jpg" },
+      { name: "Sky Blue", hex: "#A3C4E0", image: "/assets/product/Samsung/S26/Samsung-S26-Sky Blue.jpg" },
+      { name: "White Shadow", hex: "#F5F5F7", image: "/assets/product/Samsung/S26/Samsung-S26-White Shadow.jpg" },
+    ],
+    features: [
+      "5G",
+      "Dynamic AMOLED 2X",
+      "120Hz",
+      "IP68 กันน้ำ",
+      "Galaxy AI",
+      "Snapdragon 8 Elite",
+      "Wireless Charging",
+      "S Pen Support",
+    ],
+  },
+  {
+    id: "galaxy-s26-ultra-5g",
+    name: "Galaxy S26 Ultra 5G",
+    price: 61900,
+    down: 22900,
+    hot: true,
+    new: true,
+    image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra.jpg",
+    category: "android",
+    brand: "Samsung",
+    specs: {
+      storage: ["256GB", "512GB", "1TB"],
+      processor: "Snapdragon 8 Elite",
+      display: '6.9"',
+      camera: "200MP Quad",
+    },
+    description:
+      "Galaxy S26 Ultra 5G เรือธงสุดท้อป ชิป Snapdragon 8 Elite กล้อง 200MP จอ 6.9 นิ้ว QHD+ S Pen ในตัว Galaxy AI สุดล้ำ",
+    colors: [
+      { name: "Black Shadow", hex: "#2A2A2A", image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra-Black Shadow.jpg" },
+      { name: "Cobalt Violet", hex: "#6B5B95", image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra-Cobalt Violet.jpg" },
+      { name: "Pink Gold", hex: "#E8C4B8", image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra-Pink Gold.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra-Silver.jpg" },
+      { name: "Sky Blue", hex: "#A3C4E0", image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra-Sky Blue.jpg" },
+      { name: "White Shadow", hex: "#F5F5F7", image: "/assets/product/Samsung/S26 Ultra/Samsung-S26 ultra-White Shadow.jpg" },
+    ],
+    features: [
+      "5G",
+      "Dynamic AMOLED 2X",
+      "QHD+ 120Hz",
+      "IP68 กันน้ำ",
+      "Galaxy AI",
+      "S Pen ในตัว",
+      "200MP Camera",
+      "Titanium Frame",
+      "45W Fast Charging",
+    ],
+  },
+];
+
+// ============================================================
+// MacBook Products
+// ============================================================
+
+export const macBooks: Product[] = [
+  // ────────────────────────────────────────────
+  // MacBook Air 13" (M2)
+  // ────────────────────────────────────────────
+  {
+    id: "macbook-air-13-m2",
+    name: 'MacBook Air 13" (M2)',
+    price: 39900,
+    down: 8900,
+    image: "/assets/product/MacBook/macbook air m2/MacBook Air (M2) 13_.jpg",
+    category: "MacBook",
+    brand: "Apple",
+    specs: {
+      storage: ["256GB", "512GB"],
+      processor: "Apple M2",
+      display: '13.6" Liquid Retina',
+    },
+    description:
+      "MacBook Air ชิป M2 จอ 13.6 นิ้ว Liquid Retina บางเบา น้ำหนักเพียง 1.24 กก. แบตใช้ได้ยาวนานถึง 18 ชม. MagSafe ชาร์จเร็ว",
+    colors: [
+      { name: "Midnight", hex: "#2E3642", image: "/assets/product/MacBook/macbook air m2/MacBook Air (M2) 13_-MN.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/MacBook/macbook air m2/MacBook Air (M2) 13_-S.jpg" },
+      { name: "Space Gray", hex: "#6E6E73", image: "/assets/product/MacBook/macbook air m2/MacBook Air (M2) 13_-SG.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/MacBook/macbook air m2/MacBook Air (M2) 13_-SL.jpg" },
+    ],
+    features: [
+      "Apple M2 Chip",
+      "8-core CPU",
+      "10-core GPU",
+      "Liquid Retina Display",
+      "MagSafe Charging",
+      "แบต 18 ชม.",
+      "น้ำหนัก 1.24 กก.",
+      "1080p FaceTime HD",
+    ],
+  },
+  // ────────────────────────────────────────────
+  // MacBook Air 13" (M4)
+  // ────────────────────────────────────────────
+  {
+    id: "macbook-air-13-m4",
+    name: 'MacBook Air 13" (M4)',
+    price: 44900,
+    down: 12700,
+    new: true,
+    hot: true,
+    image: "/assets/product/MacBook/macbook air m4/MacBook Air (M4) 13_.jpg",
+    category: "MacBook",
+    brand: "Apple",
+    specs: {
+      storage: ["256GB", "512GB", "1TB"],
+      processor: "Apple M4",
+      display: '13.6" Liquid Retina',
+    },
+    description:
+      "MacBook Air ชิป M4 รุ่นใหม่ จอ 13.6 นิ้ว Liquid Retina ประสิทธิภาพสูงสุด รองรับ Apple Intelligence แบตใช้ได้ถึง 18 ชม.",
+    colors: [
+      { name: "Midnight", hex: "#2E3642", image: "/assets/product/MacBook/macbook air m4/MacBook Air (M4) 13_-MN.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/MacBook/macbook air m4/MacBook Air (M4) 13_-S.jpg" },
+      { name: "Sky Blue", hex: "#A3C4E0", image: "/assets/product/MacBook/macbook air m4/MacBook Air (M4) 13_-SB.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/MacBook/macbook air m4/MacBook Air (M4) 13_-SL.jpg" },
+    ],
+    features: [
+      "Apple M4 Chip",
+      "10-core CPU",
+      "10-core GPU",
+      "Apple Intelligence",
+      "Liquid Retina Display",
+      "MagSafe Charging",
+      "แบต 18 ชม.",
+      "12MP Center Stage",
+    ],
+  },
+  // ────────────────────────────────────────────
+  // MacBook Pro 14" (M5)
+  // ────────────────────────────────────────────
+  {
+    id: "macbook-pro-14-m5",
+    name: 'MacBook Pro 14" (M5)',
+    price: 66900,
+    down: 19100,
+    new: true,
+    hot: true,
+    image: "/assets/product/MacBook/mac pro m5/MacBook Pro (M5) 14_.jpg",
+    category: "MacBook",
+    brand: "Apple",
+    specs: {
+      storage: ["512GB", "1TB", "2TB"],
+      processor: "Apple M5 Pro",
+      display: '14.2" Liquid Retina XDR',
+    },
+    description:
+      "MacBook Pro ชิป M5 Pro จอ 14.2 นิ้ว Liquid Retina XDR ProMotion 120Hz ประสิทธิภาพระดับมืออาชีพ Apple Intelligence แบต 17 ชม.",
+    colors: [
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/MacBook/mac pro m5/MacBook Air (M5) 14_-S.jpg" },
+      { name: "Space Black", hex: "#1D1D1F", image: "/assets/product/MacBook/mac pro m5/MacBook Air (M5) 14_-SB.jpg" },
+    ],
+    features: [
+      "Apple M5 Pro",
+      "12-core CPU",
+      "18-core GPU",
+      "Apple Intelligence",
+      "Liquid Retina XDR",
+      "ProMotion 120Hz",
+      "MagSafe 3",
+      "แบต 17 ชม.",
+      "HDMI + SD Card",
+    ],
+  },
 ];
 
 // ============================================================
 // iPad Products
 // ============================================================
 
-const ipadImg = "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop&q=1";
-const ipadAirImg = "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=300&fit=crop&q=1";
-const ipadColors = [
-  { name: "Silver", hex: "#E3E4E5", image: ipadImg },
-  { name: "Blue", hex: "#A1C6EA", image: ipadImg },
-  { name: "Pink", hex: "#F9C5D1", image: ipadImg },
-  { name: "Yellow", hex: "#F9E472", image: ipadImg },
-];
-const ipadAirColors = [
-  { name: "Space Gray", hex: "#6E6E73", image: ipadAirImg },
-  { name: "Starlight", hex: "#F5F0E8", image: ipadAirImg },
-  { name: "Purple", hex: "#C5B9DB", image: ipadAirImg },
-  { name: "Blue", hex: "#A1C6EA", image: ipadAirImg },
-];
-
 export const iPads: Product[] = [
-  // iPad Gen 11 (A16)
-  { id: "ipad-gen11-wifi", name: "iPad Gen 11 (A16) Wifi", price: 18800, down: 1800, hot: true, image: ipadImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB", "512GB"], processor: "A16 Bionic", display: '10.9"', connectivity: "Wi-Fi" }, description: "iPad Gen 11 ชิป A16 Bionic จอ 10.9 นิ้ว Liquid Retina รองรับ Apple Pencil เหมาะสำหรับเรียนและทำงาน", colors: ipadColors, features: ["Wi-Fi 6", "USB-C", "Apple Pencil", "Liquid Retina", "Center Stage"] },
-  { id: "ipad-gen11-cellular", name: "iPad Gen 11 (A16) Wifi+Cellular", price: 24900, down: 4900, image: ipadImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "A16 Bionic", display: '10.9"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Gen 11 ชิป A16 Bionic จอ 10.9 นิ้ว Wifi+Cellular ใช้ซิมได้ พกพาไปได้ทุกที่", colors: ipadColors, features: ["Wi-Fi 6", "USB-C", "Cellular", "Apple Pencil", "Liquid Retina", "Center Stage"] },
+  // ────────────────────────────────────────────
   // iPad Air 11" (M3)
-  { id: "ipad-air-11-m3-wifi", name: 'iPad Air 11" (M3) Wifi', price: 25800, down: 5800, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi" }, description: "iPad Air ชิป M3 จอ 11 นิ้ว Liquid Retina ประสิทธิภาพระดับ Pro รองรับ Apple Pencil Pro และ Magic Keyboard", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard", "Center Stage"] },
-  { id: "ipad-air-11-m3-cellular", name: 'iPad Air 11" (M3) Wifi+Cellular', price: 36900, down: 8900, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Air ชิป M3 จอ 11 นิ้ว Wifi+Cellular ใช้ซิมได้ ประสิทธิภาพระดับ Pro", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard"] },
+  // ────────────────────────────────────────────
+  {
+    id: "ipad-air-11-m3-wifi",
+    name: 'iPad Air 11" (M3) Wifi',
+    price: 25800,
+    down: 5800,
+    image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/ปกSKU-ipad m3 11_ wifi.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi" },
+    description: "iPad Air ชิป M3 จอ 11 นิ้ว Liquid Retina ประสิทธิภาพระดับ Pro รองรับ Apple Pencil Pro และ Magic Keyboard",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11_M3_WiFi_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11_M3_WiFi_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11_M3_WiFi_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11-M3-WiFi-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard", "Center Stage"],
+  },
+  {
+    id: "ipad-air-11-m3-cellular",
+    name: 'iPad Air 11" (M3) Wifi+Cellular',
+    price: 36900,
+    down: 8900,
+    image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/ปกSKU-ipad m3 11_ wifi cellular.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Air ชิป M3 จอ 11 นิ้ว Wifi+Cellular ใช้ซิมได้ ประสิทธิภาพระดับ Pro",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11_M3_WiFi Cellular_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11_M3_WiFi Cellular_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11_M3_WiFi Cellular_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M3/ipad air m3 11_/Air11-M3-WiFi Cellular-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard"],
+  },
+  // ────────────────────────────────────────────
   // iPad Air 13" (M3)
-  { id: "ipad-air-13-m3-wifi", name: 'iPad Air 13" (M3) Wifi', price: 33800, down: 9800, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi" }, description: "iPad Air ชิป M3 จอ 13 นิ้ว Liquid Retina จอใหญ่เต็มตา เหมาะกับงานครีเอทีฟ", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard", "Center Stage"] },
-  { id: "ipad-air-13-m3-cellular", name: 'iPad Air 13" (M3) Wifi+Cellular', price: 43900, down: 14900, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Air ชิป M3 จอ 13 นิ้ว Wifi+Cellular จอใหญ่พร้อมซิม", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard"] },
-  // iPad Gen 12 (A19) — NEW
-  { id: "ipad-gen12-wifi", name: "iPad Gen 12 (A19) Wifi", price: 21900, down: 5900, new: true, image: ipadImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "A19", display: '10.9"', connectivity: "Wi-Fi" }, description: "iPad Gen 12 ชิป A19 รุ่นใหม่ จอ 10.9 นิ้ว ประสิทธิภาพสูงขึ้น รองรับ Apple Intelligence", colors: ipadColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil", "Apple Intelligence", "Liquid Retina"] },
-  { id: "ipad-gen12-cellular", name: "iPad Gen 12 (A19) Wifi+Cellular", price: 29900, down: 10900, new: true, image: ipadImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "A19", display: '10.9"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Gen 12 ชิป A19 Wifi+Cellular ใช้ซิมได้ รองรับ Apple Intelligence", colors: ipadColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil", "Apple Intelligence", "Liquid Retina"] },
-  // iPad Air 11" (M4) — NEW
-  { id: "ipad-air-11-m4-wifi", name: 'iPad Air 11" (M4) Wifi', price: 31900, down: 9900, new: true, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M4", display: '11"', connectivity: "Wi-Fi" }, description: "iPad Air ชิป M4 รุ่นใหม่ จอ 11 นิ้ว ประสิทธิภาพสูงสุด รองรับ Apple Pencil Pro", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard", "Apple Intelligence"] },
-  { id: "ipad-air-11-m4-cellular", name: 'iPad Air 11" (M4) Wifi+Cellular', price: 40900, down: 14900, new: true, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M4", display: '11"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Air ชิป M4 จอ 11 นิ้ว Wifi+Cellular ใช้ซิมได้ ประสิทธิภาพระดับ Pro", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard"] },
-  // iPad Air 13" (M4) — NEW
-  { id: "ipad-air-13-m4-wifi", name: 'iPad Air 13" (M4) Wifi', price: 40900, down: 13900, new: true, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M4", display: '13"', connectivity: "Wi-Fi" }, description: "iPad Air ชิป M4 จอ 13 นิ้ว Liquid Retina จอใหญ่เต็มตา ประสิทธิภาพสูงสุด", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard", "Apple Intelligence"] },
-  { id: "ipad-air-13-m4-cellular", name: 'iPad Air 13" (M4) Wifi+Cellular', price: 49900, down: 16900, new: true, image: ipadAirImg, category: "iPad", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M4", display: '13"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Air ชิป M4 จอ 13 นิ้ว Wifi+Cellular จอใหญ่พร้อมซิม ประสิทธิภาพสูงสุด", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard"] },
+  // ────────────────────────────────────────────
+  {
+    id: "ipad-air-13-m3-wifi",
+    name: 'iPad Air 13" (M3) Wifi',
+    price: 33800,
+    down: 9800,
+    image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/ปกSKU-ipad m3 13_ wifi.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi" },
+    description: "iPad Air ชิป M3 จอ 13 นิ้ว Liquid Retina จอใหญ่เต็มตา เหมาะกับงานครีเอทีฟ",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13_M3_WiFi_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13_M3_WiFi_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13_M3_WiFi_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13-M3-WiFi-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard", "Center Stage"],
+  },
+  {
+    id: "ipad-air-13-m3-cellular",
+    name: 'iPad Air 13" (M3) Wifi+Cellular',
+    price: 43900,
+    down: 14900,
+    image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/ปกSKU-ipad m3 13_ wifi cellular.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Air ชิป M3 จอ 13 นิ้ว Wifi+Cellular จอใหญ่พร้อมซิม",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13_M3_WiFi Cellular_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13_M3_WiFi Cellular_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13_M3_WiFi Cellular_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M3/ipad air m3 13_/Air13-M3-WiFi Cellular-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M3 Chip", "Magic Keyboard"],
+  },
+  // ────────────────────────────────────────────
+  // iPad Air 11" (M4)
+  // ────────────────────────────────────────────
+  {
+    id: "ipad-air-11-m4-wifi",
+    name: 'iPad Air 11" (M4) Wifi',
+    price: 31900,
+    down: 9900,
+    new: true,
+    image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/ปกSKU-ipad m4 11_ wifi.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M4", display: '11"', connectivity: "Wi-Fi" },
+    description: "iPad Air ชิป M4 รุ่นใหม่ จอ 11 นิ้ว ประสิทธิภาพสูงสุด รองรับ Apple Pencil Pro",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11_M4_WiFi_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11_M4_WiFi_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11_M4_WiFi_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11-M4-WiFi-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard", "Apple Intelligence"],
+  },
+  {
+    id: "ipad-air-11-m4-cellular",
+    name: 'iPad Air 11" (M4) Wifi+Cellular',
+    price: 40900,
+    down: 14900,
+    new: true,
+    image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/ปกSKU-ipad m4 11_ wifi cellular.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M4", display: '11"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Air ชิป M4 จอ 11 นิ้ว Wifi+Cellular ใช้ซิมได้ ประสิทธิภาพระดับ Pro",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11_M4_WiFi Cellular_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11_M4_WiFi Cellular_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11_M4_WiFi Cellular_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M4/ipad air m4 11_/Air11-M4-WiFi Cellular-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard"],
+  },
+  // ────────────────────────────────────────────
+  // iPad Air 13" (M4)
+  // ────────────────────────────────────────────
+  {
+    id: "ipad-air-13-m4-wifi",
+    name: 'iPad Air 13" (M4) Wifi',
+    price: 40900,
+    down: 13900,
+    new: true,
+    image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/ปกSKU-ipad m4 13_ wifi.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M4", display: '13"', connectivity: "Wi-Fi" },
+    description: "iPad Air ชิป M4 จอ 13 นิ้ว Liquid Retina จอใหญ่เต็มตา ประสิทธิภาพสูงสุด",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13_M4_WiFi_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13_M4_WiFi_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13_M4_WiFi_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13-M4-WiFi-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard", "Apple Intelligence"],
+  },
+  {
+    id: "ipad-air-13-m4-cellular",
+    name: 'iPad Air 13" (M4) Wifi+Cellular',
+    price: 49900,
+    down: 16900,
+    new: true,
+    image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/ปกSKU-ipad m4 13_ wifi cellular.jpg",
+    category: "iPad",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M4", display: '13"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Air ชิป M4 จอ 13 นิ้ว Wifi+Cellular จอใหญ่พร้อมซิม ประสิทธิภาพสูงสุด",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13_M4_WiFi Cellular_Black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13_M4_WiFi Cellular_Blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13_M4_WiFi Cellular_Purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad/iPad Air M4/ipad air m4 13_/Air13-M4-WiFi Cellular-Starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil Pro", "M4 Chip", "Magic Keyboard"],
+  },
 ];
 
 // ============================================================
@@ -644,12 +711,123 @@ export const iPads: Product[] = [
 // ============================================================
 
 export const comboApplePencil: Product[] = [
-  { id: "combo-ipad-gen11-wifi-pencil", name: "iPad Gen 11 (A16) Wifi + Pencil (USB-C)", price: 22000, down: 3000, image: ipadImg, category: "Combo set Apple Pencil", brand: "Apple", specs: { storage: ["128GB", "256GB", "512GB"], processor: "A16 Bionic", display: '10.9"', connectivity: "Wi-Fi" }, description: "iPad Gen 11 + Apple Pencil (USB-C) ชุดพร้อมใช้ ราคาคุ้มกว่าซื้อแยก", colors: ipadColors, features: ["Wi-Fi 6", "USB-C", "Apple Pencil (USB-C)", "Liquid Retina"] },
-  { id: "combo-ipad-gen11-cellular-pencil", name: "iPad Gen 11 (A16) Wifi+Cellular + Pencil (USB-C)", price: 30400, down: 6000, image: ipadImg, category: "Combo set Apple Pencil", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "A16 Bionic", display: '10.9"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Gen 11 Wifi+Cellular + Apple Pencil (USB-C) ชุดพร้อมใช้ ใส่ซิมได้", colors: ipadColors, features: ["Wi-Fi 6", "USB-C", "Cellular", "Apple Pencil (USB-C)", "Liquid Retina"] },
-  { id: "combo-ipad-air-11-m3-wifi-pencil", name: 'iPad Air 11" (M3) Wifi + Pencil (USB-C)', price: 32000, down: 8500, image: ipadAirImg, category: "Combo set Apple Pencil", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi" }, description: "iPad Air M3 + Apple Pencil (USB-C) ชุดพร้อมใช้ ประสิทธิภาพระดับ Pro", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil (USB-C)", "M3 Chip", "Magic Keyboard"] },
-  { id: "combo-ipad-air-11-m3-cellular-pencil", name: 'iPad Air 11" (M3) Wifi+Cellular + Pencil (USB-C)', price: 40400, down: 13500, image: ipadAirImg, category: "Combo set Apple Pencil", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Air M3 Wifi+Cellular + Apple Pencil (USB-C) ชุดพร้อมใช้ ใส่ซิมได้", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil (USB-C)", "M3 Chip"] },
-  { id: "combo-ipad-air-13-m3-wifi-pencil", name: 'iPad Air 13" (M3) Wifi + Pencil (USB-C)', price: 40400, down: 12500, image: ipadAirImg, category: "Combo set Apple Pencil", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi" }, description: "iPad Air M3 จอ 13 นิ้ว + Apple Pencil (USB-C) ชุดพร้อมใช้", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Apple Pencil (USB-C)", "M3 Chip", "Magic Keyboard"] },
-  { id: "combo-ipad-air-13-m3-cellular-pencil", name: 'iPad Air 13" (M3) Wifi+Cellular + Pencil (USB-C)', price: 48400, down: 16500, image: ipadAirImg, category: "Combo set Apple Pencil", brand: "Apple", specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi + Cellular" }, description: "iPad Air M3 จอ 13 นิ้ว Wifi+Cellular + Apple Pencil (USB-C) ชุดพร้อมใช้", colors: ipadAirColors, features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil (USB-C)", "M3 Chip"] },
+  // ────────────────────────────────────────────
+  // iPad Gen 11 (A16) + Pencil Bundle
+  // ────────────────────────────────────────────
+  {
+    id: "combo-ipad-gen11-wifi-pencil",
+    name: "iPad Gen 11 (A16) Wifi + Pencil (USB-C)",
+    price: 22000,
+    down: 3000,
+    image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi.jpg",
+    category: "Combo set Apple Pencil",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB", "512GB"], processor: "A16 Bionic", display: '10.9"', connectivity: "Wi-Fi" },
+    description: "iPad Gen 11 + Apple Pencil (USB-C) ชุดพร้อมใช้ ราคาคุ้มกว่าซื้อแยก",
+    colors: [
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi-blue.jpg" },
+      { name: "Pink", hex: "#F9C5D1", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi-pink.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi-silver.jpg" },
+      { name: "Yellow", hex: "#F9E472", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi-yellow.jpg" },
+    ],
+    features: ["Wi-Fi 6", "USB-C", "Apple Pencil (USB-C)", "Liquid Retina"],
+  },
+  {
+    id: "combo-ipad-gen11-cellular-pencil",
+    name: "iPad Gen 11 (A16) Wifi+Cellular + Pencil (USB-C)",
+    price: 30400,
+    down: 6000,
+    image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi+cellular.jpg",
+    category: "Combo set Apple Pencil",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "A16 Bionic", display: '10.9"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Gen 11 Wifi+Cellular + Apple Pencil (USB-C) ชุดพร้อมใช้ ใส่ซิมได้",
+    colors: [
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi+cellular-blue.jpg" },
+      { name: "Pink", hex: "#F9C5D1", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi+cellular-pink.jpg" },
+      { name: "Silver", hex: "#E3E4E5", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi+cellular-silver.jpg" },
+      { name: "Yellow", hex: "#F9E472", image: "/assets/product/iPad Bundle/Gen11 A16/Set-iPad A16-wifi+cellular-yellow.jpg" },
+    ],
+    features: ["Wi-Fi 6", "USB-C", "Cellular", "Apple Pencil (USB-C)", "Liquid Retina"],
+  },
+  // ────────────────────────────────────────────
+  // iPad Air 11" (M3) + Pencil Bundle
+  // ────────────────────────────────────────────
+  {
+    id: "combo-ipad-air-11-m3-wifi-pencil",
+    name: 'iPad Air 11" (M3) Wifi + Pencil (USB-C)',
+    price: 32000,
+    down: 8500,
+    image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi.jpg",
+    category: "Combo set Apple Pencil",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi" },
+    description: "iPad Air M3 + Apple Pencil (USB-C) ชุดพร้อมใช้ ประสิทธิภาพระดับ Pro",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi-black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi-blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi-purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi-starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil (USB-C)", "M3 Chip", "Magic Keyboard"],
+  },
+  {
+    id: "combo-ipad-air-11-m3-cellular-pencil",
+    name: 'iPad Air 11" (M3) Wifi+Cellular + Pencil (USB-C)',
+    price: 40400,
+    down: 13500,
+    image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi+cellular.jpg",
+    category: "Combo set Apple Pencil",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '11"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Air M3 Wifi+Cellular + Apple Pencil (USB-C) ชุดพร้อมใช้ ใส่ซิมได้",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi+cellular-black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi+cellular-blue .jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi+cellular-purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad Bundle/Air M3 11_/Set-iPad Air 11-wifi+cellular-starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil (USB-C)", "M3 Chip"],
+  },
+  // ────────────────────────────────────────────
+  // iPad Air 13" (M3) + Pencil Bundle
+  // ────────────────────────────────────────────
+  {
+    id: "combo-ipad-air-13-m3-wifi-pencil",
+    name: 'iPad Air 13" (M3) Wifi + Pencil (USB-C)',
+    price: 40400,
+    down: 12500,
+    image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi.jpg",
+    category: "Combo set Apple Pencil",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi" },
+    description: "iPad Air M3 จอ 13 นิ้ว + Apple Pencil (USB-C) ชุดพร้อมใช้",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi-black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi-blue.jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi-purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi-starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Apple Pencil (USB-C)", "M3 Chip", "Magic Keyboard"],
+  },
+  {
+    id: "combo-ipad-air-13-m3-cellular-pencil",
+    name: 'iPad Air 13" (M3) Wifi+Cellular + Pencil (USB-C)',
+    price: 48400,
+    down: 16500,
+    image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi+cellular.jpg",
+    category: "Combo set Apple Pencil",
+    brand: "Apple",
+    specs: { storage: ["128GB", "256GB"], processor: "M3", display: '13"', connectivity: "Wi-Fi + Cellular" },
+    description: "iPad Air M3 จอ 13 นิ้ว Wifi+Cellular + Apple Pencil (USB-C) ชุดพร้อมใช้",
+    colors: [
+      { name: "Black", hex: "#1C1C1E", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi+cellular-black.jpg" },
+      { name: "Blue", hex: "#A1C6EA", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi+cellular-blue .jpg" },
+      { name: "Purple", hex: "#C5B9DB", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi+cellular-purple.jpg" },
+      { name: "Starlight", hex: "#F5F0E8", image: "/assets/product/iPad Bundle/Air M3 13_/Set-iPad Air 13-wifi+cellular-starlight.jpg" },
+    ],
+    features: ["Wi-Fi 6E", "USB-C", "Cellular", "Apple Pencil (USB-C)", "M3 Chip"],
+  },
 ];
 
 
@@ -727,7 +905,7 @@ export const packages: Package[] = [
 // Combined products
 // ============================================================
 
-export const allProducts: Product[] = [...iPhones, ...iPads, ...androids, ...comboApplePencil];
+export const allProducts: Product[] = [...iPhones, ...iPads, ...androids, ...macBooks, ...comboApplePencil];
 
 // ============================================================
 // Product Grouping (for categorized dropdowns)
@@ -742,8 +920,8 @@ export interface ProductGroup {
 export function getGroupedProducts(): ProductGroup[] {
   const groups: ProductGroup[] = [];
 
-  // iPhone — group by series (newest first)
-  const iphoneSeries = [17, 16, 15, 14, 13] as const;
+  // iPhone — group by series (only iPhone 17 now)
+  const iphoneSeries = [17] as const;
   for (const series of iphoneSeries) {
     const prefix = `iPhone ${series}`;
     const matched = iPhones.filter((p) => p.name.startsWith(prefix));
@@ -768,6 +946,11 @@ export function getGroupedProducts(): ProductGroup[] {
     groups.push({ label: "iPad", products: iPads });
   }
 
+  // MacBook — single group
+  if (macBooks.length) {
+    groups.push({ label: "MacBook", products: macBooks });
+  }
+
   // Combo set Apple Pencil
   if (comboApplePencil.length) {
     groups.push({ label: "Combo set Apple Pencil", products: comboApplePencil });
@@ -781,7 +964,7 @@ export function getGroupedProducts(): ProductGroup[] {
 // ============================================================
 
 export function getProductsByCategory(
-  category: "iPhone" | "iPad" | "android" | "Combo set Apple Pencil"
+  category: "iPhone" | "iPad" | "android" | "MacBook" | "Combo set Apple Pencil"
 ): Product[] {
   return allProducts.filter((product) => product.category === category);
 }
