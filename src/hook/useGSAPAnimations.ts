@@ -19,7 +19,7 @@ function scrollReveal(
   fromVars: gsap.TweenVars,
   toVars: gsap.TweenVars,
   trigger: Element | null,
-  startPos = "top 88%"
+  startPos = "top 92%"
 ) {
   if (!trigger) return;
   gsap.fromTo(target, fromVars, {
@@ -146,7 +146,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: el,
-            start: "top 85%",
+            start: "top 90%",
             once: true,
           },
         });
@@ -156,7 +156,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             mascot,
             { scale: 0, rotation: -15, opacity: 0 },
-            { scale: 1, rotation: 0, opacity: 1, duration: 0.8, ease: "elastic.out(1, 0.5)" }
+            { scale: 1, rotation: 0, opacity: 1, duration: 0.55, ease: "elastic.out(1, 0.5)" }
           );
         }
 
@@ -165,8 +165,8 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             title,
             { y: 40, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.7 },
-            "-=0.4"
+            { y: 0, opacity: 1, duration: 0.48 },
+            "-=0.28"
           );
         }
 
@@ -175,8 +175,8 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             subtitle,
             { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5 },
-            "-=0.3"
+            { y: 0, opacity: 1, duration: 0.35 },
+            "-=0.2"
           );
         }
       });
@@ -189,15 +189,15 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         gsap.set(productCards, { opacity: 0, y: 40, scale: 0.95 });
 
         ScrollTrigger.batch(productCards, {
-          start: "top 88%",
+          start: "top 92%",
           once: true,
           onEnter: (batch) => {
             gsap.to(batch, {
               opacity: 1,
               y: 0,
               scale: 1,
-              stagger: 0.08,
-              duration: 0.6,
+              stagger: 0.045,
+              duration: 0.4,
               ease: "back.out(1.4)",
               overwrite: true,
             });
@@ -211,7 +211,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           filterBtns,
           { scale: 0.8, opacity: 0 },
-          { scale: 1, opacity: 1, stagger: 0.1, duration: 0.5, ease: "back.out(1.5)" },
+          { scale: 1, opacity: 1, stagger: 0.06, duration: 0.35, ease: "back.out(1.5)" },
           filterBtns[0].parentElement
         );
       }
@@ -222,9 +222,9 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           productCta,
           { y: 30, opacity: 0, scale: 0.95 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.7 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.48 },
           productCta,
-          "top 90%"
+          "top 94%"
         );
       }
 
@@ -236,7 +236,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           compareSelector,
           { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.7 },
+          { y: 0, opacity: 1, duration: 0.48 },
           compareSelector
         );
       }
@@ -247,7 +247,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           card,
           { x: i === 0 ? -60 : 60, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
+          { x: 0, opacity: 1, duration: 0.48, ease: "power2.out" },
           card
         );
       });
@@ -263,9 +263,9 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
             {
               x: 0,
               opacity: 1,
-              stagger: 0.08,
-              duration: 0.5,
-              scrollTrigger: { trigger: compareTable, start: "top 85%", once: true },
+              stagger: 0.045,
+              duration: 0.35,
+              scrollTrigger: { trigger: compareTable, start: "top 90%", once: true },
             }
           );
         }
@@ -277,9 +277,9 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           compareCta,
           { y: 30, opacity: 0, scale: 0.9 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.5)" },
+          { y: 0, opacity: 1, scale: 1, duration: 0.48, ease: "back.out(1.5)" },
           compareCta,
-          "top 90%"
+          "top 94%"
         );
       }
 
@@ -291,15 +291,15 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         gsap.set(packageCards, { opacity: 0, y: 50, scale: 0.9 });
 
         ScrollTrigger.batch(packageCards, {
-          start: "top 88%",
+          start: "top 92%",
           once: true,
           onEnter: (batch) => {
             gsap.to(batch, {
               opacity: 1,
               y: 0,
               scale: 1,
-              stagger: 0.15,
-              duration: 0.7,
+              stagger: 0.09,
+              duration: 0.48,
               ease: "back.out(1.5)",
               overwrite: true,
             });
@@ -313,7 +313,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           videoSection,
           { y: 40, opacity: 0, scale: 0.95 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.8 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.55 },
           videoSection
         );
       }
@@ -324,7 +324,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
       const roadmapSteps = container.querySelectorAll<HTMLElement>(".gsap-roadmap-step");
       roadmapSteps.forEach((step) => {
         const tl = gsap.timeline({
-          scrollTrigger: { trigger: step, start: "top 88%", once: true },
+          scrollTrigger: { trigger: step, start: "top 92%", once: true },
         });
 
         const circle = step.querySelector(".gsap-step-circle");
@@ -332,7 +332,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             circle,
             { scale: 0, rotation: -180, opacity: 0 },
-            { scale: 1, rotation: 0, opacity: 1, duration: 0.5, ease: "back.out(2)" }
+            { scale: 1, rotation: 0, opacity: 1, duration: 0.35, ease: "back.out(2)" }
           );
         }
 
@@ -341,8 +341,8 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             content,
             { x: 40, opacity: 0 },
-            { x: 0, opacity: 1, duration: 0.5 },
-            "-=0.2"
+            { x: 0, opacity: 1, duration: 0.35 },
+            "-=0.14"
           );
         }
 
@@ -351,8 +351,8 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             line,
             { scaleY: 0 },
-            { scaleY: 1, transformOrigin: "top center", duration: 0.4 },
-            "-=0.2"
+            { scaleY: 1, transformOrigin: "top center", duration: 0.28 },
+            "-=0.14"
           );
         }
       });
@@ -365,7 +365,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           post,
           { x: i % 2 === 0 ? -50 : 50, y: 20, opacity: 0, rotation: i % 2 === 0 ? -2 : 2 },
-          { x: 0, y: 0, opacity: 1, rotation: 0, duration: 0.7, ease: "power2.out" },
+          { x: 0, y: 0, opacity: 1, rotation: 0, duration: 0.48, ease: "power2.out" },
           post
         );
       });
@@ -378,7 +378,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           contactCta,
           { scale: 0.8, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(2)" },
+          { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" },
           contactCta
         );
       }
@@ -389,7 +389,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           card,
           { x: i === 0 ? -50 : 50, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
+          { x: 0, opacity: 1, duration: 0.48, ease: "power2.out" },
           card
         );
       });
@@ -398,13 +398,13 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
       const finalCta = container.querySelector(".gsap-final-cta");
       if (finalCta) {
         const tl = gsap.timeline({
-          scrollTrigger: { trigger: finalCta, start: "top 88%", once: true },
+          scrollTrigger: { trigger: finalCta, start: "top 92%", once: true },
         });
 
         tl.fromTo(
           finalCta,
           { y: 40, opacity: 0, scale: 0.9 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.5)" }
+          { y: 0, opacity: 1, scale: 1, duration: 0.48, ease: "back.out(1.5)" }
         );
 
         const ctaMascot = finalCta.querySelector(".gsap-cta-mascot");
@@ -412,8 +412,8 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           tl.fromTo(
             ctaMascot,
             { scale: 0, rotation: -20 },
-            { scale: 1, rotation: 0, duration: 0.6, ease: "elastic.out(1, 0.5)" },
-            "-=0.4"
+            { scale: 1, rotation: 0, duration: 0.4, ease: "elastic.out(1, 0.5)" },
+            "-=0.28"
           );
         }
       }
@@ -429,11 +429,11 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
           {
             y: 0,
             opacity: 1,
-            stagger: 0.1,
-            duration: 0.6,
+            stagger: 0.06,
+            duration: 0.4,
             scrollTrigger: {
               trigger: footerCols[0].parentElement,
-              start: "top 90%",
+              start: "top 94%",
               once: true,
             },
           }
@@ -449,7 +449,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
             trigger: el.closest("section"),
             start: "top bottom",
             end: "bottom top",
-            scrub: 1.5,
+            scrub: 0.9,
           },
           y: -30,
           ease: "none",
@@ -463,7 +463,7 @@ export function useGSAPAnimations(): RefObject<HTMLDivElement | null> {
         scrollReveal(
           el,
           { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
+          { y: 0, opacity: 1, duration: 0.48, ease: "power2.out" },
           el
         );
       });

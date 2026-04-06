@@ -55,10 +55,11 @@ export const PACKAGE_CARD = {
   puppy: `${B}/puppy.png`,
   plus: `${B}/plus.png`,
   promax: `${B}/promax.png`,
+  ultra: `${B}/ultra.png`,
 } as const;
 
 export const PACKAGE_BADGE = {
-  /** Like badge สำหรับ Pro Max */
+  /** Like badge สำหรับ Ultra */
   like: `${B}/like.png`,
 } as const;
 
@@ -70,6 +71,7 @@ export const PROMOTION = {
   puppy: `${B}/promotion_puppy.png`,
   plus: `${B}/promotion_plus.png`,
   promax: `${B}/promotion_promax.png`,
+  ultra: `${B}/promotion_ultra.png`,
 } as const;
 
 // ============================================================
@@ -103,6 +105,7 @@ export const packageImageMap: Record<string, string> = {
   puppy: PACKAGE_CARD.puppy,
   plus: PACKAGE_CARD.plus,
   promax: PACKAGE_CARD.promax,
+  ultra: PACKAGE_CARD.ultra,
 };
 
 /** Promotion badge image by package id */
@@ -110,5 +113,6 @@ export const promotionImageMap: Record<string, string> = {
   puppy: PROMOTION.puppy,
   plus: PROMOTION.plus,
   promax: PROMOTION.promax,
+  ultra: PROMOTION.ultra,
 };
 

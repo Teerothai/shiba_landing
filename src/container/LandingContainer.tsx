@@ -117,6 +117,7 @@ export function LandingContainer() {
                 | "all"
                 | "iPhone"
                 | "iPad"
+                | "MacBook"
                 | "android"
                 | "Combo set Apple Pencil",
             )
