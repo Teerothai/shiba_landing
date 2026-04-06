@@ -38,8 +38,8 @@ function PackageCard({
       data-promoted={pkg.popular ? "true" : undefined}
       className="relative gsap-package-card min-w-[180px] w-[180px] sm:min-w-[220px] sm:w-[220px] lg:min-w-[240px] lg:w-[240px] shrink-0 snap-center lg:snap-align-none"
     >
-      {/* Like badge for Pro Max */}
-      {pkg.id === "promax" && (
+      {/* Like badge for Ultra */}
+      {pkg.id === "ultra" && (
         <div className="absolute top-1 md:top-2 md:left-2 z-20">
           <Image
             src={PACKAGE_BADGE.like}
