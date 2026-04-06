@@ -4,7 +4,13 @@ import { useState, useMemo, useCallback } from "react";
 import { allProducts, packages } from "@/data/products";
 import type { Product, Package } from "@/data/products";
 
-type CategoryFilter = "all" | "iPhone" | "iPad" | "android" | "Combo set Apple Pencil";
+type CategoryFilter =
+  | "all"
+  | "iPhone"
+  | "iPad"
+  | "MacBook"
+  | "android"
+  | "Combo set Apple Pencil";
 type SortOption = "popular" | "price-low" | "price-high" | "newest";
 
 const ITEMS_PER_PAGE = 6;
@@ -63,8 +69,14 @@ export function useProducts(): UseProductsReturn {
         result.sort((a, b) => b.price - a.price);
         break;
       case "newest": {
-        // ใหม่สุด→เก่าสุด โดยคงลำดับ iPhone → iPad → Android
-        const categoryOrder: Record<string, number> = { iPhone: 0, iPad: 1, android: 2 };
+        // ใหม่สุด→เก่าสุด โดยคงลำดับ iPhone → iPad → MacBook → Android → Combo
+        const categoryOrder: Record<string, number> = {
+          iPhone: 0,
+          iPad: 1,
+          MacBook: 2,
+          android: 3,
+          "Combo set Apple Pencil": 4,
+        };
         const originalIdx = new Map(allProducts.map((p, i) => [p.id, i]));
         result.sort((a, b) => {
           const catDiff = (categoryOrder[a.category] ?? 99) - (categoryOrder[b.category] ?? 99);

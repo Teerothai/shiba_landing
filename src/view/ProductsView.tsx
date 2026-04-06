@@ -4,6 +4,7 @@ import Image from "next/image";
 import {
   Smartphone,
   Tablet,
+  Laptop,
   ShoppingCart,
   Gift,
   ChevronLeft,
@@ -37,6 +38,7 @@ const categories = [
   { id: "all", name: "ทั้งหมด", icon: ShoppingCart },
   { id: "iPhone", name: "iPhone", icon: Smartphone },
   { id: "iPad", name: "iPad", icon: Tablet },
+  { id: "MacBook", name: "MacBook", icon: Laptop },
   { id: "android", name: "Android", icon: Smartphone },
   { id: "Combo set Apple Pencil", name: "Combo set", icon: Gift },
 ];
@@ -90,7 +92,7 @@ export function ProductsView({
             สินค้าแนะนำ
           </h2>
           <p className="text-lg text-(--kawaii-brown)/80">
-            iPhone, iPad & Android คุณภาพ ราคาดี พร้อมแพ็กเกจผ่อนที่เหมาะกับคุณ
+            iPhone, iPad, MacBook & Android คุณภาพ ราคาดี พร้อมแพ็กเกจผ่อนที่เหมาะกับคุณ
           </p>
         </div>
 
