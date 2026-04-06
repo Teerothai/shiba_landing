@@ -88,7 +88,12 @@ export function useProducts(): UseProductsReturn {
       }
       case "popular":
       default:
-        // เรียงตามลำดับใน products.ts (รุ่นเก่าสุด → ใหม่สุด) — ไม่ต้อง sort เพิ่ม
+        // hot products first, then the rest in original order
+        result.sort((a, b) => {
+          if (a.hot && !b.hot) return -1;
+          if (!a.hot && b.hot) return 1;
+          return 0;
+        });
         break;
     }
 
