@@ -490,7 +490,7 @@ export const macBooks: Product[] = [
     specs: { storage: ["256GB", "512GB"], processor: "Apple A18 Pro", display: '13.6" Liquid Retina' },
     description: "MacBook Neo ชิป A18 Pro จอ 13.6 นิ้ว Liquid Retina รุ่นใหม่ล่าสุด ราคาเข้าถึงง่าย รองรับ Apple Intelligence",
     colors: [
-      { name: "Blush", hex: "#F2C4C4", image: "/assets/product/MacBook/macbook neo/MacBook Neo (A18 Pro) 13_-B.webp" },
+      { name: "Black", hex: "#F2C4C4", image: "/assets/product/MacBook/macbook neo/MacBook Neo (A18 Pro) 13_-B.webp" },
       { name: "Citrus", hex: "#A1C50A", image: "/assets/product/MacBook/macbook neo/MacBook Neo (A18 Pro) 13_-C.webp" },
       { name: "Indigo", hex: "#4B5FA6", image: "/assets/product/MacBook/macbook neo/MacBook Neo (A18 Pro) 13_-In.webp" },
       { name: "Silver", hex: "#E3E4E5", image: "/assets/product/MacBook/macbook neo/MacBook Neo (A18 Pro) 13_-S.webp" },
@@ -499,9 +499,9 @@ export const macBooks: Product[] = [
   },
 ];
 
-// ============================================================
+// =============================================================
 // iPad Products
-// ============================================================
+// =============================================================
 
 export const iPads: Product[] = [
   // ────────────────────────────────────────────
